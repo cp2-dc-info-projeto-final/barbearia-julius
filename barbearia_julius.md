@@ -125,7 +125,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 4. O sistema informa que não há uma conta vinculada à esse login
 ![FluxoAlt_Log02](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/0bfaa6b2-c5ad-4c28-b13f-d457cf9c8a44)
 
-### Fluxo alternativo C
+### Fluxo Principal
 
 1. O sistema apresenta o formulário de login
 2. O usuário pressiona o botão "Esqueceu a senha?"
