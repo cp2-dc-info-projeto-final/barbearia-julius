@@ -24,5 +24,6 @@ Sed sit amet ante sem. Nunc id sapien metus. Etiam lobortis in purus ut porta. V
 
 **Modelagem do Banco de Dados**
 
-https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/cd54bdf8-3028-4739-bfa3-6128280cb120
+![Barbearia Julius](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/c5203ff2-4125-4f57-b263-ef04adf41a73)
+
 
