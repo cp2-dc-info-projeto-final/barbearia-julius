@@ -94,6 +94,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 5. O sistema direciona o usuário para completar o cadastro utilizando as informações, onde algumas já estão preenchidas.
 6. O usuário pressiona o botão "Cadastrar"
 7. O sistema redireciona o usuário para a página principal
+![FluxoAlt_LogSoc01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/6b5d0c36-55b2-45bc-ac76-00bea8c9db03)
 
 # CDU 02 - Login <h1>
 
@@ -114,6 +115,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 5. O usuário preenche novamente o login e senha
 6. O usuário clica no botão "Logar"
 7. O sistema redireciona o usuário para a página principal
+![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/5834aaed-bc02-4f86-8802-2abbcbf2e983)
 
 ### Fluxo alternativo B
 
@@ -121,6 +123,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 2. O usuário preenche o campo usuário e senha
 3. O usuário pressiona o botão "Logar"
 4. O sistema informa que não há uma conta vinculada à esse login
+![FluxoAlt_Log02](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/0bfaa6b2-c5ad-4c28-b13f-d457cf9c8a44)
 
 ### Fluxo alternativo C
 
@@ -132,6 +135,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 6. Entrando no link, o usuário preencherá com uma nova senha e confirmar a senha.
 7. O sistema altera a senha no banco de dados
 8. O usuário redireciona o usuário para a página principal
+![FluxoAlt_Log03](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f960c911-05f9-4a55-b87a-478afc02a381)
 
 # cdu 03 -  Calendario Interativo<h1>
 
