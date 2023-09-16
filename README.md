@@ -1,11 +1,9 @@
-# Nome do Meu Projeto
-
-Projeto Final do Curso Técnico Integrado de Desenvolvimento de Sistemas - Colégio Pedro II - Campus Duque de Caxias
-
-**Integrantes:**
- - Fulano
- - Beltrano
- - Ciclano
+# **SiSTEMA DE AGENDAMENTO** <h1>
+## BARBEARIA JULIUS <h2>
+* Ana Caroline de Oliveira
+* Antônio Reuther Fructuoso Damasceno 
+* Lucas de Souza Santana
+* Lucas Melo Moura 
 
  ## Descrição do Projeto
 
@@ -26,4 +24,5 @@ Sed sit amet ante sem. Nunc id sapien metus. Etiam lobortis in purus ut porta. V
 
 **Modelagem do Banco de Dados**
 
-![Diagrama de Banco de Dados](diagrama-exemplo.png)
+![Diagrama de Banco de Dados](![Barbearia Julius](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/cd54bdf8-3028-4739-bfa3-6128280cb120)
+)
