@@ -70,6 +70,8 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 3. O usuário pressiona o botão "Cadastrar"
 3. O sistema valida o login e senha
 4. O sistema informa que já possui uma conta vinculada com esse login
+   ![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/9fdc4e52-523a-4d58-88b2-97f57c2cee0a)
+
 
 # CDU 1.5 - Login/Cadastro Social
 
@@ -173,6 +175,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 9. O usuário escolhe um horário que se adeque ao seu agendamento.
 10. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional,valor, hora , uma coluna para o usuário colocar alguma observação e um botão para confirmar agendamento
 11. O usuário clica no botão "confirmar".
+![FluxoAlt_GestHor01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/7ee3d6a2-0727-4bed-8c27-38300cce1294)
 
 # cdu 06 -  acesso ao perfil criado <h1>
 
