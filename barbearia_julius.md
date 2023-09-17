@@ -152,6 +152,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 1. o usuário clica em uma coluna escrito "serviços".
 2. o sistema exibirá os serviços disponíveis.
 3. o usuário clicará no serviço que desejar.
+![FluxoAlt_LogSoc01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/b7bc27d4-cde9-4835-a7ff-3d348fbb17af)
 
 # cdu 05 - gestão de horários <h1>
 
