@@ -52,6 +52,8 @@ o sistema deverá ser disponibilizado em português
 ### rnf 03
 o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 
+![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
+
 # cdu 01 - cadastro de usuários <h1>
 
 ### Fluxo principal
@@ -62,6 +64,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 4. O sistema valida o login e senha
 5. O sistema cadastra o usuário
 6. O sistema redireciona o usuário para a página principal
+![tca](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/4f6ba4af-b070-4644-a1b5-ac4681f9da07)
 
 ### Fluxo alternativo A - já existente
 
@@ -105,6 +108,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 3. O usuário pressiona o botão "Logar"
 4. O sistema valida login e senha
 5. O sistema redireciona o usuário para a página principal
+![WhatsApp Image 2023-09-15 at 18 43 51 (2)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/ffc0ef01-47f1-4a67-bdfc-20e8ed3995f3)
 
 ### Fluxo alternativo a
 
@@ -209,6 +213,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 5. Uma mensagem de confirmação é exibida: "Tem certeza de que deseja cancelar este agendamento?". 
 6. Se houver uma taxa de cancelamento, o sistema informa o cliente sobre a taxa e pede confirmação. 
 7. O sistema remove o agendamento e envia uma notificação confirmando o cancelamento.
+![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
 
 ### fluxo principal -reagendamento
 
@@ -230,6 +235,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 4. Junto ao agendamento concluído, o cliente encontra a opção "Avaliar" e clica nela.
 5. O sistema exibe uma escala de 1 a 5 estrelas, permitindo que o cliente escolha sua avaliação.
 6. O cliente confirma sua seleção e a avaliação é registrada no sistema.
+![WhatsApp Image 2023-09-15 at 18 43 52 (1)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/16a7700d-debb-4dde-89cb-96f3a7f7aff5)
 
 ### Fluxo principal Comentários
 
@@ -252,6 +258,8 @@ o sistema deverá ser desenvolvido nas linguagens: html, css e javascript
 2. O usuário pressiona o botão "Logar"
 3. O sistema valida o login e senha e verifica que há permissão de administrador
 4. O sistema redireciona o usuário para o dashboard para administradores
+![WhatsApp Image 2023-09-15 at 18 43 51 (1)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/cd6586ae-cae9-41a6-9f65-e5f5d0293dcf)
+![WhatsApp Image 2023-09-15 at 18 43 52](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/701d15a2-880a-49a2-a8aa-34ab10899da5)
 
 # CRONOGRAMA DE DESENVOLVIMENTO<h1>
 
