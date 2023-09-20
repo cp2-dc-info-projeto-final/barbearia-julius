@@ -16,9 +16,6 @@ Bem-vindo ao projeto da Barbearia Julius, o seu destino premium para cuidados ma
 - [Casos de Uso](casos-de-uso.md)
 - [Apresentação](apresentacao.pdf)
 
-**Diagrama de Classes**
-
-![Diagrama de Classes](diagrama-exemplo.png)
 
 **Modelagem do Banco de Dados**
 
