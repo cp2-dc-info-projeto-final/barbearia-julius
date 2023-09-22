@@ -19,7 +19,7 @@
         }
 
         body {
-            background-image: url('img/fundo.jpg');
+            background-image: url('img/background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -32,7 +32,6 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(128, 0, 128, 0.5));
             z-index: -1;
         }
 
@@ -170,7 +169,7 @@
             </span>
         </div>
 
-            <p><input type="submit" class="rounded-button" value="Enviar"></p>
+            <p><input type="submit" class="rounded-button" value="Entrar"></p>
             <a href="form_cadastro.php" class="logout-link">Cadastre-se</a>
 
         </form>

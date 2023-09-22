@@ -19,7 +19,7 @@
         }
 
         body {
-            background-image: url('img/fundo.jpg');
+            background-image: url('img/background.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -34,7 +34,6 @@
             right: 0;
             bottom: 0;
             left: 0;
-            background: linear-gradient(120deg, rgba(0, 0, 0, 0.5), rgba(128, 0, 128, 0.5));
             z-index: -1;
         }
 
@@ -139,18 +138,19 @@
             
             <div class="input-field">
                 <label for="nome"><i class="fas fa-user"></i> Nome:</label>
-                <input type="text" id="nome" name="nome" placeholder="Escreva seu nome" required>
-            </div>
-            <div class="input-field">
-                <label for="senha"><i class="fas fa-lock"></i> Senha:</label>
-                <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required>
+                <input type="text" id="nome" name="nome" required>
             </div>
             <div class="input-field">
                 <label for="email"><i class="fas fa-envelope"></i> E-mail:</label>
-                <input type="email" id="email" name="email" placeholder="exemplo@dominio.com" required>
+                <input type="email" id="email" name="email" required>
             </div>
+            <div class="input-field">
+                <label for="senha"><i class="fas fa-lock"></i> Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            
 
-            <p><input type="submit" class="rounded-button" value="Enviar"></p>
+            <p><input type="submit" class="rounded-button" value="Cadastrar"></p>
         </form>
         <a href="logout.php" class="logout-link">Login</a>
     </div>
