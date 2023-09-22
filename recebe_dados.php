@@ -39,7 +39,7 @@
                     if(!mysqli_query($mysqli,$sql)){
                         echo mysqli_error($mysqli);
                     }
-                    echo "<br>O usuário foi cadastrado com sucesso!";
+                    header("Location: form_login.php");
                 }
             }
             
