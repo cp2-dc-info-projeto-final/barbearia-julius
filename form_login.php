@@ -19,7 +19,7 @@
         }
 
         body {
-            background-image: url('fundo.jpg');
+            background-image: url('img/fundo.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             background-position: center;
@@ -171,7 +171,7 @@
         </div>
 
             <p><input type="submit" class="rounded-button" value="Enviar"></p>
-            <a href="index.php" class="logout-link">Cadastre-se</a>
+            <a href="form_cadastro.php" class="logout-link">Cadastre-se</a>
 
         </form>
     </div>
