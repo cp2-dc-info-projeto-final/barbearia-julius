@@ -10,16 +10,20 @@ if ($operacao == "cadastrar") {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
 
+    // Verifique se o e-mail já existe na tabela de usuários
+    $verifica_email = "SELECT * FROM usuarios WHERE email = '$email'";
+    $resultado = mysqli_query($mysqli, $verifica_email);
+
+    if (mysqli_num_rows($resultado) > 0) {
+        $erros[] = "E-mail já cadastrado. Por favor, escolha outro e-mail.";
+    }
+
     if (empty($senha) || strlen($senha) < 8) {
         $erros[] = "Preencha sua senha com pelo menos 8 caracteres.";
     }
 
     if (empty($nome) || !preg_match('/\S+\s+\S+/', $nome)) {
-        $erros[] = "Preencha seu nome completo.";
-    }
-
-    if (strlen($email) < 8 || strstr($email, "@") === FALSE) {
-        $erros[] = "Favor, digitar o e-mail com pelo menos 8 caracteres.";
+        $erros[] = "Preencha seu nome completo (nome e sobrenome).";
     }
 
     if (count($erros) > 0) {
