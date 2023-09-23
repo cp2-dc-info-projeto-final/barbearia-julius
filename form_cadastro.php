@@ -126,12 +126,32 @@
             color: #0056b3; /* Cor do link ao passar o mouse */
         }
 
+
+        .error {
+            color: #ff4d4d; /* Cor vermelha para as mensagens de erro individuais */
+            list-style-type: none;
+        }
+
         
 
     </style>
 </head>
 <body>
     <div class="container">
+
+        <?php
+            session_start();
+            if(isset($_SESSION["cadastro_erros"]) && count($_SESSION["cadastro_erros"]) > 0){
+                
+               
+                foreach ($_SESSION["cadastro_erros"] as $erro) {
+                    echo '<li class="error">' . $erro . '</li>';
+                }
+                
+                unset($_SESSION["cadastro_erros"]);
+            }
+        ?>
+
         <h1>Cadastro</h1>
         <form action="recebe_dados.php" method="POST">
             <input type="hidden" name="operacao" value="cadastrar">
@@ -149,11 +169,9 @@
                 <input type="password" id="senha" name="senha" required>
             </div>
             
-
             <p><input type="submit" class="rounded-button" value="Cadastrar"></p>
         </form>
-        <a href="logout.php" class="logout-link">Login</a>
+        <a href="form_login.php" class="logout-link">Login</a>
     </div>
-
 </body>
 </html>

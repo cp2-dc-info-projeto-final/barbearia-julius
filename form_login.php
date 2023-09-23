@@ -143,11 +143,10 @@
     <div class="container">
         <?php 
             session_start();
-            if(isset($_SESSION["erro_login"])){
+            if (isset($_SESSION["erro_login"])) {
                 echo '<p class="error">' . $_SESSION["erro_login"] . '</p>';
                 unset($_SESSION["erro_login"]);
-            }
-            elseif(isset($_SESSION["senha_invalida"])){
+            } elseif (isset($_SESSION["senha_invalida"])) {
                 echo '<p class="error">' . $_SESSION["senha_invalida"] . '</p>';
                 unset($_SESSION["senha_invalida"]);
             }
