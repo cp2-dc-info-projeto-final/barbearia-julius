@@ -8,7 +8,7 @@
 
 .bloco_fotos{
     padding: 10px;
-    background-color:#121212;
+    background-color:;
 }
     
 }
@@ -166,6 +166,24 @@ footer {
     color: #fff; /* Branco para o texto no rodapé */
     text-align: center;
     padding: 20px 0;
+}
+.espaco{
+    background-color: #000; /* Roxo escuro */
+    color: #fff; /* Branco para o texto no rodapé */
+    text-align: center;
+    padding: 200px ;
+}
+.espaco1{
+    background-color: #000; /* Roxo escuro */
+    color: #fff; /* Branco para o texto no rodapé */
+    text-align: center;
+    padding: 200px ;
+}
+.espaco2{
+    background-color: #000; /* Roxo escuro */
+    color: #fff; /* Branco para o texto no rodapé */
+    text-align: center;
+    padding: 200px ;
 }
 
 .footer-content {
