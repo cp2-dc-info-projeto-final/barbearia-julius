@@ -18,8 +18,8 @@ if ($operacao == "cadastrar") {
         $erros[] = "E-mail já cadastrado. Por favor, escolha outro e-mail.";
     }
 
-    if (empty($senha) || strlen($senha) < 8) {
-        $erros[] = "Preencha sua senha com pelo menos 8 caracteres.";
+    if (empty($senha) || strlen($senha) < 6) {
+        $erros[] = "Preencha sua senha com pelo menos 6 caracteres.";
     }
 
     if (empty($nome) || !preg_match('/\S+\s+\S+/', $nome)) {
