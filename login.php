@@ -27,7 +27,7 @@ else {
         $_SESSION["email"] = $email;
         $_SESSION["senha"] = $usuario["senha"];
         // direciona para a página inicial
-        header("Location: index.php");
+        header("Location: form_cadastro.php");
     }
 }
 mysqli_close($mysqli);
