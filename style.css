@@ -2,9 +2,15 @@
 
 *{
     margin: 0;
-    padding: 0;
+    padding:0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+
+.bloco_fotos{
+    padding: 10px;
+    background-color:;
+}
+    
 }
 section{
     position: relative;
@@ -160,6 +166,24 @@ footer {
     color: #fff; /* Branco para o texto no rodapé */
     text-align: center;
     padding: 20px 0;
+}
+.espaco{
+    background-color: #000; /* Roxo escuro */
+    color: #fff; /* Branco para o texto no rodapé */
+    text-align: center;
+    padding: 200px ;
+}
+.espaco1{
+    background-color: #000; /* Roxo escuro */
+    color: #fff; /* Branco para o texto no rodapé */
+    text-align: center;
+    padding: 200px ;
+}
+.espaco2{
+    background-color: #000; /* Roxo escuro */
+    color: #fff; /* Branco para o texto no rodapé */
+    text-align: center;
+    padding: 200px ;
 }
 
 .footer-content {
