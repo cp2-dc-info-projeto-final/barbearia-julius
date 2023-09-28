@@ -3,7 +3,8 @@
 * Ana Caroline de Oliveira
 * Antônio Reuther Fructuoso Damasceno 
 * Lucas de Souza Santana
-* Lucas Melo Moura 
+* Lucas Melo Moura
+* Beatriz dos Santos Silva
 
  ## Descrição do Projeto
 
