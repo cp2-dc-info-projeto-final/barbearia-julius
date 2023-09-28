@@ -24,11 +24,11 @@ if (mysqli_num_rows($res) != 1) {
         $_SESSION["email"] = $email;
         $_SESSION["senha"] = $usuario["senha"];
         // direciona para a página inicial
-<<<<<<< HEAD
+
         header("Location: form_cadastro.php");
-=======
+
         header("Location: index.html");
->>>>>>> bfaa0c0645edee1914f345404ef3078d616189ec
+
     }
 }
 mysqli_close($mysqli);
