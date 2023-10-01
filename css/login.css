@@ -49,10 +49,17 @@
         }
 
         .error {
-            color: #ff4d4d; /* Cor de erro mais viva */
+            color: #a94442;
             font-weight: bold;
             margin-bottom: 15px;
+            padding: 10px;
+            margin-bottom: 25px;
+            border: 5px solid #94095e;
+            border-radius: 13px;
+            background-color: #f2dede;
         }
+
+        
 
         .input-field {
             margin-bottom: 20px;
