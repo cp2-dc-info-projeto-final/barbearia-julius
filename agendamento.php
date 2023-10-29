@@ -32,7 +32,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
         <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
         <nav class="navegation">
             <ul>
-                <li><a href="index.html">Página Principal</a></li>
+                <li><a href="logado.html">Página Principal</a></li>
             </ul>
         </nav>
     </header>
