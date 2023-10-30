@@ -6,7 +6,6 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     $hora = $_POST['hora'];
     $servico = $_POST['servico'];
 
-    // Aqui, você pode inserir os dados em um banco de dados, enviar por e-mail, etc.
 
     $mensagem = "Agendamento realizado com sucesso para $nome em $data às $hora para o serviço $servico!";
 }
@@ -45,20 +44,40 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             ?>
             <form action="" method="POST">
-                <label for="nome">Nome:</label>
-                <input type="text" name="nome" required>
+
+                <label for="funcionario">Funcionário:</label>
+                <select name="funcionario">
+                    <option value="julius">Julius</option>
+                    <option value="chris">Chris</option>
+                </select>
                 
                 <label for="data">Data:</label>
                 <input type="date" name="data" required>
                 
                 <label for="hora">Hora:</label>
-                <input type="time" name="hora" required>
+                <select>
+                    <option value="horario1">07:00</option>
+                    <option value="horario2">08:00</option>
+                    <option value="horario3">09:00</option>
+                    <option value="horario4">10:00</option>
+                    <option value="horario5">11:00</option>
+                    <option value="horario6">12:00</option>
+                    <option value="horario7">13:00</option>
+                    <option value="horario8">14:00</option>
+                    <option value="horario9">15:00</option>
+                    <option value="horario10">16:00</option>
+                    <option value="horario11">17:00</option>
+                    <option value="horario12">18:00</option>
+                    <option value="horario13">19:00</option>
+                    <option value="horario14">20:00</option>
+                </select>
                 
                 <label for="servico">Serviço:</label>
                 <select name="servico">
                     <option value="corte">Corte</option>
                     <option value="barba">Barba</option>
-                    <!-- Adicione mais serviços conforme necessário -->
+                    <option value="cortebarba">Corte + barba</option>
+                
                 </select>
                 
                 <input type="submit" value="Agendar">
@@ -67,7 +86,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     </div>
 </section>
 
-<!-- O resto do seu código (ícones, rodapé, etc) aqui -->
+
 
 </body>
 </html>
