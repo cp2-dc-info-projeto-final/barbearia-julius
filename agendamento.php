@@ -20,6 +20,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="css/agendamento.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="js/agendamento.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Agendamento - Barbearia Julius</title>
 </head>
@@ -46,30 +47,19 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
             <form action="" method="POST">
 
                 <label for="funcionario">Funcionário:</label>
-                <select name="funcionario">
+                <select name="funcionario" id="funcionario">
+                    <option value="" selected="selected" disabled="disabled">Selecione um funcionário</option>
                     <option value="julius">Julius</option>
                     <option value="chris">Chris</option>
                 </select>
+
                 
                 <label for="data">Data:</label>
                 <input type="date" name="data" required>
                 
                 <label for="hora">Hora:</label>
-                <select>
-                    <option value="horario1">07:00</option>
-                    <option value="horario2">08:00</option>
-                    <option value="horario3">09:00</option>
-                    <option value="horario4">10:00</option>
-                    <option value="horario5">11:00</option>
-                    <option value="horario6">12:00</option>
-                    <option value="horario7">13:00</option>
-                    <option value="horario8">14:00</option>
-                    <option value="horario9">15:00</option>
-                    <option value="horario10">16:00</option>
-                    <option value="horario11">17:00</option>
-                    <option value="horario12">18:00</option>
-                    <option value="horario13">19:00</option>
-                    <option value="horario14">20:00</option>
+                <select name="hora" id="hora">
+                    
                 </select>
                 
                 <label for="servico">Serviço:</label>
