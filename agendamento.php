@@ -66,7 +66,11 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <select name="servico">
                     <option value="corte">Corte</option>
                     <option value="barba">Barba</option>
+                    <option value="sobrancelha">Sobrancelha</option>
                     <option value="cortebarba">Corte + barba</option>
+                    <option value="cortesobrancelha">Corte + sobrancelha</option>
+                    <option value="cortebarbasobrancelha">Corte + barba + sobrancelha</option>
+                    <option value="barbasobrancelha">Barba + sobrancelha</option>
                 
                 </select>
                 
