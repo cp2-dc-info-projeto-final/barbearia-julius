@@ -27,7 +27,7 @@ if (mysqli_num_rows($res) != 1) {
 
         header("Location: form_cadastro.php");
 
-        header("Location: index.html");
+        header("Location: agendamento.php");
 
     }
 }
