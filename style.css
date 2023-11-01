@@ -1,48 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
 *{
     margin: 0;
     padding:0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
-}
 
 .bloco_fotos{
     padding: 116px;
     margin-left: 35px;
 }
-
-.botao1{
-  display: inline-block;
-  padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
-  background-color: #94095e; /* Cor de fundo do botão */
-  color: #fff; /* Cor do texto do botão */
-  text-decoration: none; /* Remove sublinhado padrão dos links */
-  border: none; /* Remove a borda do botão */
-  border-radius: 30px; /* Borda arredondada */
-  cursor: pointer; /* Altera o cursor ao passar o mouse sobre o botão */
-  margin-left: 30px;
+    
 }
-
-.botao1:hover {
-  background-color: #222; /* Cor de fundo ao passar o mouse sobre o botão */
-}
-
-.botao2{
-    display: inline-block;
-    padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
-    background-color: #94095e; /* Cor de fundo do botão */
-    color: #fff; /* Cor do texto do botão */
-    text-decoration: none; /* Remove sublinhado padrão dos links */
-    border: none; /* Remove a borda do botão */
-    border-radius: 30px; /* Borda arredondada */
-    cursor: pointer; /* Altera o cursor ao passar o mouse sobre o botão */
-    margin-left: 30px;
-  }
-
-  .botao2:hover {
-    background-color: #222; /* Cor de fundo ao passar o mouse sobre o botão */
-  }
-
 section{
     position: relative;
     width: 100%;
@@ -83,7 +52,6 @@ header .navegation ul{
 }
 header .navegation  li{
     list-style: none;
-    margin-left: 0px;
 }
 header .navegation li a{
     display: inline-block;
@@ -144,7 +112,6 @@ header .navegation li a{
 }
 .icons li{
     list-style: none;
-    margin-left: 10px;
 }
 .icons li a{
     display: inline-block;
@@ -157,7 +124,6 @@ header .navegation li a{
     align-items: center;
     border-radius: 50%;
     transition:  0.3s ease-in-out;
-    margin-bottom: -43px;
 }
 .icons li a:hover{
     background:#94095e;
@@ -187,38 +153,11 @@ header .navegation li a{
 .boxImg .img4{
     transform: rotate(-15deg)
 }
-.row{
-    background: #121212;
-}
-
-.titulo1 {
-    font-size: 30px;
-    color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 10px;
-    line-height: 2.5em;
-    font-weight: 700;
-    font-family: Playfair Display SC;
-    margin-top: 180px;
-
-}
-.produto_nome{
-    color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 10px;
-    line-height: 2.5em;
-    font-weight: 700;
-    font-family: Playfair Display SC;
-    text-align: center;
-}
-
 /* Estilos globais */
-
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212;
 }
 
 /* Estilos do rodapé */
@@ -246,53 +185,62 @@ footer {
     text-align: center;
     padding: 200px ;
 }
+
 .footer-content {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
 }
+
 .footer-left, .footer-right {
     flex: 1;
     padding: 20px;
 }
+
 .footer-left h3, .footer-right h3 {
     color: #fff;
     font-size: 1.2em;
 }
+
 .footer-left p, .footer-right ul {
     margin: 0;
     color: #fff;
 }
+
 .footer-left p {
     font-size: 0.9em;
 }
+
 .footer-right ul {
     list-style: none;
     padding: 0;
 }
+
 .footer-right ul li {
     margin: 5px 0;
 }
+
 .footer-right ul li a {
     text-decoration: none;
     color: #fff;
 }
+
 /* Estilos do rodapé inferior */
 .copyright {
     background-color: #000; /* Preto */
     padding: 10px 0;
 }
+
 .copyright p {
     margin: 0;
     color: #fff;
     font-size: 0.8em;
 }
 /* Estilos globais */
-.body {
+body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-color: #121212;
 }
 
 /* Estilos do container de produtos */
@@ -302,6 +250,7 @@ footer {
     width: 100%;
     position: relative;
 }
+
 /* Estilos dos cards de produtos */
 .product-card {
     display: inline-block;
@@ -314,10 +263,12 @@ footer {
     padding: 20px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
+
 .product-card img {
     max-width: 100%;
     height: auto;
 }
+
 /* Estilos de rolagem */
 @keyframes scroll {
     0% {
@@ -326,62 +277,4 @@ footer {
     100% {
         transform: translateX(-100%);
     }
-}
-
-.container-fluid{
-    background-color: #121212;
-    margin-top: 200px;
-}
-
-.fotos1{
-    padding-right: 100px;
-    padding-left: 100px;
-    margin-right: auto;
-    margin-left: auto;
-}
-
-.titulo3{
-    color: #ffffff;
-    font-size: 3em;
-    margin-bottom: 10px;
-    line-height: 2.5em;
-    font-weight: 700;
-    font-family: Playfair Display SC;
-    text-align: center;
-}
-.container {
-    padding: 80px 120px;
-  }
-.person {
-    border: 10px solid transparent;
-    margin-bottom: 25px;
-    width: 80%;
-    height: 80%;
-    opacity: 0.7;
-  }
-.person:hover {
-    border-color: #f1f1f1;
-  }
-.text-center{
-    color: white;
-
-}
-.collapse{
-    color: white;
-}
-.mini{
-    text-align: center;
-
-}
-.col-sm-4{
-    color: #000;
-    width: 23.333333%;
-}
-.img-circle person{
-    color: white;
-    width: 35px;
-}
-.container-fluid {
-    background-color: #121212;
-    margin-top: -71px;
 }
