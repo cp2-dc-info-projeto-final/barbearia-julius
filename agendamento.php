@@ -31,9 +31,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <header>
         <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
         <nav class="navegation">
-            <ul>
-                <li><a href="logado.html">Página Principal</a></li>
-            </ul>
+        <ul>
+                <li><a class="nav" href="logado.html">Pagina Principal</a></li>
+                <li><a class="na" href="agendamento.php">Agendamento</a></li>
+              </ul>
         </nav>
     </header>
     <div class="content">

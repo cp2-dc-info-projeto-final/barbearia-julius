@@ -1,5 +1,46 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
+header .navegation li a{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 19px;
+    margin-left: 100px;
+    border-radius: 40px;
+    transition: -0.7s ease-in-out;
+    padding: 10px 25px;
+}
+ul .nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+  
+  li .nav{
+    float: left;
+    
+  }
+  
+  li a .nav{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover.nav{
+    background-color: #111;
+  }
+  
+  .nav {
+    background-color: #af4c8e;
+  }
 
 
 * {
@@ -48,8 +89,14 @@ header .logo {
 }
 
 header .navegation ul {
-    position: relative;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 header .navegation li {
