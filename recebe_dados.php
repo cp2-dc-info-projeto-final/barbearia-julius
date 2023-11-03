@@ -34,14 +34,6 @@ if ($operacao == "cadastrar") {
 
     $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuarios (senha, nome, email) VALUES ('$senha_cript', '$nome', '$email')";
-    
-    if(mysqli_query($mysqli, $sql)) {
-        header("Location: form_login.php");
-    } else {
-        $_SESSION['cadastro_erro'] = "Erro ao cadastrar usuário. Tente novamente mais tarde.";
-        header("Location: form_cadastro.php");
-        exit();
-    }
 }
 
 mysqli_close($mysqli);

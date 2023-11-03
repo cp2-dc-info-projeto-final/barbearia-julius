@@ -1,15 +1,16 @@
 <?php
 $mensagem = "";
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $nome = $_POST['nome'];
-    $data = $_POST['data'];
-    $hora = $_POST['hora'];
-    $servico = $_POST['servico'];
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    $funcionario = isset($_POST['funcionario']) ? $_POST['funcionario'] : "";
+    $data = isset($_POST['data']) ? $_POST['data'] : "";
+    $hora = isset($_POST['hora']) ? $_POST['hora'] : "";
+    $servico = isset($_POST['servico']) ? $_POST['servico'] : "";
 
-
-    $mensagem = "Agendamento realizado com sucesso para $nome em $data às $hora para o serviço $servico!";
+    $mensagem = "Agendamento realizado com sucesso com $funcionario em $data às $hora para o serviço $servico!";
 }
 ?>
+
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -31,10 +32,10 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
     <header>
         <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
         <nav class="navegation">
-        <ul>
+            <ul>
                 <li><a class="nav" href="logado.html">Pagina Principal</a></li>
                 <li><a class="na" href="agendamento.php">Agendamento</a></li>
-              </ul>
+            </ul>
         </nav>
     </header>
     <div class="content">
@@ -45,7 +46,8 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     echo "<p class='mensagem'>$mensagem</p>";
                 }
             ?>
-            <form action="" method="POST">
+            <form action="recebe_agen.php" method="POST">
+                <input type="hidden" name="funcao" value="salvar">
 
                 <label for="funcionario">Funcionário:</label>
                 <select name="funcionario" id="funcionario">
@@ -54,34 +56,49 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <option value="chris">Chris</option>
                 </select>
 
-                
                 <label for="data">Data:</label>
-                <input type="date" name="data" required>
+                <input type="date" name="data" id="data" required>
                 
                 <label for="hora">Hora:</label>
                 <select name="hora" id="hora">
-                    
+                    <!-- Opções de hora -->
                 </select>
                 
-                <label for="servico">Serviço:</label>
-                <select name="servico">
-                    <option value="corte">Corte</option>
+                <label for="servico">Servico:</label>
+                <select name="servico" id="servico">
+                <option value="corte">Corte</option>
                     <option value="barba">Barba</option>
                     <option value="sobrancelha">Sobrancelha</option>
                     <option value="cortebarba">Corte + barba</option>
                     <option value="cortesobrancelha">Corte + sobrancelha</option>
                     <option value="cortebarbasobrancelha">Corte + barba + sobrancelha</option>
                     <option value="barbasobrancelha">Barba + sobrancelha</option>
-                
                 </select>
                 
                 <input type="submit" value="Agendar">
             </form>
+
+            <!-- Botão "Meus Agendamentos" -->
+            <button id="meusAgendamentosButton" class="btn btn-primary">Meus Agendamentos</button>
+
+            <!-- Bloco para históricos de agendamento (inicialmente oculto) -->
+            <div id="historicoAgendamentos" style="display: none;">
+                <!-- Conteúdo dos históricos de agendamento será adicionado posteriormente -->
+            </div>
         </div>
     </div>
 </section>
 
-
+<script>
+    // JavaScript para manipular a exibição do bloco de históricos de agendamento
+    $(document).ready(function() {
+        // Quando o botão "Meus Agendamentos" for clicado
+        $("#meusAgendamentosButton").click(function() {
+            // Toggle (mostrar/ocultar) o bloco "historicoAgendamentos"
+            $("#historicoAgendamentos").toggle();
+        });
+    });
+</script>
 
 </body>
 </html>
