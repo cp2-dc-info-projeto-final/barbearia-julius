@@ -73,8 +73,8 @@ o sistema deverá ser disponibilizado em português
 ### RNF 03
 o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 
+# CASOS DE USO
 ![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
-
 ## CDU 01 - Cadastro de usuários <h1>
 
 ### Fluxo principal
