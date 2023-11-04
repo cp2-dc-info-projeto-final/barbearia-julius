@@ -10,7 +10,7 @@ if ($operacao == "cadastrar") {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
 
-    // Verifique se o e-mail já existe na tabela de usuários
+    q// Verifique se o e-mail já existe na tabela de usuários
     $verifica_email = "SELECT * FROM usuarios WHERE email = '$email'";
     $resultado = mysqli_query($mysqli, $verifica_email);
 
@@ -34,6 +34,12 @@ if ($operacao == "cadastrar") {
 
     $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
     $sql = "INSERT INTO usuarios (senha, nome, email) VALUES ('$senha_cript', '$nome', '$email')";
+    
+    if (mysqli_query($mysqli, $sql)) {
+        // Cadastro bem-sucedido, redirecione para a página de login
+        header("Location: form_login.php");
+        exit();
+    }
 }
 
 mysqli_close($mysqli);

@@ -2,17 +2,15 @@
 session_start();
 include 'conecta_mysqli.inc';
 
-$funcao = $_POST["funcao"];
+$operacao = $_POST["operacao"];
 $erros = [];
 
-if ($funcao == "salvar") {
-    $funcionario = $_POST["funcionario"];
-    $servico = $_POST["senha"];
-    $data = $_POST["nome"];
-    $hora = $_POST["email"];
-    exit();
-    
+if ($operacao == "cadastrar") {
+    $orario_inicio = $_POST["horario_inicio"];
+    $data_agenda = $_POST["data_agenda"];
 }
+
+$sql = "INSERT INTO usuarios (horario_inicio, data_agenda) VALUES ('$horario_inicio', '$data_agenda')";
 
 mysqli_close($mysqli);
 ?>

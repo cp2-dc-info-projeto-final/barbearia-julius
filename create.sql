@@ -35,7 +35,7 @@ CREATE TABLE agendamento(
     horario_inicio time NOT NULL,
     duracao time NOT NULL,
     data_agenda date NOT NULL,
-    id_usuario int,
+    id_usuario int,  
     id_funcionario int,
     id_servico int,
     primary key(id_agendamento),
