@@ -33,7 +33,6 @@ DROP TABLE IF EXISTS agendamento;
 CREATE TABLE agendamento(
     id_agendamento int NOT NULL AUTO_INCREMENT,
     horario_inicio time NOT NULL,
-    duracao time NOT NULL,
     data_agenda date NOT NULL,
     id_usuario int,  
     id_funcionario int,
