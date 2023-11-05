@@ -10,7 +10,7 @@ if ($operacao == "cadastrar") {
     $nome = $_POST["nome"];
     $email = $_POST["email"];
 
-    q// Verifique se o e-mail já existe na tabela de usuários
+    // Verifique se o e-mail já existe na tabela de usuários
     $verifica_email = "SELECT * FROM usuarios WHERE email = '$email'";
     $resultado = mysqli_query($mysqli, $verifica_email);
 
