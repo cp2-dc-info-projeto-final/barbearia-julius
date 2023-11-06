@@ -1,12 +1,12 @@
 <?php
 $mensagem = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $funcionario = isset($_POST['funcionario']) ? $_POST['funcionario'] : "";
-    $data = isset($_POST['data']) ? $_POST['data'] : "";
-    $hora = isset($_POST['hora']) ? $_POST['hora'] : "";
-    $servico = isset($_POST['servico']) ? $_POST['servico'] : "";
+    $id_funcionario = isset($_POST['id_funcionario']) ? $_POST['id_funcionario'] : "";
+    $data_agenda = isset($_POST['data_agenda']) ? $_POST['data_agenda'] : "";
+    $horario_inicio = isset($_POST['horario_inicio']) ? $_POST['horario_inicio'] : "";
+    $id_servico = isset($_POST['id_servico']) ? $_POST['id_servico'] : "";
 
-    $mensagem = "Agendamento realizado com sucesso com $funcionario em $data às $hora para o serviço $servico!";
+    $mensagem = "Agendamento realizado com sucesso com $id_funcionario em $data_agenda às $horario_inicio para o serviço $id_servico!";
 }
 ?>
 
@@ -47,25 +47,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             ?>
             <form action="recebe_agen.php" method="POST">
-                <input type="hidden" name="funcao" value="salvar">
+                <input type="hidden" name="funcao" value="agendar">
 
-                <label for="funcionario">Funcionário:</label>
-                <select name="funcionario" id="funcionario">
+                <label for="id_funcionario">Funcionário:</label>
+                <select name="id_funcionario" id="id_funcionario">
                     <option value="" selected="selected" disabled="disabled">Selecione um funcionário</option>
                     <option value="julius">Julius</option>
                     <option value="chris">Chris</option>
                 </select>
 
-                <label for="data">Data:</label>
-                <input type="date" name="data" id="data" required>
+                <label for="data_agenda">data_agenda:</label>
+                <input type="date" name="data_agenda" id="data_agenda" required>
                 
-                <label for="hora">Hora:</label>
-                <select name="hora" id="hora">
-                    <!-- Opções de hora -->
+                <label for="horario_inicio">horario_inicio:</label>
+                <select name="horario_inicio" id="horario_inicio">
+                   
                 </select>
                 
-                <label for="servico">Servico:</label>
-                <select name="servico" id="servico">
+                <label for="id_servico">id_servico:</label>
+                <select name="id_servico" id="id_servico">
                 <option value="corte">Corte</option>
                     <option value="barba">Barba</option>
                     <option value="sobrancelha">Sobrancelha</option>
