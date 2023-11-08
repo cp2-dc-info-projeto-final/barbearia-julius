@@ -52,8 +52,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="id_funcionario">Funcionário:</label>
                 <select name="id_funcionario" id="id_funcionario">
                     <option value="" selected="selected" disabled="disabled">Selecione um funcionário</option>
-                    <option value="julius">Julius</option>
-                    <option value="chris">Chris</option>
+                    <option value="1">Julius</option>
+                    <option value="2">Chris</option>
                 </select>
 
                 <label for="data_agenda">data_agenda:</label>
@@ -66,7 +66,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 <label for="id_servico">id_servico:</label>
                 <select name="id_servico" id="id_servico">
-                <option value="corte">Corte</option>
+                    <option value="" selected="selected" disabled="disabled">Selecione um serviço</option>
+                    <option value="corte">Corte</option>
                     <option value="barba">Barba</option>
                     <option value="sobrancelha">Sobrancelha</option>
                     <option value="cortebarba">Corte + barba</option>
@@ -88,17 +89,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         </div>
     </div>
 </section>
-
-<script>
-    // JavaScript para manipular a exibição do bloco de históricos de agendamento
-    $(document).ready(function() {
-        // Quando o botão "Meus Agendamentos" for clicado
-        $("#meusAgendamentosButton").click(function() {
-            // Toggle (mostrar/ocultar) o bloco "historicoAgendamentos"
-            $("#historicoAgendamentos").toggle();
-        });
-    });
-</script>
 
 </body>
 </html>

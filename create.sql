@@ -18,7 +18,7 @@ CREATE TABLE funcionarios(
     id_funcionario int NOT NULL AUTO_INCREMENT,
     nome varchar(30) NOT NULL,
     senha varchar(10) NOT NULL,
-    numero int NOT NULL,
+    numero varchar(11) NOT NULL,
     email varchar(30) NOT NULL,
     primary key(id_funcionario)
 );
@@ -43,3 +43,6 @@ CREATE TABLE agendamento(
     foreign key(id_servico) references servico(id_servico)
     
 );
+
+INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (1, "Julius", "ju1452", "21987456123", "julis@email.com");
+INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (2, "Chris", "ch5689", "21932145678", "chris@email.com");
