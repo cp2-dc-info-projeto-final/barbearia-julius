@@ -56,15 +56,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <option value="2">Chris</option>
                 </select>
 
-                <label for="data_agenda">data_agenda:</label>
+                <label for="data_agenda">Data:</label>
                 <input type="date" name="data_agenda" id="data_agenda" required>
                 
-                <label for="horario_inicio">horario_inicio:</label>
+                <label for="horario_inicio">Horário:</label>
                 <select name="horario_inicio" id="horario_inicio">
                    
                 </select>
                 
-                <label for="id_servico">id_servico:</label>
+                <label for="id_servico">Serviço:</label>
                 <select name="id_servico" id="id_servico">
                     <option value="" selected="selected" disabled="disabled">Selecione um serviço</option>
                     <option value="corte">Corte</option>

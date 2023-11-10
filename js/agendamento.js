@@ -1,23 +1,30 @@
-// Horários disponíveis (os mesmos para todos os funcionários)
-const horariosFuncionario = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
-
 $(document).ready(function() {
     $('#id_funcionario').on('change', function() {
         const selecionado = $(this).val();
         $('#horario_inicio').empty();
 
-        if (selecionado !== '0') { 
-            $.each(horariosFuncionario, function(index, horario_inicio) {
-                $('#horario_inicio').append($('<option>', {
-                    value: horario_inicio,
-                    text: horario_inicio
-                }));
+        if (selecionado !== '0') {
+            $.ajax({
+                url: 'consultar_horarios.php',
+                type: 'POST',
+                data: { id_funcionario: selecionado },
+                dataType: 'json',
+                success: function(response) {
+                    $.each(response, function(index, horario) {
+                        $('#horario_inicio').append($('<option>', {
+                            value: horario,
+                            text: horario
+                        }));
+                    });
+                },
+                error: function(error) {
+                    console.error('Erro na requisição AJAX: ', error);
+                }
             });
         }
     });
 
     $("#meusAgendamentosButton").click(function() {
-        // Toggle (mostrar/ocultar) o bloco "historicoAgendamentos"
         $("#historicoAgendamentos").toggle();
     });
 });
