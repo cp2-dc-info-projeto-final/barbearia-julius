@@ -1,4 +1,22 @@
 <?php
+// Inicie a sessão no início do script
+session_start();
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Recupere o ID do usuário da sessão
+    $usuario_modificador_id = $_SESSION["usuario_id"];
+
+    // Restante do código para conexão ao banco de dados e atualização
+    // ...
+
+    // Atualize a consulta para incluir o ID do usuário modificador
+    $query = "UPDATE usuarios SET nome='$novo_nome', email='$novo_email', usuario_modificador_id=$usuario_modificador_id WHERE id=$usuario_id";
+
+    // Restante do código para executar a consulta e redirecionar
+    // ...
+}
+?>
+<?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Recupera os dados do formulário
     $id_usuario = $_POST["id_usuario"];
