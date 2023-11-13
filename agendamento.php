@@ -35,6 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <ul>
                 <li><a class="nav" href="logado.html">Pagina Principal</a></li>
                 <li><a class="na" href="agendamento.php">Agendamento</a></li>
+                <li><a class="na" href="pagina_cliente.php">Página Cliente</a></li>
             </ul>
         </nav>
     </header>
