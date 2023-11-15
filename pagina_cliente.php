@@ -1,8 +1,10 @@
 <?php
 session_start();
+
 // Verifica se o usuário está logado
 if (isset($_SESSION["email"])) {
-    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
+    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão 
+
     // Conectar ao banco de dados (substitua os detalhes com os seus)
     $conexao = new mysqli("localhost", "barbeariajulius", "123", "BARBEARIAJULIUS");
 
@@ -11,43 +13,57 @@ if (isset($_SESSION["email"])) {
         die("Falha na conexão: " . $conexao->connect_error);
     }
 
-    // Consulta para obter o ID do usuário com base no email
-    $query = "SELECT id_usuario, nome, email FROM usuarios WHERE email = ?";
+    // Consulta para obter o ID, nome, email e senha hash do usuário com base no email
+    $query = "SELECT id_usuario, nome, email, senha FROM usuarios WHERE email = ?";
     $stmt = $conexao->prepare($query);
     $stmt->bind_param("s", $emailUsuario);
     $stmt->execute();
     $resultado = $stmt->get_result();
-    
+
     // Verifica se há resultados
     if ($resultado->num_rows > 0) {
         $row = $resultado->fetch_assoc();
         $id_usuario = $row['id_usuario'];
         $nomeUsuario = $row['nome'];
         $emailUsuario = $row['email'];
+        $senha_hash = $row['senha']; // Definindo a variável $senha_hash
     } else {
-        header("Location: pagina_cliente.php");
+        header("Location: form_login.php"); // Redireciona para a página de login se não houver resultados
         exit;
     }
 
     // ... restante do código para atualizar os dados
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Recupera os dados do formulário
-        $novo_nome = htmlspecialchars($_POST["novo_nome"]);
-        $novo_email = htmlspecialchars($_POST["novo_email"]);
+        $senha_antiga = $_POST["senha_antiga"];
+        $nova_senha = $_POST["nova_senha"];
+        $confirmar_senha = $_POST["confirmar_senha"];
+        $novo_nome = $_POST["novo_nome"];
+        $novo_email = $_POST["novo_email"];
 
-        // Preparar e executar a consulta SQL usando prepared statements
-        $query_update = $conexao->prepare("UPDATE usuarios SET nome=?, email=? WHERE id_usuario=?");
-        $query_update->bind_param("ssi", $novo_nome, $novo_email, $id_usuario);
+        // Verifica se a senha antiga está correta
+        if (password_verify($senha_antiga, $senha_hash)) {
+            // Verifica se a nova senha e a confirmação coincidem
+            if ($nova_senha === $confirmar_senha) {
+                // Hash da nova senha
+                $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
 
-        if ($query_update->execute()) {
-            // Atualiza os dados na sessão para refletir as mudanças
-            $_SESSION['email'] = $novo_email;
+                // Atualiza a senha, nome e email no banco de dados
+                $query_update = $conexao->prepare("UPDATE usuarios SET senha=?, nome=?, email=? WHERE id_usuario=?");
+                $query_update->bind_param("sssi", $nova_senha_hash, $novo_nome, $novo_email, $id_usuario);
 
-            // Redireciona de volta para a página de perfil após a alteração
-            header("Location: pagina_cliente.php");
-            exit();
+                if ($query_update->execute()) {
+                    // Redireciona de volta para a página de perfil após a alteração
+                    header("Location: pagina_cliente.php");
+                    exit();
+                } else {
+                    echo "Erro ao atualizar os dados: " . $conexao->error;
+                }
+            } else {
+                echo "A nova senha e a confirmação não coincidem.";
+            }
         } else {
-            echo "Erro ao atualizar os dados: " . $conexao->error;
+            echo "Senha antiga incorreta.";
         }
     }
 
@@ -123,17 +139,13 @@ if (isset($_SESSION["email"])) {
                 
                 <label for="novo_email">Novo Email:</label>
                 <input type="email" id="novo_email" name="novo_email" value="<?php echo htmlspecialchars($emailUsuario); ?>" required>
-                
+                <input type="password" id="senha_antiga" name="senha_antiga" required>
+                <input type="password" id="nova_senha" name="nova_senha" required>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+
                 <button type="submit" class="salvar-alteracoes-btn">Salvar Alterações</button>
             </form>
         </div>
     </div>
 </body>
 </html>
-
-
-
-
-
-
-
