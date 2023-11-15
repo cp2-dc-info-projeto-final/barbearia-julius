@@ -1,51 +1,65 @@
 <?php
-// Inicie a sessão no início do script
 session_start();
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupere o ID do usuário da sessão
-    $usuario_modificador_id = $_SESSION["usuario_id"];
-
-    // Restante do código para conexão ao banco de dados e atualização
-    // ...
-
-    // Atualize a consulta para incluir o ID do usuário modificador
-    $query = "UPDATE usuarios SET nome='$novo_nome', email='$novo_email', usuario_modificador_id=$usuario_modificador_id WHERE id=$usuario_id";
-
-    // Restante do código para executar a consulta e redirecionar
-    // ...
-}
-?>
-<?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera os dados do formulário
-    $id_usuario = $_POST["id_usuario"];
-    $novo_nome = $_POST["novo-nome"];
-    $novo_email = $_POST["novo-email"];
-
+// Verifica se o usuário está logado
+if (isset($_SESSION["email"])) {
+    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
+    echo "Usuário logado: $emailUsuario";
     // Conectar ao banco de dados (substitua os detalhes com os seus)
-    $conexao = new mysqli("localhost", "barbeariajulius","123","BARBEARIAJULIUS");
+    $conexao = new mysqli("localhost", "barbeariajulius", "123", "BARBEARIAJULIUS");
 
     // Verificar a conexão
     if ($conexao->connect_error) {
         die("Falha na conexão: " . $conexao->connect_error);
     }
 
-    // Preparar e executar a consulta SQL
-    $query = "UPDATE usuarios SET nome='$novo_nome', email='$novo_email' WHERE id_usuario=$id_usuario";
-
-    if ($conexao->query($query) === TRUE) {
-        // Redireciona de volta para a página de perfil após a alteração
-        header("Location: pagina_cliente.php");
-        exit();
+    // Consulta para obter o ID do usuário com base no email
+    $query = "SELECT id_usuario FROM usuarios WHERE email = ?";
+    $stmt = $conexao->prepare($query);
+    $stmt->bind_param("s", $emailUsuario);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+    
+    // Verifica se há resultados
+    if ($resultado->num_rows > 0) {
+        $row = $resultado->fetch_assoc();
+        $id_usuario = $row['id_usuario'];
     } else {
-        echo "Erro ao atualizar os dados: " . $conexao->error;
+        header("Location: logado.html");
+        exit;
+    }
+
+    // ... restante do código para atualizar os dados
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        // Recupera os dados do formulário
+        $novo_nome = $_POST["novo_nome"];
+        $novo_email = $_POST["novo_email"];
+
+        // Preparar e executar a consulta SQL usando prepared statements
+        $query_update = $conexao->prepare("UPDATE usuarios SET nome=?, email=? WHERE id_usuario=?");
+        $query_update->bind_param("ssi", $novo_nome, $novo_email, $id_usuario);
+
+        if ($query_update->execute()) {
+            // Redireciona de volta para a página de perfil após a alteração
+            header("Location: pagina_cliente.php");
+            exit();
+        } else {
+            echo "Erro ao atualizar os dados: " . $conexao->error;
+        }
     }
 
     // Fechar a conexão
     $conexao->close();
+} else {
+    // Se o usuário não estiver logado, redirecione-o para a página de login
+    header("Location: form_login.php");
+    exit;
 }
 ?>
+
+
+<!-- ... (restante do código HTML) -->
+
+
 
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -90,23 +104,30 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </section>
 
+
     <div class="popup" id="alterarDadosPopup">
         <div class="popup-content">
             <span class="close-popup" id="fecharPopup">&times;</span>
-            <!-- Adicione essas linhas ao seu formulário -->
-<form action="pagina_cliente.php" method="post">
-    <input type="hidden" id="id_usuario" name="id_usuario" value="1">
-    
-    <label for="novo-nome">Novo Nome:</label>
-    <input type="text" id="novo-nome" name="novo-nome" required>
-    
-    <label for="novo-email">Novo Email:</label>
-    <input type="email" id="novo-email" name="novo-email" required>
-    
-    <button type="submit" class="salvar-alteracoes-btn">Salvar Alterações</button>
-</form>
-
+            <form action="pagina_cliente.php" method="post">
+                <!-- Incluindo um campo oculto para o ID do usuário -->
+                <input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $id_usuario; ?>">   
+                
+                <label for="novo_nome">Novo Nome:</label>
+                <input type="text" id="novo_nome" name="novo_nome" required>
+                
+                <label for="novo_email">Novo Email:</label>
+                <input type="email" id="novo_email" name="novo_email" required>
+                
+                <button type="submit" class="salvar-alteracoes-btn">Salvar Alterações</button>
+            </form>
         </div>
     </div>
 </body>
 </html>
+
+
+
+
+
+
+
