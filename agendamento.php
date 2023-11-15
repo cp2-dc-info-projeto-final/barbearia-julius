@@ -1,4 +1,19 @@
 <?php
+
+session_start();
+
+// Verifica se o usuário está logado
+if (isset($_SESSION["email"])) {
+    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
+
+    // Use $emailUsuario para exibir informações do usuário ou realizar operações relacionadas ao agendamento
+    echo "Usuário logado: $emailUsuario";
+} else {
+    // Se o usuário não estiver logado, redirecione-o para a página de login
+    header("Location: form_login.php");
+    exit;
+}
+
 $mensagem = "";
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $id_funcionario = isset($_POST['id_funcionario']) ? $_POST['id_funcionario'] : "";

@@ -47,12 +47,12 @@ DROP TABLE IF EXISTS administradores;
 CREATE TABLE administradores (
     id_administrador INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL,
-    senha VARCHAR(255) NOT NULL,
+    senha VARCHAR(8) NOT NULL,
     email VARCHAR(30) NOT NULL,
     PRIMARY KEY (id_administrador)
 );
 
-INSERT INTO administradores (nome, senha, email) VALUES ('Administrador', 'admsenha', 'adm@gmail.com');
+INSERT INTO administradores (nome, senha, email) VALUES ('Administrador', '123456', 'adm@gmail.com');
 
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (1, "Julius", "ju1452", "21987456123", "julis@email.com");
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (2, "Chris", "ch5689", "21932145678", "chris@email.com");

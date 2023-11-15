@@ -5,53 +5,50 @@ session_start();
 $email = $_POST["email"];
 $senha = $_POST["senha"];
 
-// Consulta a tabela de administradores
-$sql = "SELECT * FROM administradores WHERE email = '$email';";
-$res = mysqli_query($mysqli, $sql);
+// Consulta na tabela de administradores
+$sql_admin = "SELECT * FROM administradores WHERE email = '$email';";
+$res_admin = mysqli_query($mysqli, $sql_admin);
 
-// Se o email estiver na tabela de administradores
-if (mysqli_num_rows($res) == 1) {
-    $administrador = mysqli_fetch_array($res);
-
-    // Verifica se a senha está correta para o administrador
-    if (password_verify(trim($senha), $administrador["senha"])) {
-        // Usuário autenticado como administrador
+if (mysqli_num_rows($res_admin) == 1) {
+    $admin = mysqli_fetch_array($res_admin);
+    
+    // Verifica a senha do administrador sem criptografia
+    if ($senha == $admin["senha"]) { // Comparação simples
         $_SESSION["email"] = $email;
-        $_SESSION["senha"] = $senha;
+        $_SESSION["senha"] = $admin["senha"];
+        // Direciona para a página de administração
         header("Location: adm_visu.php");
         exit;
     } else {
-        $_SESSION['senha_invalida'] = "Senha incorreta!";
+        $_SESSION['senha_invalida'] = "Senha de administrador incorreta!";
         header("Location: form_login.php");
         exit;
     }
-}
-
-// Se o email não pertencer a um administrador, consulte a tabela de usuários
-$sql = "SELECT * FROM usuarios WHERE email = '$email';";
-$res = mysqli_query($mysqli, $sql);
-
-// Testa se não encontrou o email
-if (mysqli_num_rows($res) != 1) {
-    $_SESSION['erro_login'] = "E-mail não encontrado!";
-    header("Location: form_login.php");
-    exit;
 } else {
-    $usuario = mysqli_fetch_array($res);
+    // Se não for encontrado na tabela de administradores, busca na tabela de usuários
+    $sql_user = "SELECT * FROM usuarios WHERE email = '$email';";
+    $res_user = mysqli_query($mysqli, $sql_user);
 
-    // Verifica se a senha está errada para o usuário comum
-    if (!password_verify($senha, $usuario["senha"])) {
-        $_SESSION['senha_invalida'] = "Senha incorreta!";
-        header("Location: form_login.php");
-        exit;
+    if (mysqli_num_rows($res_user) == 1) {
+        $usuario = mysqli_fetch_array($res_user);
+
+        // Verifica se a senha do usuário está correta usando password_verify()
+        if (password_verify($senha, $usuario["senha"])) {
+            $_SESSION["email"] = $email;
+            $_SESSION["senha"] = $usuario["senha"];
+            // Direciona para a página inicial do usuário
+            header("Location: agendamento.php");
+            exit;
+        } else {
+            $_SESSION['senha_invalida'] = "Senha de usuário incorreta!";
+            header("Location: form_login.php");
+            exit;
+        }
     } else {
-        $_SESSION["email"] = $email;
-        $_SESSION["senha"] = $senha;
-        // Direciona para a página inicial
-        header("Location: agendamento.php");
+        $_SESSION['erro_login'] = "E-mail não encontrado!";
+        header("Location: form_login.php");
         exit;
     }
 }
-
 mysqli_close($mysqli);
 ?>
