@@ -1,9 +1,5 @@
 <?php
-session_start();
-
-// Verifica se o usuário está logado
-if (isset($_SESSION["email"])) {
-    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão 
+include 'autentica.inc';
 
     // Conectar ao banco de dados (substitua os detalhes com os seus)
     $conexao = new mysqli("localhost", "barbeariajulius", "123", "BARBEARIAJULIUS");
@@ -21,16 +17,13 @@ if (isset($_SESSION["email"])) {
     $resultado = $stmt->get_result();
 
     // Verifica se há resultados
-    if ($resultado->num_rows > 0) {
-        $row = $resultado->fetch_assoc();
-        $id_usuario = $row['id_usuario'];
-        $nomeUsuario = $row['nome'];
-        $emailUsuario = $row['email'];
-        $senha_hash = $row['senha']; // Definindo a variável $senha_hash
-    } else {
-        header("Location: form_login.php"); // Redireciona para a página de login se não houver resultados
-        exit;
-    }
+    
+    $row = $resultado->fetch_assoc();
+    $id_usuario = $row['id_usuario'];
+    $nomeUsuario = $row['nome'];
+    $emailUsuario = $row['email'];
+    $senha_hash = $row['senha']; // Definindo a variável $senha_hash
+ 
 
     // ... restante do código para atualizar os dados
     if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -52,8 +45,14 @@ if (isset($_SESSION["email"])) {
                 $query_update = $conexao->prepare("UPDATE usuarios SET senha=?, nome=?, email=? WHERE id_usuario=?");
                 $query_update->bind_param("sssi", $nova_senha_hash, $novo_nome, $novo_email, $id_usuario);
 
+                if (mysqli_num_rows($res_user) == 1) {
+                    $usuario = mysqli_fetch_array($res_user);
+                }
                 if ($query_update->execute()) {
-                    // Redireciona de volta para a página de perfil após a alteração
+                    $_SESSION["novo_email"] = $novo_email;
+                    $_SESSION["novo_nome"] = $novo_nome;
+                    $_SESSION["nova_senha_hash"] = $nova_senha_hash;
+
                     header("Location: pagina_cliente.php");
                     exit();
                 } else {
@@ -69,13 +68,8 @@ if (isset($_SESSION["email"])) {
 
     // Fechar a conexão
     $conexao->close();
-} else {
-    // Se o usuário não estiver logado, redirecione-o para a página de login
-    header("Location: form_login.php");
-    exit;
-}
-?>
 
+?>
 
 
 <!-- ... (restante do código HTML) -->
