@@ -114,6 +114,7 @@ $conexao->close();
                     </div>
                 </div>
                 <button class="alterar-dados-btn">Alterar Dados</button>
+                <button class="alterar-dados-btni">Alterar Senha</button>
             </div>
         </div>
     </section>
@@ -129,9 +130,25 @@ $conexao->close();
 
                 <label for="novo_email">Novo Email:</label>
                 <input type="email" id="novo_email" name="novo_email" value="<?php echo htmlspecialchars($emailUsuario); ?>" required>
+ 
+                <button type="submit" class="salvar-alteracoes-btn">Salvar Alterações</button>
+            </form>
 
-                <form action="pagina_cliente.php" method="post">
+            </form>
+        </div>
+    </div>
+    <div class="contenti">
+            </div>
+        </div>
+    </section>
+    <div class="popup" id="alterarDadosPopupi">
+        <div class="popup-contenti">
+            <span class="close-popup" id="fecharPopupi">&times;</span>
+            <form action="pagina_cliente.php" method="post">
+            <input type="hidden" id="id_usuario" name="id_usuario" value="<?php echo $id_usuario; ?>"> 
                 
+                <form action="pagina_cliente.php" method="post">
+
                 <label for="senha_antiga">Senha Antiga:</label>
                 <input type="password" id="senha_antiga" name="senha_antiga" required>
 
@@ -141,11 +158,12 @@ $conexao->close();
                 <label for="confirmar_senha">Confirmar Nova Senha:</label>
                 <input type="password" id="confirmar_senha" name="confirmar_senha" required>
 
-                <button type="submit" class="salvar-alteracoes-btn">Salvar Alterações</button>
+                <button type="submit" class="salvar-alteracoes-btni">Salvar Alterações</button>
             </form>
 
             </form>
         </div>
     </div>
+        
 </body>
 </html>
