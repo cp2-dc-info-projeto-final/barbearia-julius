@@ -7,7 +7,7 @@ if (isset($_SESSION["email"])) {
     $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
 
     // Use $emailUsuario para exibir informações do usuário ou realizar operações relacionadas ao agendamento
-    echo "Usuário logado: $emailUsuario";
+    
 } else {
     // Se o usuário não estiver logado, redirecione-o para a página de login
     header("Location: form_login.php");
@@ -30,6 +30,56 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+<style>
+        #historicoAgendamentos {
+            display: none;
+            margin-top: 20px;
+            background-color: #94095e;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+
+        table {
+            width: 100%;
+            margin-top: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            border: none; /* Remove a borda da tabela */
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+            border: none; /* Remove a borda das células */
+        }
+
+        th {
+            background-color: transparent;
+            color: #fff;
+        }
+
+        tr:nth-child(even) {
+            background-color: #94095e10;
+        }
+
+        tr:hover {
+            background-color: #94095e20;
+        }
+        #meusAgendamentosButton {
+            background-color: #94095e;
+            border: none;
+            color: #fff;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #meusAgendamentosButton:hover {
+            background-color: #ff00a1;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,6 +87,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="js/agendamento.js"></script>
+    <script src="js/meus_agendamentos.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#meusAgendamentosButton').on('click', function(){
+                $.ajax({
+                    url: 'meus_agendamentos.php',
+                    method: 'GET',
+                    success: function(response){
+                        $('#historicoAgendamentos').html(response);
+                        $('#historicoAgendamentos').toggle(); // Mostra ou esconde os agendamentos
+                    }
+                });
+            });
+        });
+    </script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Agendamento - Barbearia Julius</title>
 </head>
