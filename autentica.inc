@@ -3,6 +3,9 @@
     if(isset($_SESSION["email"])){
         $email = $_SESSION["email"];
     }
+    if(isset($_SESSION["nome"])){
+        $nome = $_SESSION["nome"];
+    }
     if(isset($_SESSION["senha"])){
         $senha = $_SESSION["senha"];
     }
