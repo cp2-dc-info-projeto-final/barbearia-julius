@@ -13,6 +13,7 @@
 
         <?php
             session_start();
+
             if(isset($_SESSION["cadastro_erros"]) && count($_SESSION["cadastro_erros"]) > 0){
                 
                
