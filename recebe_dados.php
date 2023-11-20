@@ -37,17 +37,24 @@ if ($operacao == "cadastrar") {
         exit();
     }
 
-    // Se não houver erros, procedemos com o cadastro
-    $senha_cript = password_hash($senha, PASSWORD_DEFAULT);
-    $token = md5(uniqid(rand(), true)); // Gera um token único para o link de confirmação
+     // Se não houver erros, procedemos com o envio do email de confirmação
+     
+     
+    // Armazene os dados do usuário temporariamente até a confirmação do email
+    $_SESSION['temp_user_data'] = [
+        'senha' => password_hash($senha, PASSWORD_DEFAULT),
+        'nome' => $nome,
+        'email' => $email,
+        
+    ];
     
-    $sql = "INSERT INTO usuarios (senha, nome, email, confirmado, token) VALUES ('$senha_cript', '$nome', '$email', 0, '$token')";
+    $sql = "INSERT INTO usuarios (senha, nome, email) VALUES ('$senha_cript', '$nome', '$email')";
     
     if (mysqli_query($mysqli, $sql)) {
         // Envio de email de confirmação
-        $token = md5(uniqid(rand(), true)); // Gera um token único para o link de confirmação
         
-        $sql_update = "UPDATE usuarios SET token = '$token' WHERE email = '$email'";
+        
+       
         mysqli_query($mysqli, $sql_update);
 
         $mail = new PHPMailer(true);
@@ -74,12 +81,12 @@ if ($operacao == "cadastrar") {
             // Conteúdo do email
             $mail->isHTML(true);
             $mail->Subject = $assunto;
-            $mail->Body = 'Olá ' . $nome . ', por favor, confirme seu email clicando no link: https://seusite.com/verificar_email.php?email=' . $email;
+            $mail->Body = 'Olá ' . $nome . ', por favor, confirme seu email clicando no link: login_confirmado.php' ;
 
             $mail->send();
             
             // Redirecionamento após o envio do email
-            header("Location: form_login.php");
+            header("Location: verificar_email.php");
             exit();
         } catch (Exception $e) {
             $_SESSION['cadastro_erros'] = ["Erro ao enviar o email de confirmação: " . $e->getMessage()];
@@ -88,7 +95,7 @@ if ($operacao == "cadastrar") {
         }
     } else {
         $_SESSION['cadastro_erros'] = ["Erro ao cadastrar usuário: " . mysqli_error($mysqli)];
-        header("Location: form.php");
+        header("Location: form_cadastro.php");
         exit();
     }
 }

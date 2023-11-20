@@ -6,13 +6,15 @@ CREATE USER 'barbeariajulius'@'localhost' IDENTIFIED BY '123';
 GRANT ALL PRIVILEGES ON BARBEARIAJULIUS.* TO 'barbeariajulius'@'localhost';
 
 DROP TABLE IF EXISTS usuarios;
-CREATE TABLE usuarios(
-    id_usuario int NOT NULL AUTO_INCREMENT,
-    nome varchar(30) NOT NULL,
-    senha varchar(255) NOT NULL,
-    email varchar(30) NOT NULL,
-    primary key(id_usuario)
+CREATE TABLE usuarios (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    senha VARCHAR(255) NOT NULL,
+    nome VARCHAR(100) NOT NULL,
+    email VARCHAR(100) NOT NULL,
+    UNIQUE(email)
 );
+
+
 DROP TABLE IF EXISTS funcionarios;
 CREATE TABLE funcionarios(
     id_funcionario int NOT NULL AUTO_INCREMENT,

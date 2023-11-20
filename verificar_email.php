@@ -1,33 +1,24 @@
 <?php
-include 'autentica.inc';
 session_start();
-
-if (!isset($_GET['token'])) {
-    header("Location: form_cadastro.php");
-    exit();
-}
-
-$token_recebido = $_GET['token'];
-
-// Verificar o token no banco de dados
+include 'enviar.php';
 include 'conecta_mysqli.inc';
 
-$verifica_token = "SELECT * FROM usuarios WHERE token = '$token_recebido' AND confirmado = 0";
-$resultado = mysqli_query($mysqli, $verifica_token);
+if (!empty($_GET['nome']) && !empty($_GET['email']) && !empty($_GET['senha']) && !empty($_GET['id'])) {
+    $nome = $_GET['nome'];
+    $email = $_GET['email'];
+    $senha = $_GET['senha'];
 
-if (mysqli_num_rows($resultado) > 0) {
-    // Token válido, confirmar email
-    $sql_confirm = "UPDATE usuarios SET confirmado = 1 WHERE token = '$token_recebido'";
-    mysqli_query($mysqli, $sql_confirm);
-    
-    // Redirecionar para uma página informando que o email foi confirmado
-    header("Location: form_login.php?token=$token_recebido");
+    // Insere os dados no banco de dados
+    $sql = "INSERT INTO usuarios (senha, nome, email, id) VALUES ('$senha', '$nome', '$email', $id)";
+    mysqli_query($mysqli, $sql);
+
+    // Redireciona para uma página informando que o email foi confirmado ou para a área logada
+    header("Location: login_confirmado.php");
     exit();
 } else {
-    // Token inválido
-    header("Location: form_cadastro.php");
+    // Se os parâmetros não estiverem completos, redireciona para uma página de erro
+    header("Location: erro.html");
     exit();
 }
-
-mysqli_close($mysqli);
 ?>
+
