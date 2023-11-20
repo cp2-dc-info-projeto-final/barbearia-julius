@@ -7,11 +7,18 @@ GRANT ALL PRIVILEGES ON BARBEARIAJULIUS.* TO 'barbeariajulius'@'localhost';
 
 DROP TABLE IF EXISTS usuarios;
 CREATE TABLE usuarios (
-    id INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    UNIQUE(email)
+    email VARCHAR(100) NOT NULL
+    FOREIGN KEY (id_usuario) REFERENCES codigos_predefinidos(codigo)
+);
+
+DROP TABLE IF EXISTS codigos_predefinidos;
+CREATE TABLE codigos_predefinidos (
+    id_cod INT AUTO_INCREMENT PRIMARY KEY,
+    codigo VARCHAR(10) NOT NULL,
+    FOREIGN KEY (id_cod) REFERENCES usuarios(id_usuario)
 );
 
 
@@ -58,3 +65,4 @@ INSERT INTO administradores (nome, senha, email) VALUES ('Administrador', '12345
 
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (1, "Julius", "ju1452", "21987456123", "julis@email.com");
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (2, "Chris", "ch5689", "21932145678", "chris@email.com");
+INSERT INTO codigos_predefinidos (codigo) VALUES ('ABC12'),('DEF34'),('GHI56');

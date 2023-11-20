@@ -36,26 +36,45 @@ if ($operacao == "cadastrar") {
         header("Location: form_cadastro.php");
         exit();
     }
-
-     // Se não houver erros, procedemos com o envio do email de confirmação
-     
      
     // Armazene os dados do usuário temporariamente até a confirmação do email
+    // Códigos predefinidos
+    $codigos_predefinidos = ['ABC12', 'DEF34', 'GHI56', 'JKL78', 'MNO90'];
+    $usuario_id = $id_cod; // Aqui, defina o ID do usuário para o qual esses códigos estão sendo inseridos
+
+    foreach ($codigos_predefinidos as $codigo) {
+        $sql = "INSERT INTO codigos_predefinidos (codigo, usuario_id) VALUES ('$codigo', $usuario_id)";
+        
+        // Execute a consulta SQL
+        if (mysqli_query($mysqli, $sql)) {
+            echo "Códigos predefinidos inseridos com sucesso!";
+        } else {
+            echo "Erro ao inserir códigos predefinidos: " . mysqli_error($mysqli);
+        }
+    }
+    
+    // Armazene os dados do usuário temporariamente até a confirmação do email
+    // ... (código anterior)
+
+// Armazene os dados do usuário temporariamente até a confirmação do email
     $_SESSION['temp_user_data'] = [
         'senha' => password_hash($senha, PASSWORD_DEFAULT),
         'nome' => $nome,
         'email' => $email,
-        
+        'codigos_predefinidos' => implode(',', $codigos_predefinidos)
     ];
+
+    $senha_cript = $_SESSION['temp_user_data']['senha'];
+
     
     $sql = "INSERT INTO usuarios (senha, nome, email) VALUES ('$senha_cript', '$nome', '$email')";
-    
-    if (mysqli_query($mysqli, $sql)) {
-        // Envio de email de confirmação
-        
-        
-       
-        mysqli_query($mysqli, $sql_update);
+
+
+// Restante do código para envio de e-mail...
+
+        if (mysqli_query($mysqli, $sql)) {
+            // Envio de email de confirmação
+
 
         $mail = new PHPMailer(true);
 
@@ -81,12 +100,13 @@ if ($operacao == "cadastrar") {
             // Conteúdo do email
             $mail->isHTML(true);
             $mail->Subject = $assunto;
-            $mail->Body = 'Olá ' . $nome . ', por favor, confirme seu email clicando no link: login_confirmado.php' ;
+            $link_confirmacao = "$codigo"; // Substitua pelo seu domínio
+            $mail->Body = 'Olá ' . $nome .'Seu codigo é' . $codigo . '">Confirmar cadastro</a>';
 
             $mail->send();
             
             // Redirecionamento após o envio do email
-            header("Location: verificar_email.php");
+            header("Location: inserir.php");
             exit();
         } catch (Exception $e) {
             $_SESSION['cadastro_erros'] = ["Erro ao enviar o email de confirmação: " . $e->getMessage()];
