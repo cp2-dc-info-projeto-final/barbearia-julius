@@ -10,7 +10,7 @@ CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL
+    email VARCHAR(100) NOT NULL,
     FOREIGN KEY (id_usuario) REFERENCES codigos_predefinidos(codigo)
 );
 

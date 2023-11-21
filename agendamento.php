@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $horario_inicio = isset($_POST['horario_inicio']) ? $_POST['horario_inicio'] : "";
     $id_servico = isset($_POST['id_servico']) ? $_POST['id_servico'] : "";
 
-    $mensagem = "Agendamento realizado com sucesso com $id_funcionario em $data_agenda às $horario_inicio para o serviço $id_servico!";
+
 }
 ?>
 
@@ -92,13 +92,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script>
         $(document).ready(function(){
+            var agendamentosExibidos = false;
+
             $('#meusAgendamentosButton').on('click', function(){
+                if (!agendamentosExibidos) {
+                    $.ajax({
+                        url: 'meus_agendamentos.php',
+                        method: 'GET',
+                        success: function(response){
+                            $('#historicoAgendamentos').html(response);
+                            $('#historicoAgendamentos').show(); // Mostra os agendamentos
+
+                            // Adiciona o botão "Cancelar" dentro da div de agendamentos
+                            $('#historicoAgendamentos').append('<button class="cancelarAgendamentoBtn">Cancelar</button>');
+                        }
+                    });
+                    agendamentosExibidos = true;
+                } else {
+                    // Se os agendamentos já estiverem visíveis, apenas alterna a exibição do botão "Cancelar"
+                    $('.cancelarAgendamentoBtn').toggle();
+                }
+            });
+
+            // Função para cancelar o agendamento
+            $('#historicoAgendamentos').on('click', '.cancelarAgendamentoBtn', function(){
+                var id_agendamento = /* ID do agendamento correspondente */;
+                
                 $.ajax({
-                    url: 'meus_agendamentos.php',
+                    url: 'cancelar_agendamento.php',
                     method: 'GET',
+                    data: { id_agendamento: id_agendamento },
                     success: function(response){
-                        $('#historicoAgendamentos').html(response);
-                        $('#historicoAgendamentos').toggle(); // Mostra ou esconde os agendamentos
+                        $('#historicoAgendamentos').append('<p>' + response + '</p>');
                     }
                 });
             });
