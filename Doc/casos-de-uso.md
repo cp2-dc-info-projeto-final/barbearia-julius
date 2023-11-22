@@ -183,3 +183,6 @@
 ![WhatsApp Image 2023-09-15 at 18 43 51 (1)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/cd6586ae-cae9-41a6-9f65-e5f5d0293dcf)
 ![WhatsApp Image 2023-09-15 at 18 43 52](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/701d15a2-880a-49a2-a8aa-34ab10899da5)
 
+# Diagrama de Casos de uso
+
+![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
