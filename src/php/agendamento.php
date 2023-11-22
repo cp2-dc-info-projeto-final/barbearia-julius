@@ -86,8 +86,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="../css/agendamento.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="src/js/agendamento.js"></script>
-    <script src="src/js/meus_agendamentos.js"></script>
+    <script src="../js/agendamento.js"></script>
+    <script src="../js/meus_agendamentos.js"></script>
     
     <script>
         $(document).ready(function(){
