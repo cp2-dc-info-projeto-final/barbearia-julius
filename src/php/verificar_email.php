@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'enviar.php';
-include 'conecta_mysqli.inc';
+include '../inc/conecta_mysqli.inc';
 
 if (!empty($_GET['nome']) && !empty($_GET['email']) && !empty($_GET['senha']) && !empty($_GET['id'])) {
     $nome = $_GET['nome'];
@@ -17,7 +17,7 @@ if (!empty($_GET['nome']) && !empty($_GET['email']) && !empty($_GET['senha']) &&
     exit();
 } else {
     // Se os parâmetros não estiverem completos, redireciona para uma página de erro
-    header("Location: erro.html");
+    header("Location: ../html/erro.html");
     exit();
 }
 ?>

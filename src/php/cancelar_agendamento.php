@@ -4,7 +4,7 @@ if(isset($_GET['id_agendamento'])) {
     $id_agendamento = $_GET['id_agendamento'];
 
     // Lógica para deletar o agendamento no banco de dados
-    include 'conecta_mysqli.inc'; // Inclua o arquivo de conexão
+    include '../inc/conecta_mysqli.inc'; // Inclua o arquivo de conexão
 
     $query = "DELETE FROM agendamento WHERE id_agendamento = ?";
     $stmt = $mysqli->prepare($query);

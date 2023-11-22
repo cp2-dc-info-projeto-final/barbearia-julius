@@ -1,6 +1,6 @@
 <?php
 session_start();
-include 'conecta_mysqli.inc';
+include '../inc/conecta_mysqli.inc';
 
 $mensagem = "";
 $erros = [];

@@ -81,9 +81,9 @@ $conexao->close();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/pagina_cliente.css">
+    <link rel="stylesheet" href="../css/pagina_cliente.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/pagina_cliente.js"></script>
+    <script src="../js/pagina_cliente.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <title>Seus Dados - Barbearia Julius</title>
@@ -92,10 +92,10 @@ $conexao->close();
     <section>
         <div class="circle"></div>
         <header>
-            <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
+            <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
             <nav class="navegation">
                 <ul>
-                    <li><a class="nav" href="logado.html">Página Principal</a></li>
+                    <li><a class="nav" href="../html/logado.html">Página Principal</a></li>
                     <li><a class="nav" href="agendamento.php">Agendamento</a></li>
                 </ul>
             </nav>

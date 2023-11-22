@@ -1,5 +1,5 @@
 <?php
-include "conecta_mysqli.inc";
+include "../inc/conecta_mysqli.inc";
 session_start();
 
 $email = $_POST["email"];

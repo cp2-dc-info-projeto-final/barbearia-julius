@@ -83,13 +83,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/agendamento.css">
+    <link rel="stylesheet" href="../css/agendamento.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="js/agendamento.js"></script>
-    <script src="js/meus_agendamentos.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="src/js/agendamento.js"></script>
+    <script src="src/js/meus_agendamentos.js"></script>
+    
     <script>
         $(document).ready(function(){
             var agendamentosExibidos = false;
@@ -137,12 +136,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <section>
     <div class="circle"></div>
     <header>
-        <a href="#"><img src="img/logo.png" alt="" class="logo"></a>
+        <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
         <nav class="navegation">
             <ul>
-                <li><a class="nav" href="logado.html">Pagina Principal</a></li>
-                <li><a class="na" href="agendamento.php">Agendamento</a></li>
-                <li><a class="na" href="pagina_cliente.php">Página Cliente</a></li>
+                <li><a class="nav" href="../html/logado.html">Pagina Principal</a></li>
+                <li><a class="na" href="../php/agendamento.php">Agendamento</a></li>
+                <li><a class="na" href="../php/pagina_cliente.php">Página Cliente</a></li>
             </ul>
         </nav>
     </header>

@@ -1,5 +1,5 @@
 <?php
-include 'conecta_mysqli.inc';
+include '../inc/conecta_mysqli.inc';
 
 $id_funcionario = $_POST['id_funcionario'];
 

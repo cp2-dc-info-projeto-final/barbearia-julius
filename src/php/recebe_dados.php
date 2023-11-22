@@ -1,7 +1,7 @@
 <?php
 session_start();
 include 'enviar.php';
-include 'conecta_mysqli.inc';
+include '../inc/conecta_mysqli.inc';
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;

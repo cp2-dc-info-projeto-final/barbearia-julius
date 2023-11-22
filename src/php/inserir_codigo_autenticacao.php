@@ -1,5 +1,5 @@
 <?php
-include 'enviar.php';
+include '../php/enviar.php';
 ?>
 
 <!DOCTYPE html>
