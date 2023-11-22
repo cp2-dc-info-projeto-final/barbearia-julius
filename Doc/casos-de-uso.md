@@ -89,22 +89,14 @@
 5. O sistema redireciona o usuário para a página principal novamente
 4. O produto e/ou um serviço disponível é selecionado
 
-## CDU 04 - Calendario Interativo <h1>
-
-### Fluxo principal - calendário interativo.
-
-1. O usuário clica na opção "Calendário" para acessar o calendário interativo.
-2. Um pop-up ou modal será exibido, permitindo que o usuário selecione o mês e o dia desejados.
-3. O usuário clica no número do dia e do mês no calendário.
-
 ## CDU 05 - Agendamento de serviço<h1>
 
 ### Fluxo principal - Agendamento de serviço.
 
-1. O usuário clica em uma coluna escrito "serviços"
-2. O sistema exibirá os serviços disponíveis
-3. O usuário clicará no serviço que desejar
-4. O agendamento fica registrado na coluna: Meus agendamentos
+1. O usuário pressiona o botão "Agendamento"
+2. O sistema exibirá a tela com os botões para preencher
+3. O usuário preencherá as informações
+4. O agendamento é registrado no sistema
 ![FluxoAlt_LogSoc01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/b7bc27d4-cde9-4835-a7ff-3d348fbb17af)
 
 ## CDU 06 - Gestão de horários <h1>
@@ -150,7 +142,7 @@
 5. O usuário clica em sair
 6. O usuário é direcionado para a interface da página principal
 
-## CDU 08 - Cancelamento e Reagendamento <h1>
+## CDU 08 - Cancelamento <h1>
 
 ### Fluxo principal - Cancelamento <h1>
 
@@ -162,15 +154,6 @@
 6. O sistema remove o agendamento e envia uma notificação confirmando o cancelamento
 ![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
 
-### Fluxo principal - Reagendamento <h1>
-
-1. O usuário acessa o sistema usando suas credenciais de login
-2. O usuário é direcionado para o painel onde seus agendamentos são exibidos
-3. O usuário localiza o agendamento que deseja reagendar
-4. Junto ao agendamento, o cliente encontra a opção "Reagendar" e clica nela
-5. O sistema exibe um calendário ou lista de horários disponíveis para o reagendamento
-6. O usuário seleciona a nova data/horário e confirma a alteração
-7. O sistema atualiza o agendamento e envia uma notificação com os detalhes do novo horário
 
 ## CDU 09 - Dashboard para administradores <h1>
 
