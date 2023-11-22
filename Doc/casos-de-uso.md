@@ -7,7 +7,7 @@
 * Lucas de Souza Santana
 * Lucas Melo Moura 
 
-# CDU 01 - Cadastro de usuários <h1>
+## CDU 01 - Cadastro de usuários <h1>
 
 ### Fluxo principal
 
@@ -28,7 +28,7 @@
 4. O sistema informa que já possui uma conta vinculada com esse login
    ![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/9fdc4e52-523a-4d58-88b2-97f57c2cee0a)
 
-# CDU 02 - Login <h1>
+## CDU 02 - Login <h1>
 
 ### Fluxo principal
 
@@ -39,7 +39,7 @@
 5. O sistema redireciona o usuário para a página principal
 ![WhatsApp Image 2023-09-15 at 18 43 51 (2)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/ffc0ef01-47f1-4a67-bdfc-20e8ed3995f3)
 
-### Fluxo alternativo a
+### Fluxo alternativo A
 
 1. O sistema apresenta formulário de login
 2. O usuário preenche o campo email e senha
@@ -73,14 +73,14 @@
 11. O sistema redireciona o usuário para a página principal
 ![FluxoAlt_Log03](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f960c911-05f9-4a55-b87a-478afc02a381)
 
-# CDU 03 - Interface da página principal <h1>
+## CDU 03 - Interface da página principal <h1>
 
 ### Fluxo principal
 
 1. O usuário terá acesso a página principal
 2. O usuário poderá vizualizar os serviços e produtos disponíveis
 
-### Fluxo alternativo a
+### Fluxo alternativo A
 
 1. O usuário seleciona um produto e/ou um serviço disponível
 2. O sistema direciona o usuário para a inteface de cadastro
@@ -89,7 +89,7 @@
 5. O sistema redireciona o usuário para a página principal novamente
 4. O produto e/ou um serviço disponível é selecionado
 
-# CDU 04 - Calendario Interativo <h1>
+## CDU 04 - Calendario Interativo <h1>
 
 ### Fluxo principal - calendário interativo.
 
@@ -97,7 +97,7 @@
 2. Um pop-up ou modal será exibido, permitindo que o usuário selecione o mês e o dia desejados.
 3. O usuário clica no número do dia e do mês no calendário.
 
-# CDU 05 - Agendamento de serviço<h1>
+## CDU 05 - Agendamento de serviço<h1>
 
 ### Fluxo principal - Agendamento de serviço.
 
@@ -107,7 +107,7 @@
 4. O agendamento fica registrado na coluna: Meus agendamentos
 ![FluxoAlt_LogSoc01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/b7bc27d4-cde9-4835-a7ff-3d348fbb17af)
 
-# CDU 06 - Gestão de horários <h1>
+## CDU 06 - Gestão de horários <h1>
 
 ### Fluxo principal
 
@@ -120,7 +120,7 @@
 7. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora e um botão para confirmar agendamento)
 8. O usuário clica no botão "confirmar"
 
-### Fluxo alternativo a
+### Fluxo alternativo A
 
 1. O usuário clica na opção para acessar a seleção de profissionais.
 2. O sistema lista os profissionais disponíveis.
@@ -135,7 +135,7 @@
 11. O usuário clica no botão "confirmar".
 ![FluxoAlt_GestHor01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/7ee3d6a2-0727-4bed-8c27-38300cce1294)
 
-# CDU 07 -  Acesso ao perfil criado <h1>
+## CDU 07 -  Acesso ao perfil criado <h1>
 
 ### Fluxo principal
 
@@ -145,12 +145,12 @@
 4. O usuário clica na opção de "mudar a senha" 
 5. O usuário é direcionado para a página de redefinição de senha.
 
-### fluxo alternativo a
+### Fluxo alternativo A
 
 5. O usuário clica em sair
 6. O usuário é direcionado para a interface da página principal
 
-# CDU 08 - Cancelamento e Reagendamento <h1>
+## CDU 08 - Cancelamento e Reagendamento <h1>
 
 ### Fluxo principal - Cancelamento <h1>
 
@@ -172,7 +172,7 @@
 6. O usuário seleciona a nova data/horário e confirma a alteração
 7. O sistema atualiza o agendamento e envia uma notificação com os detalhes do novo horário
 
-# CDU 09 - Dashboard para administradores <h1>
+## CDU 09 - Dashboard para administradores <h1>
 
 ### Fluxo principal
 
@@ -183,6 +183,6 @@
 ![WhatsApp Image 2023-09-15 at 18 43 51 (1)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/cd6586ae-cae9-41a6-9f65-e5f5d0293dcf)
 ![WhatsApp Image 2023-09-15 at 18 43 52](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/701d15a2-880a-49a2-a8aa-34ab10899da5)
 
-# Diagrama de Casos de uso
+## Diagrama de Casos de uso
 
 ![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
