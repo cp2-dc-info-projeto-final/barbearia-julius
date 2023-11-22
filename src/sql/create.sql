@@ -34,7 +34,7 @@ CREATE TABLE funcionarios(
 DROP TABLE IF EXISTS servico;
 CREATE TABLE servico(
     id_servico int NOT NULL AUTO_INCREMENT,
-    descricao varchar(30) NOT NULL,
+    descricao varchar(50) NOT NULL,
     preco float NOT NULL,
     primary key(id_servico)
 );
@@ -66,3 +66,10 @@ INSERT INTO administradores (nome, senha, email) VALUES ('Administrador', '12345
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (1, "Julius", "ju1452", "21987456123", "julis@email.com");
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (2, "Chris", "ch5689", "21932145678", "chris@email.com");
 INSERT INTO codigos_predefinidos (codigo) VALUES ('ABC12'),('DEF34'),('GHI56');
+INSERT INTO servico (descricao, preco) VALUES ("Corte", 20);
+INSERT INTO servico (descricao, preco) VALUES ("Barba", 15);
+INSERT INTO servico (descricao, preco) VALUES ("Sobrancelha", 10);
+INSERT INTO servico (descricao, preco) VALUES ("Corte + Barba", 30);
+INSERT INTO servico (descricao, preco) VALUES ("Corte + Sobrancelha", 25);
+INSERT INTO servico (descricao, preco) VALUES ("Corte + Barba + Sobrancelha", 35);
+INSERT INTO servico (descricao, preco) VALUES ("Barba + Sobrancelha", 20);
