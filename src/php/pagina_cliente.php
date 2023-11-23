@@ -33,28 +33,42 @@ if ($resultado->num_rows > 0) {
 }
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Recupera os dados do formulário
-    $novo_nome = htmlspecialchars($_POST["novo_nome"]);
-    $novo_email = htmlspecialchars($_POST["novo_email"]);
-    $senha_antiga = $_POST["senha_antiga"];
-    $nova_senha = $_POST["nova_senha"];
-    $confirmar_senha = $_POST["confirmar_senha"];
+    if (isset($_POST["novo_nome"])) {
+        $novo_nome = htmlspecialchars($_POST["novo_nome"]);
+        $novo_email = htmlspecialchars($_POST["novo_email"]);
+        
 
-    // Verifica se a senha antiga está correta
-    if (password_verify($senha_antiga, $senha_hash)) {
-        // Verifica se a nova senha e a confirmação coincidem
-        if ($nova_senha === $confirmar_senha) {
-            // Hash da nova senha
-            $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
+        // Atualiza a senha, nome e email no banco de dados
+        $query_update = $conexao->prepare("UPDATE usuarios SET  nome=?, email=? WHERE id_usuario=?");
+        $query_update->bind_param("sssi", $novo_nome, $novo_email, $id_usuario);
 
-            // Atualiza a senha, nome e email no banco de dados
-            $query_update = $conexao->prepare("UPDATE usuarios SET senha=?, nome=?, email=? WHERE id_usuario=?");
-            $query_update->bind_param("sssi", $nova_senha_hash, $novo_nome, $novo_email, $id_usuario);
+        if ($query_update->execute()) {
+            // Atualiza os dados na sessão para refletir as mudanças
+            $_SESSION['email'] = $novo_email;
 
-            if ($query_update->execute()) {
-                // Atualiza os dados na sessão para refletir as mudanças
-                $_SESSION['email'] = $novo_email;
+            // Redireciona de volta para a página de perfil após a alteração
+            header("Location: pagina_cliente.php");
+            exit();
+        } else {
+            echo "Erro ao atualizar os dados: " . $conexao->error;
+        }
+    }
+    else{
+            $senha_antiga = $_POST["senha_antiga"];
+            $nova_senha = $_POST["nova_senha"];
+            $confirmar_senha = $_POST["confirmar_senha"];
+        }
+    
+        // Atualiza a senha, nome e email no banco de dados
+        $query_update = $conexao->prepare("UPDATE usuarios SET senha=?, WHERE id_usuario=?");
+        $query_update->bind_param("sssi", $nova_senha_hash, $id_usuario);
 
+        // Verifica se a senha antiga está correta
+        if (password_verify($senha_antiga, $senha_hash)) {
+            // Verifica se a nova senha e a confirmação coincidem
+            if ($nova_senha === $confirmar_senha) {
+                // Hash da nova senha
+                $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
                 // Redireciona de volta para a página de perfil após a alteração
                 header("Location: pagina_cliente.php");
                 exit();
@@ -67,7 +81,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         echo "Senha antiga incorreta.";
     }
-}
 
 // Fechar a conexão
 $conexao->close();
@@ -83,7 +96,8 @@ $conexao->close();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/pagina_cliente.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="../js/pagina_cliente.js"></script>
+    <script src="../js/pagina_cliente1.js"></script>
+    <script src="../js/pagina_cliente2.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     
     <title>Seus Dados - Barbearia Julius</title>
@@ -118,6 +132,7 @@ $conexao->close();
             </div>
         </div>
     </section>
+
     <div class="popup" id="alterarDadosPopup">
         <div class="popup-content">
             <span class="close-popup" id="fecharPopup">&times;</span>
@@ -129,7 +144,7 @@ $conexao->close();
                 <input type="text" id="novo_nome" name="novo_nome" value="<?php echo htmlspecialchars($nomeUsuario); ?>" required>
 
                 <label for="novo_email">Novo Email:</label>
-                <input type="email" id="novo_email" name="novo_email" value="<?php echo htmlspecialchars($emailUsuario); ?>" required>
+                <input type="email" id="novo_email" name="novo_email" value="<?php echo htmlspecialchars($emailUsuario); ?>" required >
  
                 <button type="submit" class="salvar-alteracoes-btn">Salvar Alterações</button>
             </form>
@@ -137,10 +152,11 @@ $conexao->close();
             </form>
         </div>
     </div>
+
+
+
+
     <div class="contenti">
-            </div>
-        </div>
-    </section>
     <div class="popup" id="alterarDadosPopupi">
         <div class="popup-contenti">
             <span class="close-popup" id="fecharPopupi">&times;</span>
@@ -163,6 +179,7 @@ $conexao->close();
 
             </form>
         </div>
+    </div>
     </div>
         
 </body>

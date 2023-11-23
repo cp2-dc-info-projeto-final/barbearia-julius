@@ -10,17 +10,8 @@ CREATE TABLE usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     senha VARCHAR(255) NOT NULL,
     nome VARCHAR(100) NOT NULL,
-    email VARCHAR(100) NOT NULL,
-    FOREIGN KEY (id_usuario) REFERENCES codigos_predefinidos(codigo)
+    email VARCHAR(100) NOT NULL
 );
-
-DROP TABLE IF EXISTS codigos_predefinidos;
-CREATE TABLE codigos_predefinidos (
-    id_cod INT AUTO_INCREMENT PRIMARY KEY,
-    codigo VARCHAR(10) NOT NULL,
-    FOREIGN KEY (id_cod) REFERENCES usuarios(id_usuario)
-);
-
 
 DROP TABLE IF EXISTS funcionarios;
 CREATE TABLE funcionarios(
