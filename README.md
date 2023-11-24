@@ -82,6 +82,15 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 * Lucas de Souza Santana
 * Lucas Melo Moura 
 
+# Documento de Casos de Uso
+
+# **SISTEMA DE AGENDAMENTO** <h1>
+## BARBEARIA JULIUS <h2>
+* Ana Caroline de Oliveira
+* Antônio Reuther Fructuoso Damasceno 
+* Lucas de Souza Santana
+* Lucas Melo Moura 
+
 ## CDU 01 - Cadastro de usuários <h1>
 
 ### Fluxo principal
@@ -177,7 +186,8 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 8. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora e um botão para confirmar agendamento) 
 9. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 10. O usuário clica no botão "confirmar"
-![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/cf2564d1-c426-4735-9846-7113a2679461)
+![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/e4be6018-53e3-45bf-91e9-32dd5a432629)
+
 
 
 ### Fluxo alternativo A
@@ -232,6 +242,13 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 3. O administrador realiza as alterações necessárias nos agendamentos 
 4. O sistema realiza as alterações e envia um email ao usuário informando as alterações
 ![FluxoPrinc_Dashboard](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/98c4a566-5770-46c6-9615-09197495587f)
+
+
+
+## Diagrama de Casos de uso
+
+![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
+
 
 
 
