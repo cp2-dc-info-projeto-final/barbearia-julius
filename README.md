@@ -164,28 +164,21 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 5. O sistema redireciona o usuário para a página principal novamente
 4. O produto e/ou um serviço disponível é selecionado
 
-## CDU 05 - Agendamento de serviço<h1>
-
-### Fluxo principal - Agendamento de serviço.
-
-1. O usuário pressiona o botão "Agendamento"
-2. O sistema exibirá a tela com os botões para preencher
-3. O usuário preencherá as informações
-4. O agendamento é registrado no sistema
-![FluxoAlt_LogSoc01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/b7bc27d4-cde9-4835-a7ff-3d348fbb17af)
-
-## CDU 06 - Gestão de horários <h1>
+## CDU 04 - Agendamento de serviço<h1>
 
 ### Fluxo principal
 
 1. O usuário clica na opção para acessar a seleção de profissionais.
-2. O usuário verá uma lista de funcionários disponíveis.
-3. O usuário seleciona o funcionário com o qual  deseja agendar um horário.
+2. O usuário seleciona o funcionário com o qual  deseja agendar um horário.
 4. O usuário clica no botão de buscar horários.
 5. O sistema exibirá as horas disponíveis para o profissional selecionado.
 6. O usuário escolhe um horário que se adeque ao seu agendamento.
-7. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora e um botão para confirmar agendamento)
-8. O usuário clica no botão "confirmar"
+7. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+8. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora e um botão para confirmar agendamento) 
+9. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+10. O usuário clica no botão "confirmar"
+![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/cf2564d1-c426-4735-9846-7113a2679461)
+
 
 ### Fluxo alternativo A
 
@@ -202,7 +195,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 11. O usuário clica no botão "confirmar".
 ![FluxoAlt_GestHor01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/7ee3d6a2-0727-4bed-8c27-38300cce1294)
 
-## CDU 07 -  Acesso ao perfil criado <h1>
+## CDU 05 -  Configuraçoes de conta <h1>
 
 ### Fluxo principal
 
@@ -217,7 +210,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 5. O usuário clica em sair
 6. O usuário é direcionado para a interface da página principal
 
-## CDU 08 - Cancelamento <h1>
+## CDU 06 - Cancelamento <h1>
 
 ### Fluxo principal - Cancelamento <h1>
 
@@ -230,20 +223,22 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 ![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
 
 
-## CDU 09 - Dashboard para administradores <h1>
+## CDU 07 - Dashboard para administradores <h1>
 
 ### Fluxo principal
 
-1. O usuário acessa a página de login
-2. O usuário pressiona o botão "Enviar"
-3. O sistema valida o login e senha e verifica que há permissão de administrador
-4. O sistema direciona o usuário para o dashboard para administradores
-![WhatsApp Image 2023-09-15 at 18 43 51 (1)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/cd6586ae-cae9-41a6-9f65-e5f5d0293dcf)
-![WhatsApp Image 2023-09-15 at 18 43 52](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/701d15a2-880a-49a2-a8aa-34ab10899da5)
+1. O administrador acessa o Dashboard
+2. O administrador seleciona um dia no calendário
+3. O administrador realiza as alterações necessárias nos agendamentos 
+4. O sistema realiza as alterações e envia um email ao usuário informando as alterações
+![FluxoPrinc_Dashboard](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/98c4a566-5770-46c6-9615-09197495587f)
+
+
 
 ## Diagrama de Casos de uso
 
 ![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
+
 
 
 # CRONOGRAMA DE DESENVOLVIMENTO<h1>
