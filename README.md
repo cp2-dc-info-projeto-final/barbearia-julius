@@ -91,6 +91,15 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 * Lucas de Souza Santana
 * Lucas Melo Moura 
 
+# Documento de Casos de Uso
+
+# **SISTEMA DE AGENDAMENTO** <h1>
+## BARBEARIA JULIUS <h2>
+* Ana Caroline de Oliveira
+* Antônio Reuther Fructuoso Damasceno 
+* Lucas de Souza Santana
+* Lucas Melo Moura 
+
 ## CDU 01 - Cadastro de usuários <h1>
 
 ### Fluxo principal
@@ -248,6 +257,7 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 ## Diagrama de Casos de uso
 
 ![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
+
 
 
 
