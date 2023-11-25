@@ -1,16 +1,33 @@
 <?php
 include '../inc/conecta_mysqli.inc';
 
-$query_servicos = "SELECT id_servico, descricao FROM servico";
-$result_servicos = $mysqli->query($query_servicos);
+header('Content-Type: application/json');
 
-$lista_servicos = array();
+$erros = [];
+$servicos_disponiveis = [];
 
-while ($row = $result_servicos->fetch_assoc()) {
-    $lista_servicos[] = $row;
+$query = "SELECT id_servico, descricao FROM servico";
+
+$result = $mysqli->query($query);
+
+if ($result) {
+    while ($row = $result->fetch_assoc()) {
+        $servicos_disponiveis[] = [
+            'id_servico' => $row['id_servico'],
+            'descricao' => $row['descricao']
+        ];
+    }
+} else {
+    $erros[] = "Erro ao consultar os serviços: " . $mysqli->error;
 }
 
-echo json_encode($lista_servicos);
-
 mysqli_close($mysqli);
+
+// Resposta JSON
+$response = [
+    'erros' => $erros,
+    'servicos_disponiveis' => $servicos_disponiveis,
+];
+
+echo json_encode($response);
 ?>
