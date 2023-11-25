@@ -19,7 +19,7 @@ while ($stmt_agendados->fetch()) {
 $stmt_agendados->close();
 
 // Consultar todos os horários disponíveis
-$horarios_disponiveis = ['09:00', '10:00', '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00'];
+$horarios_disponiveis = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
 
 // Remover os horários agendados da lista de horários disponíveis
 $horarios_disponiveis = array_diff($horarios_disponiveis, $horarios_agendados);

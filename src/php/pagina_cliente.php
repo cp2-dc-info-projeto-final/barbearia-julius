@@ -40,7 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         // Atualiza a senha, nome e email no banco de dados
         $query_update = $conexao->prepare("UPDATE usuarios SET  nome=?, email=? WHERE id_usuario=?");
-        $query_update->bind_param("sssi", $novo_nome, $novo_email, $id_usuario);
+        $query_update->bind_param("ssi", $novo_nome, $novo_email, $id_usuario);
 
         if ($query_update->execute()) {
             // Atualiza os dados na sessão para refletir as mudanças
@@ -49,19 +49,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             // Redireciona de volta para a página de perfil após a alteração
             header("Location: pagina_cliente.php");
             exit();
-        } else {
+        }else {
             echo "Erro ao atualizar os dados: " . $conexao->error;
         }
     }
-    else{
-            $senha_antiga = $_POST["senha_antiga"];
-            $nova_senha = $_POST["nova_senha"];
-            $confirmar_senha = $_POST["confirmar_senha"];
-        }
-    
-        // Atualiza a senha, nome e email no banco de dados
-        $query_update = $conexao->prepare("UPDATE usuarios SET senha=?, WHERE id_usuario=?");
-        $query_update->bind_param("sssi", $nova_senha_hash, $id_usuario);
+
+    else {
+        $senha_antiga = $_POST["senha_antiga"];
+        $nova_senha = $_POST["nova_senha"];
+        $confirmar_senha = $_POST["confirmar_senha"];
 
         // Verifica se a senha antiga está correta
         if (password_verify($senha_antiga, $senha_hash)) {
@@ -69,18 +65,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             if ($nova_senha === $confirmar_senha) {
                 // Hash da nova senha
                 $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
-                // Redireciona de volta para a página de perfil após a alteração
-                header("Location: pagina_cliente.php");
-                exit();
+
+                // Atualiza a senha no banco de dados
+                $query_update = $conexao->prepare("UPDATE usuarios SET senha=? WHERE id_usuario=?");
+                $query_update->bind_param("si", $nova_senha_hash, $id_usuario);
+
+                if ($query_update->execute()) {
+                    // Redireciona de volta para a página de perfil após a alteração
+                    header("Location: pagina_cliente.php");
+                    exit();
+                } else {
+                    echo "Erro ao atualizar os dados: " . $conexao->error;
+                }
             } else {
-                echo "Erro ao atualizar os dados: " . $conexao->error;
+                echo "A nova senha e a confirmação não coincidem.";
             }
         } else {
-            echo "A nova senha e a confirmação não coincidem.";
+            echo "Senha antiga incorreta.";
         }
-    } else {
-        echo "Senha antiga incorreta.";
     }
+}
 
 // Fechar a conexão
 $conexao->close();

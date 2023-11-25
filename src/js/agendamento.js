@@ -1,6 +1,6 @@
 $(document).ready(function() {
     $('#id_funcionario').on('change', function() {
-        const selecionado = $(this).val();
+        const selecionado = $(this).val().toString(); // Certifique-se de que é uma string
         $('#horario_inicio').empty();
 
         if (selecionado !== '0') {
