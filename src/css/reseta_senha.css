@@ -1,19 +1,31 @@
 /* CSS para sua página do cliente */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+s
 
 /* Estilos globais */
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: #fff;
 }
 
 body {
     margin: 0;
     padding: 0;
     background-color: #121212;
+}
+
+label {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    font-weight: 500;
 }
 
 /* Estilos para o cabeçalho e navegação */
@@ -31,24 +43,25 @@ section {
 
 .circle {
     position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
     height: 100%;
     background: #94095e;
     clip-path: circle(50% at bottom right);
+    clip-path: circle(60% at bottom right);
 }
 
 header {
     position: absolute;
-    top: 0;
-    left: 0;
+    top: 70px;
+    left: -700px;
     width: 100%;
     padding: 40px 100px;
     display: flex;
     align-items: center;
     justify-content: center;
+    padding: 20px;
 }
+
 
 header .logo {
     position: relative;
@@ -63,6 +76,7 @@ header .navegation ul {
 header .navegation li {
     list-style: none;
     margin-left: 100px;
+    margin-left: 20px;
 }
 
 header .navegation li a {
@@ -72,10 +86,127 @@ header .navegation li a {
     text-decoration: none;
     font-size: 19px;
 }
-* {
+
+
+/* Estilos para a seção de informações do cliente */
+.content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .text {
+    max-width: 600px;
+    margin-right: 20px;
+    flex: 1; /* Adicionado para ocupar todo o espaço disponível na largura */
+    display: flex;
+    flex-direction: column; /* Exibir os elementos como coluna */
+    justify-content: center; /* Centralizar os elementos verticalmente */
+    margin-right: 10px;
+}
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
     color: #fff;
-    font-size: 3em;
+    font-size: 23px;
     margin-bottom: 10px;
     line-height: 2.5em;
     font-weight: 700;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+    line-height: 2.5em;
+    font-weight: 700;
+    font-size: 6.5em;
+    color: #94095e;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    font-size: 19px;
+    margin-bottom: 520px;
+    line-height: 33px;
+    font-weight: 700;
+    margin-left: -46px;
+}
+
+.content .text h2 span {
+    font-size: 3.5em;
+    color: #94095e;
+}
+
+.content .text p {
+    color: #fff;
+}
+
+.content .text .dados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.content .text .informacao {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #94095e;
+    border-radius: 5px;
+}
+
+.content .text .informacao h3,
+.content .text .informacao p {
+    color: #fff;
+}
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+}
+
+section {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    overflow: hidden;
+    padding: 50px; /* ou qualquer valor que seja apropriado */
+}
+
+input#email {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #94095e;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+button {
+    background-color: #94095e;
+    border: none;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
