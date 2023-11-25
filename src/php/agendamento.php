@@ -1,82 +1,3 @@
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-<script>
-    $(document).ready(function() {
-    // Carregar opções de funcionários ao carregar a página
-    carregarOpcoesFuncionarios();
-
-    $('#id_funcionario').on('change', function() {
-        const selecionado = $(this).val().toString();
-        const dataSelecionada = $('#data_agenda').val();
-
-        const partesData = dataSelecionada.split('-');
-        const dataFormatoCorreto = partesData[2] + '-' + partesData[1] + '-' + partesData[0];
-
-        $('#horario_inicio').empty();
-
-        if (selecionado !== '0') {
-            $.ajax({
-                url: 'consultar_horarios.php',
-                type: 'POST',
-                data: {
-                    id_funcionario: selecionado,
-                    data_agenda: dataFormatoCorreto,
-                    funcao: 'agendar'
-                },
-                dataType: 'json',
-                success: function(response) {
-                    if (response.erros.length > 0) {
-                        console.error('Erro na requisição AJAX:', response.erros);
-                        alert('Erro ao consultar horários. Por favor, tente novamente mais tarde.');
-                    } else {
-                        response.horarios_disponiveis.forEach(function(horario) {
-                            $('#horario_inicio').append($('<option>', {
-                                value: horario,
-                                text: horario
-                            }));
-                        });
-                    }
-                },
-                error: function(xhr, status, error) {
-                    console.error('Erro na requisição AJAX:', error);
-                    console.log(xhr.responseText);
-                }
-            });
-        }
-    });
-
-    $("#meusAgendamentosButton").click(function() {
-        $("#historicoAgendamentos").toggle();
-    });
-});
-
-// Função para carregar as opções de funcionários
-function carregarOpcoesFuncionarios() {
-    $.ajax({
-        url: 'consultar_funcionarios.php',
-        type: 'GET',
-        dataType: 'json',
-        success: function(response) {
-            if (response.erros.length > 0) {
-                console.error('Erro na requisição AJAX:', response.erros);
-                alert('Erro ao carregar opções de funcionários. Por favor, tente novamente mais tarde.');
-            } else {
-                response.funcionarios_disponiveis.forEach(function(funcionario) {
-                    $('#id_funcionario').append($('<option>', {
-                        value: funcionario.id_funcionario,
-                        text: funcionario.nome
-                    }));
-                });
-            }
-        },
-        error: function(xhr, status, error) {
-            console.error('Erro na requisição AJAX:', error);
-            console.log(xhr.responseText);
-        }
-    });
-}
-
-</script>
-
 <?php
 
 session_start();
@@ -103,6 +24,113 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
 }
 ?>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script>
+    $(document).ready(function() {
+        // Carregar opções de funcionários e serviços ao carregar a página
+        carregarOpcoesFuncionarios();
+        carregarOpcoesServicos();
+
+        $('#id_funcionario').on('change', function() {
+            const selecionado = $(this).val().toString();
+            const dataSelecionada = $('#data_agenda').val();
+
+            const partesData = dataSelecionada.split('-');
+            const dataFormatoCorreto = partesData[2] + '-' + partesData[1] + '-' + partesData[0];
+
+            $('#horario_inicio').empty();
+
+            if (selecionado !== '0') {
+                $.ajax({
+                    url: 'consultar_horarios.php',
+                    type: 'POST',
+                    data: {
+                        id_funcionario: selecionado,
+                        data_agenda: dataFormatoCorreto,
+                        funcao: 'agendar'
+                    },
+                    dataType: 'json',
+                    success: function(response) {
+                        if (response.erros.length > 0) {
+                            console.error('Erro na requisição AJAX:', response.erros);
+                            alert('Erro ao consultar horários. Por favor, tente novamente mais tarde.');
+                        } else {
+                            response.horarios_disponiveis.forEach(function(horario) {
+                                $('#horario_inicio').append($('<option>', {
+                                    value: horario,
+                                    text: horario
+                                }));
+                            });
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        console.error('Erro na requisição AJAX:', error);
+                        console.log(xhr.responseText);
+                    }
+                });
+            }
+        });
+
+        $("#meusAgendamentosButton").click(function() {
+            $("#historicoAgendamentos").toggle();
+        });
+    });
+
+    // Função para carregar as opções de funcionários
+    function carregarOpcoesFuncionarios() {
+        $.ajax({
+            url: 'consultar_funcionarios.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.erros.length > 0) {
+                    console.error('Erro na requisição AJAX:', response.erros);
+                    alert('Erro ao carregar opções de funcionários. Por favor, tente novamente mais tarde.');
+                } else {
+                    response.funcionarios_disponiveis.forEach(function(funcionario) {
+                        $('#id_funcionario').append($('<option>', {
+                            value: funcionario.id_funcionario,
+                            text: funcionario.nome
+                        }));
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Erro na requisição AJAX:', error);
+                console.log(xhr.responseText);
+            }
+        });
+    }
+
+    // Função para carregar as opções de serviços
+    function carregarOpcoesServicos() {
+        $.ajax({
+            url: 'consultar_servicos.php',
+            type: 'GET',
+            dataType: 'json',
+            success: function(response) {
+                if (response.erros.length > 0) {
+                    console.error('Erro na requisição AJAX:', response.erros);
+                    alert('Erro ao carregar opções de serviços. Por favor, tente novamente mais tarde.');
+                } else {
+                    response.servicos_disponiveis.forEach(function(servico) {
+                        $('#id_servico').append($('<option>', {
+                            value: servico.id_servico,
+                            text: servico.descricao
+                        }));
+                    });
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Erro na requisição AJAX:', error);
+                console.log(xhr.responseText);
+            }
+        });
+    }
+</script>
+
+
+
 
 
 
@@ -252,13 +280,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label for="id_servico">Serviço:</label>
                 <select name="id_servico" id="id_servico">
                     <option value="" selected="selected" disabled="disabled">Selecione um serviço</option>
-                    <option value="corte">Corte</option>
-                    <option value="barba">Barba</option>
-                    <option value="sobrancelha">Sobrancelha</option>
-                    <option value="cortebarba">Corte + barba</option>
-                    <option value="cortesobrancelha">Corte + sobrancelha</option>
-                    <option value="cortebarbasobrancelha">Corte + barba + sobrancelha</option>
-                    <option value="barbasobrancelha">Barba + sobrancelha</option>
+                    <!-- As opções serão carregadas dinamicamente pelo JavaScript -->
                 </select>
                 
                 <input type="submit" value="Agendar">
