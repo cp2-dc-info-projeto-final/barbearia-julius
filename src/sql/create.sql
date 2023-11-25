@@ -56,7 +56,6 @@ INSERT INTO administradores (nome, senha, email) VALUES ('Administrador', '12345
 
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (1, "Julius", "ju1452", "21987456123", "julis@email.com");
 INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (2, "Chris", "ch5689", "21932145678", "chris@email.com");
-INSERT INTO codigos_predefinidos (codigo) VALUES ('ABC12'),('DEF34'),('GHI56');
 INSERT INTO servico (descricao, preco) VALUES ("Corte", 20);
 INSERT INTO servico (descricao, preco) VALUES ("Barba", 15);
 INSERT INTO servico (descricao, preco) VALUES ("Sobrancelha", 10);

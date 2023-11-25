@@ -16,7 +16,7 @@ if (isset($_SESSION["email"])) {
         } else {
             $id_funcionario = $_POST["id_funcionario"];
             $id_servico = $_POST["id_servico"];
-            $horario_inicio = $_POST["horario_inicio"];
+            $horario_inicio = strval($_POST["horario_inicio"]);
             $data_agenda = $_POST["data_agenda"];
 
             $query = "SELECT id_usuario FROM usuarios WHERE email = ?";
