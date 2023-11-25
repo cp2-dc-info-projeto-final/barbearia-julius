@@ -1,13 +1,18 @@
 <?php
 session_start();
 
+// Verifica se o usuário está logado
 if (isset($_SESSION["email"])) {
-    $emailUsuario = $_SESSION["email"];
+    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
+
+    // Use $emailUsuario para exibir informações do usuário ou realizar operações relacionadas ao agendamento
+    
 } else {
-    // Se o usuário não estiver logado, redirecione para a página de login
-    header("Location: pagina_login.php");
-    exit();
+    // Se o usuário não estiver logado, redirecione-o para a página de login
+    header("Location: form_login.php");
+    exit;
 }
+
 
 $conexao = new mysqli("localhost", "barbeariajulius", "123", "BARBEARIAJULIUS");
 
