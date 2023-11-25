@@ -249,6 +249,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a class="nav" href="../html/logado.html">Pagina Principal</a></li>
                 <li><a class="nav" href="../php/agendamento.php">Agendamento</a></li>
                 <li><a class="nav" href="../php/pagina_cliente.php">Página Cliente</a></li>
+                <li><a class="nav" href="../php/logout.php">Sair</a></li>
             </ul>
         </nav>
     </header>

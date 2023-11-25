@@ -42,6 +42,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             envia_email($emailUsuarioBD, "Redefinição de Senha", "Sua nova senha é: $novaSenha");
 
             echo "Uma nova senha foi enviada para o seu e-mail.";
+            header("Location: form_login.php");
         } else {
             echo "Erro ao atualizar a senha: " . $stmtUpdate->error;
         }

@@ -121,6 +121,7 @@ $conexao->close();
                     <li><a class="nav" href="../html/logado.html">Página Principal</a></li>
                     <li><a class="nav" href="agendamento.php">Agendamento</a></li>
                     <li><a class="nav" href="../php/pagina_cliente.php">Página Cliente</a></li>
+                    <li><a class="nav" href="../php/logout.php">Sair</a></li>
                 </ul>
             </nav>
         </header>
