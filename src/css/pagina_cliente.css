@@ -3,6 +3,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 /* Estilos globais */
+.nab {
+    background-color: #af4c8e;
+}
 * {
     margin: 0;
     padding: 0;
@@ -55,22 +58,23 @@ header .logo {
     max-width: 150px;
 }
 
-header .navegation ul {
+header .navegation2 ul {
     position: relative;
     display: flex;
 }
 
-header .navegation li {
+header .navegation2 li {
     list-style: none;
     margin-left: 100px;
 }
 
-header .navegation li a {
+header .navegation2 li a {
     display: inline-block;
     color: #fff;
     font-weight: 500;
     text-decoration: none;
     font-size: 19px;
+    background-color: #af4c96;
 }
 
 /* Estilos para a seção de informações do cliente */

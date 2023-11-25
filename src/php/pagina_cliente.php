@@ -116,10 +116,11 @@ $conexao->close();
         <div class="circle"></div>
         <header>
             <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
-            <nav class="navegation">
+            <nav class="navegation2">
                 <ul>
                     <li><a class="nav" href="../html/logado.html">Página Principal</a></li>
-                    <li><a class="nav" href="agendamento.php">Agendamento</a></li>
+                    <li><a class="na" href="agendamento.php">Agendamento</a></li>
+                    <li><a class="nab" href="../php/pagina_cliente.php">Página Cliente</a></li>
                 </ul>
             </nav>
         </header>

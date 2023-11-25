@@ -13,6 +13,7 @@ header .navegation li a{
     border-radius: 40px;
     transition: -0.7s ease-in-out;
     padding: 10px 25px;
+    background-color: #af4c96;
 }
 ul .nav{
   list-style-type: none;

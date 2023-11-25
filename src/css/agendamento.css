@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-header .navegation li a{
+header .navegation1 li a{
     display: inline-block;
     color: #fff;
     font-weight: 500;
@@ -10,8 +10,9 @@ header .navegation li a{
     border-radius: 40px;
     transition: -0.7s ease-in-out;
     padding: 10px 25px;
+    background-color: #af4c96;
 }
-ul .nav{
+ul .na{
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -21,12 +22,12 @@ ul .nav{
     top: 0;
   }
   
-  li .nav{
+  li .na{
     float: left;
     
   }
   
-  li a .nav{
+  li a .na{
     display: block;
     color: white;
     text-align: center;
@@ -34,12 +35,12 @@ ul .nav{
     text-decoration: none;
   }
   
-  li a:hover.nav{
+  li a:hover.na{
     background-color: #111;
   }
   
-  .nav {
-    background-color: #af4c8e;
+  .na {
+    
   }
 
 
@@ -88,7 +89,7 @@ header .logo {
     max-width: 150px;
 }
 
-header .navegation ul {
+header .navegation1 ul {
     position: absolute;
     top: 0;
     left: 0;
@@ -99,17 +100,18 @@ header .navegation ul {
     justify-content: center;
 }
 
-header .navegation li {
+header .navegation1 li {
     list-style: none;
 }
 
-header .navegation li a {
+header .navegation1 li a {
     display: inline-block;
     color: #fff;
     font-weight: 500;
     text-decoration: none;
     font-size: 19px;
     margin-left: 100px;
+    background-color: #af4c96;
 }
 
 .content {
