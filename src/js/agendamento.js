@@ -1,9 +1,8 @@
 $(document).ready(function() {
     $('#id_funcionario').on('change', function() {
         const selecionado = $(this).val().toString();
-        const dataSelecionada = $('#data_agenda').val(); // Obtém a data selecionada no formato dd-mm-aaaa
+        const dataSelecionada = $('#data_agenda').val();
 
-        // Converte a data para o formato aaaa-mm-dd
         const partesData = dataSelecionada.split('-');
         const dataFormatoCorreto = partesData[2] + '-' + partesData[1] + '-' + partesData[0];
 
@@ -15,20 +14,25 @@ $(document).ready(function() {
                 type: 'POST',
                 data: {
                     id_funcionario: selecionado,
-                    data_agenda: dataFormatoCorreto // Envia a data no formato aaaa-mm-dd para o servidor
+                    data_agenda: dataFormatoCorreto,
+                    funcao: 'agendar'
                 },
                 dataType: 'json',
                 success: function(response) {
-                    // Limpa os horários disponíveis e adiciona os novos horários
-                    response.forEach(function(horario) {
-                        $('#horario_inicio').append($('<option>', {
-                            value: horario,
-                            text: horario
-                        }));
-                    });
+                    if (response.erros.length > 0) {
+                        console.error('Erro na requisição AJAX:', response.erros);
+                    } else {
+                        response.horarios_disponiveis.forEach(function(horario) {
+                            $('#horario_inicio').append($('<option>', {
+                                value: horario,
+                                text: horario
+                            }));
+                        });
+                    }
                 },
-                error: function(error) {
-                    console.error('Erro na requisição AJAX: ', error);
+                error: function(xhr, status, error) {
+                    console.error('Erro na requisição AJAX:', error);
+                    console.log(xhr.responseText);
                 }
             });
         }
