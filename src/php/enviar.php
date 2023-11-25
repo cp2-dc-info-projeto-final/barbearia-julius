@@ -29,9 +29,9 @@ function envia_email($para, $assunto, $mensagem){
         //Remetente e Destinatários
         $mail->setFrom('lp3.turma2023@gmail.com', 'Site do Professor');  // Adiciona o remetente
         $mail->addAddress($para);                                       // Adiciona um destinatário
-        // $mail->addAddress('ellen@example.com');                      // O nome é opcional
-        // $mail->addReplyTo('info@example.com', 'Information');        // Adicona um endereço de resposta
-        // $mail->addCC('cc@example.com');                              // Adiciona um e-mail de cópia
+        $mail->addAddress('ellen@example.com');                      // O nome é opcional
+        $mail->addReplyTo('info@example.com', 'Information');        // Adicona um endereço de resposta
+        //$mail->addCC('cc@example.com');                              // Adiciona um e-mail de cópia
         // $mail->addBCC('bcc@example.com');                            // Adicona um e-mail de cópia oculta.
 
         //Anexos
