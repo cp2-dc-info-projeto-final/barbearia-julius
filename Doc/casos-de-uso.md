@@ -14,19 +14,20 @@
 1. O sistema apresenta formulário de cadastro
 2. O usuário preenche o campo nome, email, senha e confirmação de senha.
 3. O usuário pressiona o botão "enviar"
-4. O sistema valida o login e senha
+4. O sistema valida as informações
 5. O sistema cadastra o usuário
-6. O sistema redireciona o usuário para a página principal
+6. O sistema redireciona o usuário para a página de login
 ![tca](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/4f6ba4af-b070-4644-a1b5-ac4681f9da07)
 
 ### Fluxo alternativo A - já existente
 
-1. O sistema apresenta formulário de cadastro
-2. O usuário preenche o campo nome, email, senha e confirmação de senha.
-3. O usuário pressiona o botão "enviar"
-3. O sistema valida o login e senha
-4. O sistema informa que já possui uma conta vinculada com esse login
-   ![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/9fdc4e52-523a-4d58-88b2-97f57c2cee0a)
+1. O sistema informa que já possui uma conta vinculada com esse email
+2. O usuário preenche um outro email
+3. O sistema valida as informações
+4. O sistema cadastra o usuário
+5. O sistema redireciona o usuário para a página de login
+![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/42af0953-47d9-4c40-b1c5-756fd424b93f)
+
 
 ## CDU 02 - Login <h1>
 
@@ -41,13 +42,10 @@
 
 ### Fluxo alternativo A
 
-1. O sistema apresenta formulário de login
-2. O usuário preenche o campo email e senha
-3. O usuário pressiona o botão "enviar"
-4. O sistema informa que o email e senha não coincidem
-5. O usuário preenche novamente o email e senha
-6. O usuário clica no botão "enviar"
-7. O sistema redireciona o usuário para a página principal
+1. O sistema informa que o email e senha não coincidem
+2. O usuário preenche novamente o email e senha
+3. O usuário clica no botão "enviar"
+4. O sistema redireciona o usuário para a página principal
 ![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/5834aaed-bc02-4f86-8802-2abbcbf2e983)
 
 ### Fluxo alternativo B
