@@ -1,11 +1,52 @@
-/* CSS para sua página do cliente */
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
-/* Estilos globais */
-.nab {
-    background-color: #af4c8e;
+body {
+
 }
+header .navegation li a{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 19px;
+    margin-left: 100px;
+    border-radius: 40px;
+    transition: -0.7s ease-in-out;
+    padding: 10px 25px;
+    background-color: #af4c96;
+}
+ul .nav{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: -webkit-sticky; /* Safari */
+    position: sticky;
+    top: 0;
+  }
+  
+  li .nav{
+    float: left;
+    
+  }
+  
+  li a .nav{
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+  li a:hover.nav{
+    background-color: #111;
+  }
+  
+  .nav {
+    
+  }
+
+
 * {
     margin: 0;
     padding: 0;
@@ -13,13 +54,6 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body {
-    margin: 0;
-    padding: 0;
-    background-color: #121212;
-}
-
-/* Estilos para o cabeçalho e navegação */
 section {
     position: relative;
     width: 100%;
@@ -50,7 +84,7 @@ header {
     padding: 40px 100px;
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
 }
 
 header .logo {
@@ -58,23 +92,68 @@ header .logo {
     max-width: 150px;
 }
 
-header .navegation2 ul {
-    position: relative;
+header .navegation ul {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-header .navegation2 li {
+header .navegation1 li {
     list-style: none;
-    margin-left: 100px;
 }
 
-header .navegation2 li a {
+
+.content {
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.content .text {
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+}
+
+.content .text h2 {
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 2.5em;
+    font-weight: 700;
+}
+
+.content .text h2 span {
+    font-size: 3.5em;
+    color: #94095e;
+}
+
+.content .text p {
+    color: #fff;
+}
+
+.content .text a {
     display: inline-block;
+    margin-top: 50px;
+    padding: 10px 25px;
+    background: #94095e;
     color: #fff;
     font-weight: 500;
+    letter-spacing: 1px;
     text-decoration: none;
-    font-size: 19px;
-    background-color: #af4c96;
+    border-radius: 40px;
+    transition: 0.3s ease-in-out;
+}
+
+.content .text a:hover {
+    transform: translateY(-10px);
 }
 
 /* Estilos para a seção de informações do cliente */
@@ -147,6 +226,9 @@ header .navegation2 li a {
 }
 
 .content .text .alterar-dados-btn:hover {
+    transform: translateY(-10px);
+}
+.content .text .alterar-dados-btni:hover {
     transform: translateY(-10px);
 }
 
@@ -240,7 +322,7 @@ header .navegation2 li a {
     transition: background-color 0.3s ease;
 }
 
-.popup-content .salvar-alteracoes-btn:hover {
+.popup-content .salvar-alteracoes-btni:hover {
     background-color: #ff00a1;
 }
 
