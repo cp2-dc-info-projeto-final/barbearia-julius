@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/reseta_senha.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
     <title>Seus Dados - Barbearia Julius</title>
 </head>
 <body>
@@ -21,6 +20,7 @@
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" required>
         <button type="submit">Redefinir Senha</button>
+            <a href="reseta"><img src="../img/logo.png" alt="" class="logo"></a>
         </header>
         <div class="content">
             <div class="text">
@@ -30,3 +30,4 @@
     </section>
 </body>
 </html>
+
