@@ -14,6 +14,7 @@ if (mysqli_num_rows($res_admin) == 1) {
     
     // Verifica a senha do administrador sem criptografia
     if ($senha == $admin["senha"]) { // Comparação simples
+        $_SESSION["tipo_usuario"] = 'administrador';
         $_SESSION["email"] = $email;
         $_SESSION["senha"] = $admin["senha"];
         // Direciona para a página de administração
