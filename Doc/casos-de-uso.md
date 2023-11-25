@@ -42,19 +42,12 @@
 
 ### Fluxo alternativo A
 
-1. O sistema informa que o email e senha não coincidem
+1. O sistema informa que há alguma informação inválida
 2. O usuário preenche novamente o email e senha
 3. O usuário clica no botão "enviar"
 4. O sistema redireciona o usuário para a página principal
-![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/5834aaed-bc02-4f86-8802-2abbcbf2e983)
+![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/ded03f08-ee66-43ce-bba4-0561c5715e1c)
 
-### Fluxo alternativo B
-
-1. O sistema apresenta formulário de login
-2. O usuário preenche o campo email e senha
-3. O usuário pressiona o botão "enviar"
-4. O sistema informa que não há uma conta vinculada à esse login
-![FluxoAlt_Log02](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/0bfaa6b2-c5ad-4c28-b13f-d457cf9c8a44)
 
 ### Fluxo alternatico C - Esqueceu a senha.
 
@@ -71,23 +64,8 @@
 11. O sistema redireciona o usuário para a página principal
 ![FluxoAlt_Log03](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f960c911-05f9-4a55-b87a-478afc02a381)
 
-## CDU 03 - Interface da página principal <h1>
 
-### Fluxo principal
-
-1. O usuário terá acesso a página principal
-2. O usuário poderá vizualizar os serviços e produtos disponíveis
-
-### Fluxo alternativo A
-
-1. O usuário seleciona um produto e/ou um serviço disponível
-2. O sistema direciona o usuário para a inteface de cadastro
-3. O usuário preenche o cadastro 
-4. O sistema valida o cadastro
-5. O sistema redireciona o usuário para a página principal novamente
-4. O produto e/ou um serviço disponível é selecionado
-
-## CDU 04 - Agendamento de serviço<h1>
+## CDU 03 - Agendamento de serviço<h1>
 
 ### Fluxo principal
 
@@ -103,38 +81,25 @@
 ![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/e4be6018-53e3-45bf-91e9-32dd5a432629)
 
 
-
-### Fluxo alternativo A
-
-1. O usuário clica na opção para acessar a seleção de profissionais.
-2. O sistema lista os profissionais disponíveis.
-3. O usuário seleciona o profissional com o qual  deseja agendar um horário.
-4. O usuário clica no botão de buscar horários.
-5. O sistema notifica que não há horários disponíveis.
-6. O usuário troca a data.
-7. O usuário clica novamente no botão de buscar horários.
-8. O sistema exibirá as horas disponíveis para o profissional selecionado.
-9. O usuário escolhe um horário que se adeque ao seu agendamento.
-10. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora  e um botão para confirmar agendamento)
-11. O usuário clica no botão "confirmar".
-![FluxoAlt_GestHor01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/7ee3d6a2-0727-4bed-8c27-38300cce1294)
-
-## CDU 05 -  Configuraçoes de conta <h1>
+## CDU 04 -  Alterar senha <h1>
 
 ### Fluxo principal
 
-1. Ao clicar na opção "perfil" da página principal o usuário é direcionado para uma interface da página do cliente.
-2. Na página do cliente estarão as informações concedidas pelo usuário.
-3. O sistema exibe as opções de "mudar a senha" e "sair".
-4. O usuário clica na opção de "mudar a senha" 
-5. O usuário é direcionado para a página de redefinição de senha.
+1. Usuário seleciona a opção de alterar senha
+2. O usuário preenche as informações necessárias
+3. O sistema altera a senha
+![FluxoPrinc_AlteraSenha](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f30dcbb2-7ad8-44e3-8ad1-16d8a242e306)
 
-### Fluxo alternativo A
+## CDU 05 -  Alterar dados <h1>
 
-5. O usuário clica em sair
-6. O usuário é direcionado para a interface da página principal
+1. Usuário seleciona a opção de alterar dados
+2. O usuário preenche as informações que deseja alterar
+3. O sistema altera as informações concedidas
+![FluxoPrinc_AlteraDados](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/96ba6888-6ab0-48ac-86d8-ff099ef58828)
 
-## CDU 06 - Cancelamento <h1>
+
+
+## CDU 05 - Cancelamento <h1>
 
 ### Fluxo principal - Cancelamento <h1>
 
@@ -147,7 +112,7 @@
 ![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
 
 
-## CDU 07 - Dashboard para administradores <h1>
+## CDU 06 - Dashboard para administradores <h1>
 
 ### Fluxo principal
 
