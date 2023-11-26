@@ -22,7 +22,7 @@ if (isset($_SESSION["id_funcionario"])) {
     if ($result->num_rows > 0) {
         echo "<h3>Agendamentos do Funcionário:</h3>";
         echo "<table border='1'>";
-        echo "<tr><th>Data</th><th>Hora</th><th>Numero do Agendamento</th><th>Descrição do Serviço</th><th>Nome do Cliente</th></tr>";
+        echo "<tr><th>Número de agendamento</th><th>Data</th><th>Hora</th><th>Descrição do Serviço</th><th>Nome do Cliente</th></tr>";
         while ($row = $result->fetch_assoc()) {
             echo "<tr>";
             echo "<td>" . $row['id_agendamento'] . "</td>"; // Adicionando o ID do agendamento
