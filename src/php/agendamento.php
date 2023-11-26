@@ -137,56 +137,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<style>
-        #historicoAgendamentos {
-            display: none;
-            margin-top: 20px;
-            background-color: #94095e;
-            color: white;
-            padding: 10px;
-            border-radius: 10px;
-        }
 
-        table {
-            width: 100%;
-            margin-top: 10px;
-            background-color: #fff;
-            border-radius: 10px;
-            border: none; /* Remove a borda da tabela */
-        }
-
-        th, td {
-            padding: 10px;
-            text-align: left;
-            border: none; /* Remove a borda das células */
-        }
-
-        th {
-            background-color: transparent;
-            color: #fff;
-        }
-
-        tr:nth-child(even) {
-            background-color: #94095e10;
-        }
-
-        tr:hover {
-            background-color: #94095e20;
-        }
-        #meusAgendamentosButton {
-            background-color: #94095e;
-            border: none;
-            color: #fff;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s ease;
-        }
-
-        #meusAgendamentosButton:hover {
-            background-color: #ff00a1;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -194,48 +145,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
     <script src="../js/agendamento.js"></script>
-    <script src="../js/meus_agendamentos.js"></script>
     
-    <script>
-        $(document).ready(function(){
-            var agendamentosExibidos = false;
-
-            $('#meusAgendamentosButton').on('click', function(){
-                if (!agendamentosExibidos) {
-                    $.ajax({
-                        url: 'meus_agendamentos.php',
-                        method: 'GET',
-                        success: function(response){
-                            $('#historicoAgendamentos').html(response);
-                            $('#historicoAgendamentos').show(); // Mostra os agendamentos
-
-                            // Adiciona o botão "Cancelar" dentro da div de agendamentos
-                            $('#historicoAgendamentos').append('<button class="cancelarAgendamentoBtn">Cancelar</button>');
-                        }
-                    });
-                    agendamentosExibidos = true;
-                } else {
-                    // Se os agendamentos já estiverem visíveis, apenas alterna a exibição do botão "Cancelar"
-                    $('.cancelarAgendamentoBtn').toggle();
-                }
-            });
-
-            // Função para cancelar o agendamento
-            $('#historicoAgendamentos').on('click', '.cancelarAgendamentoBtn', function(){
-                var id_agendamento = /* ID do agendamento correspondente */;
-                
-                $.ajax({
-                    url: 'cancelar_agendamento.php',
-                    method: 'GET',
-                    data: { id_agendamento: id_agendamento },
-                    success: function(response){
-                        $('#historicoAgendamentos').append('<p>' + response + '</p>');
-                    }
-                });
-            });
-        });
-    </script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <title>Agendamento - Barbearia Julius</title>
 </head>
 <body>
@@ -286,14 +196,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 
                 <input type="submit" value="Agendar">
             </form>
-
-            <!-- Botão "Meus Agendamentos" -->
-            <button id="meusAgendamentosButton" class="btn btn-primary">Meus Agendamentos</button>
-
-            <!-- Bloco para históricos de agendamento (inicialmente oculto) -->
-            <div id="historicoAgendamentos" style="display: none;">
-                <!-- Conteúdo dos históricos de agendamento será adicionado posteriormente -->
-            </div>
         </div>
     </div>
 </section>
