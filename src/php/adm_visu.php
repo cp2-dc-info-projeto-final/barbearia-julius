@@ -75,6 +75,48 @@ echo "Bem-vindo à área de administração!";
         </div>
     </div>
 
+<!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
+<button onclick="abrirModalExclusaoS()">Abrir Modal de Exclusão</button>
+
+<div id="modalExclusaoS" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModalExclusaoS()">&times;</span>
+        <h2>Excluir Funcionário</h2>
+        <div id="mensagemExclusaoS"></div>
+        <form id="formExclusaoS">
+            <label for="idServico">ID do serviço:</label>
+            <input type="text" id="idServico" name="id_servico" required><br><br>
+            <button type="button" onclick="excluirServico()">Excluir Serviço</button>
+        </form>
+    </div>
+</div>
+
+<script>
+function excluirServico() {
+    var idServico = document.getElementById('idServico').value;
+
+    // Enviar requisição AJAX para o script de exclusão
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'exclui_servico.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            var response = JSON.parse(xhr.responseText);
+            var mensagemExclusaoS = document.getElementById('mensagemExclusaoS');
+            if (response.success) {
+                mensagemExclusaoS.innerHTML = response.message;
+            } else {
+                mensagemExclusaoS.innerHTML = 'Erro ao excluir serviço';
+            }
+        }
+    };
+    xhr.send('id_servico=' + idServico);
+}
+</script>
+
+<!-- Restante do seu código permanece o mesmo -->
+
+
 <script>
 function excluirFuncionario() {
     var idFuncionario = document.getElementById('idFuncionario').value;
@@ -97,9 +139,11 @@ function excluirFuncionario() {
     xhr.send('id_funcionario=' + idFuncionario);
 }
 </script>
+
     <script src="../js/pop_up_ex.js"></script>
     <script src="../js/pop_up_fun.js"></script>
     <script src="../js/pop_up_cad.js"></script>
+    <script src="../js/pop_up_ex_servico.js"></script>
 
     <?php
     // Verifica se há um parâmetro 'success' na URL indicando o status do cadastro
@@ -115,6 +159,7 @@ function excluirFuncionario() {
 
         echo "</script>";
     }
+
     ?>
     
 </body>
