@@ -31,29 +31,10 @@ if (isset($_SESSION["email"])) {
             echo "<td>" . $row['horario_inicio'] . "</td>";
             echo "<td>" . $row['descricao_servico'] . "</td>";
             echo "<td>" . $row['id_agendamento'] . "</td>";
-            echo "<td><form method='post'><button type='submit' name='cancelar' value='" . $row['id_agendamento'] . "'>Cancelar</button></form></td>";
+            echo "<td><form method='post' onsubmit='return confirm(\"Tem certeza que deseja cancelar este agendamento?\")' action='cancelar_agendamento.php'><button type='submit' name='cancelar' value='" . $row['id_agendamento'] . "'>Cancelar</button></form></td>";
             echo "</tr>";
         }
         echo "</table>";
-
-        // Verifica se o botão de cancelar foi pressionado
-        if (isset($_POST['cancelar'])) {
-            $id_agendamento_cancelar = $_POST['cancelar'];
-
-            // Query para deletar o agendamento
-            $query_delete = "DELETE FROM agendamento WHERE id_agendamento = ?";
-            $stmt_delete = $mysqli->prepare($query_delete);
-            $stmt_delete->bind_param("i", $id_agendamento_cancelar);
-            $stmt_delete->execute();
-
-            // Verifica se a deleção foi bem-sucedida
-            if ($stmt_delete->affected_rows > 0) {
-                echo "Agendamento cancelado com sucesso!";
-                // Aqui você pode adicionar redirecionamento ou outras ações após o cancelamento
-            } else {
-                echo "Erro ao cancelar o agendamento.";
-            }
-        }
     } else {
         echo "Nenhum agendamento encontrado para este usuário.";
     }
