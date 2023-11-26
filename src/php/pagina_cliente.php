@@ -140,6 +140,7 @@ $conexao->close();
                 </div>
                 <button class="alterar-dados-btn">Alterar Dados</button>
                 <button class="alterar-dados-btni">Alterar Senha</button>
+                <button class="alterar-dados-btni" onclick="window.location.href = 'meus_agendamentos.php';">Meus Agendamentos</button>
             </div>
         </div>
     </section>
