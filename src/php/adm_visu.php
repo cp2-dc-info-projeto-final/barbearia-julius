@@ -43,14 +43,21 @@ echo "Bem-vindo à área de administração!";
         </div>
     </div>
 <!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
-<h2>Excluir Funcionário</h2>
-<div id="mensagemExclusao"></div>
-<form id="formExclusao">
-    <label for="idFuncionario">ID do Funcionário:</label>
-    <input type="text" id="idFuncionario" name="id_funcionario" required><br><br>
+<button onclick="abrirModalExclusao()">Abrir Modal de Exclusão</button>
 
-    <button type="button" onclick="excluirFuncionario()">Excluir Funcionário</button>
-</form>
+<div id="modalExclusao" class="modal" style="display: none;">
+    <div class="modal-content">
+        <span class="close" onclick="fecharModalExclusao()">&times;</span>
+        <h2>Excluir Funcionário</h2>
+        <div id="mensagemExclusao"></div>
+        <form id="formExclusao">
+            <label for="idFuncionario">ID do Funcionário:</label>
+            <input type="text" id="idFuncionario" name="id_funcionario" required><br><br>
+
+            <button type="button" onclick="excluirFuncionario()">Excluir Funcionário</button>
+        </form>
+    </div>
+</div>
 
 <script>
 function excluirFuncionario() {
@@ -74,7 +81,7 @@ function excluirFuncionario() {
     xhr.send('id_funcionario=' + idFuncionario);
 }
 </script>
-
+    <script src="../js/pop_up_ex.js"></script>
     <script src="../js/pop_up_fun.js"></script>
 
     <?php
