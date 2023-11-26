@@ -58,6 +58,22 @@ echo "Bem-vindo à área de administração!";
         </form>
     </div>
 </div>
+<button onclick="abrirModalCad()">Cadastrar serviço</button> <!-- Botão para abrir o modal -->
+<div id="modalCad" class="modal" style="display: none;">
+        <div class="modal-content">
+            <span class="close" onclick="fecharModalCad()">&times;</span>
+            <h2>Adicionar Novo serviço</h2>
+            <div id="mensagem"></div> <!-- Elemento para exibir a mensagem -->
+            <form action="processa_novo_servico.php" method="POST">
+            <label for="descricao">descricao:</label>
+              <input type="text" id="descricao" name="descricao" required><br><br>
+              
+              <label for="preco">preco:</label>
+              <input type="text" id="preco" name="preco" required><br><br>
+              <input type="submit" value="Adicionar servico">
+              </form>
+        </div>
+    </div>
 
 <script>
 function excluirFuncionario() {
@@ -83,6 +99,7 @@ function excluirFuncionario() {
 </script>
     <script src="../js/pop_up_ex.js"></script>
     <script src="../js/pop_up_fun.js"></script>
+    <script src="../js/pop_up_cad.js"></script>
 
     <?php
     // Verifica se há um parâmetro 'success' na URL indicando o status do cadastro
