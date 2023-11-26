@@ -43,7 +43,7 @@ echo "Bem-vindo à área de administração!";
         </div>
     </div>
 <!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
-<h2>Excluir Funcionário</h2>
+<h2>Excluir Funcionári</h2>
 <div id="mensagemExclusao"></div>
 <form id="formExclusao">
     <label for="idFuncionario">ID do Funcionário:</label>
