@@ -46,17 +46,16 @@ if (mysqli_num_rows($res_admin) == 1) {
         }
     } else {
         // Consulta na tabela de usuários
-        $sql_user = "SELECT * FROM usuarios WHERE email = '$email';";
+        $sql_user = "SELECT id_usuario, email, senha FROM usuarios WHERE email = '$email';";
         $res_user = mysqli_query($mysqli, $sql_user);
 
         if (mysqli_num_rows($res_user) == 1) {
             $usuario = mysqli_fetch_array($res_user);
 
-            // Verifica se a senha do usuário está correta usando password_verify()
             if (password_verify($senha, $usuario["senha"])) {
                 $_SESSION["email"] = $email;
                 $_SESSION["senha"] = $usuario["senha"];
-                // Direciona para a página inicial do usuário
+                $_SESSION["id_usuario"] = $usuario["id_usuario"]; // Armazena o ID do usuário na sessão
                 header("Location: agendamento.php");
                 exit;
             } else {

@@ -40,6 +40,7 @@ if (isset($_SESSION["email"])) {
     }
 } else {
     echo "Sessão expirada. Por favor, faça login novamente.";
+    header("Location: form_login.php");
 }
 
 mysqli_close($mysqli);
