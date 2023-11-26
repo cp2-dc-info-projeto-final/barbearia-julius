@@ -42,6 +42,7 @@ echo "Bem-vindo à área de administração!";
             </form>
         </div>
     </div>
+
     <script src="../js/pop_up_fun.js"></script>
 
     <?php
