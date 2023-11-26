@@ -5,21 +5,21 @@ if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'administ
     header("Location: form_login.php");
     exit; 
 }
-echo "Bem-vindo à área de administração!";
+echo "Bem-vindo a área de administração!";
 ?>
 
 
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Adicionar Funcionário</title>
+<title>Dashboard Administrador</title>
 <link rel="stylesheet" href="../css/pop_up_fun.css">
 </head>
 <body>
-<button onclick="abrirModal()">Cadastrar funcionário</button> <!-- Botão para abrir o modal -->
+<button onclick="abrirModal()">Cadastrar Funcionário</button> <!-- Botão para abrir o modal -->
 <div id="myModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="fecharModal()">&times;</span>
@@ -43,7 +43,7 @@ echo "Bem-vindo à área de administração!";
         </div>
     </div>
 <!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
-<button onclick="abrirModalExclusao()">Abrir Modal de Exclusão</button>
+<button onclick="abrirModalExclusao()">Excluir Funcionário</button>
 
 <div id="modalExclusao" class="modal" style="display: none;">
     <div class="modal-content">
@@ -58,25 +58,26 @@ echo "Bem-vindo à área de administração!";
         </form>
     </div>
 </div>
-<button onclick="abrirModalCad()">Cadastrar serviço</button> <!-- Botão para abrir o modal -->
+<button onclick="abrirModalCad()">Cadastrar Serviço</button> <!-- Botão para abrir o modal -->
 <div id="modalCad" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="fecharModalCad()">&times;</span>
-            <h2>Adicionar Novo serviço</h2>
+            <h2>Adicionar Novo Serviço</h2>
             <div id="mensagem"></div> <!-- Elemento para exibir a mensagem -->
             <form action="processa_novo_servico.php" method="POST">
-            <label for="descricao">descricao:</label>
+            <label for="descricao">Descrição:</label>
               <input type="text" id="descricao" name="descricao" required><br><br>
               
-              <label for="preco">preco:</label>
+              <label for="preco">Preço:</label>
               <input type="text" id="preco" name="preco" required><br><br>
-              <input type="submit" value="Adicionar servico">
+              <input type="submit" value="Adicionar Serviço">
               </form>
         </div>
     </div>
+    
 
 <!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
-<button onclick="abrirModalExclusaoS()">Abrir Modal de Exclusão</button>
+<button onclick="abrirModalExclusaoS()">Excluir Serviço</button>
 
 <div id="modalExclusaoS" class="modal" style="display: none;">
     <div class="modal-content">
@@ -140,10 +141,10 @@ function excluirFuncionario() {
 }
 </script>
 
-    <script src="../js/pop_up_ex.js"></script>
-    <script src="../js/pop_up_fun.js"></script>
-    <script src="../js/pop_up_cad.js"></script>
-    <script src="../js/pop_up_ex_servico.js"></script>
+<script src="../js/pop_up_ex.js"></script>
+<script src="../js/pop_up_fun.js"></script>
+<script src="../js/pop_up_cad.js"></script>
+<script src="../js/pop_up_ex_servico.js"></script>
 
     <?php
     // Verifica se há um parâmetro 'success' na URL indicando o status do cadastro
