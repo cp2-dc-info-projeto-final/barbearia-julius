@@ -20,32 +20,25 @@ if (!isset($_SESSION["email"])) {
         $horario_inicio = isset($_POST['horario_inicio']) ? $_POST['horario_inicio'] : "";
         $id_servico = isset($_POST['id_servico']) ? $_POST['id_servico'] : "";
 
+        // Validar dados do formulário
         if (empty($id_funcionario) || empty($id_servico) || empty($horario_inicio) || empty($data_agenda)) {
             $erros[] = "Por favor, preencha todos os campos obrigatórios.";
         } else {
+            // Obter o ID do usuário
             $id_usuario = obterIdUsuarioPorEmail($mysqli, $emailUsuario);
 
             if ($id_usuario !== null) {
-                $stmt_verificar = $mysqli->prepare("SELECT id_agendamento FROM agendamento WHERE id_funcionario = ? AND data_agenda = ? AND horario_inicio = ?");
-                $stmt_verificar->bind_param("iss", $id_funcionario, $data_agenda, $horario_inicio);
-                $stmt_verificar->execute();
-                $stmt_verificar->store_result();
-
-                if ($stmt_verificar->num_rows > 0) {
+                // Verificar se já existe um agendamento
+                if (existeAgendamento($mysqli, $id_funcionario, $data_agenda, $horario_inicio)) {
                     $erros[] = "Este funcionário já possui um agendamento para o dia e horário especificados.";
                 } else {
-                    $stmt_agendar = $mysqli->prepare("INSERT INTO agendamento (id_usuario, id_funcionario, id_servico, horario_inicio, data_agenda) VALUES (?, ?, ?, ?, ?)");
-                    $stmt_agendar->bind_param("iiiis", $id_usuario, $id_funcionario, $id_servico, $horario_inicio, $data_agenda);
-
-                    if ($stmt_agendar->execute()) {
+                    // Realizar o agendamento
+                    if (agendar($mysqli, $id_usuario, $id_funcionario, $id_servico, $horario_inicio, $data_agenda)) {
                         $mensagem = "Agendamento realizado com sucesso!";
                     } else {
                         $erros[] = "Ocorreu um erro ao realizar o agendamento. Por favor, tente novamente.";
                     }
-
-                    $stmt_agendar->close();
                 }
-                $stmt_verificar->close();
             } else {
                 $erros[] = "Usuário não encontrado.";
             }
@@ -77,5 +70,31 @@ function obterIdUsuarioPorEmail($mysqli, $email)
     }
 
     return null;
+}
+
+function existeAgendamento($mysqli, $id_funcionario, $data_agenda, $horario_inicio)
+{
+    $stmt = $mysqli->prepare("SELECT id_agendamento FROM agendamento WHERE id_funcionario = ? AND data_agenda = ? AND horario_inicio = ?");
+    $stmt->bind_param("iss", $id_funcionario, $data_agenda, $horario_inicio);
+    $stmt->execute();
+    $stmt->store_result();
+
+    $existeAgendamento = $stmt->num_rows > 0;
+
+    $stmt->close();
+
+    return $existeAgendamento;
+}
+
+function agendar($mysqli, $id_usuario, $id_funcionario, $id_servico, $horario_inicio, $data_agenda)
+{
+    $stmt = $mysqli->prepare("INSERT INTO agendamento (id_usuario, id_funcionario, id_servico, horario_inicio, data_agenda) VALUES (?, ?, ?, ?, ?)");
+    $stmt->bind_param("iiiis", $id_usuario, $id_funcionario, $id_servico, $horario_inicio, $data_agenda);
+
+    $resultado = $stmt->execute();
+
+    $stmt->close();
+
+    return $resultado;
 }
 ?>

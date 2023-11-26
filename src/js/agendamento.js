@@ -1,4 +1,5 @@
 $(document).ready(function() {
+    // Manipulador de mudança para o funcionário
     $('#id_funcionario').on('change', function() {
         const selecionado = $(this).val().toString();
         const dataSelecionada = $('#data_agenda').val();
@@ -38,7 +39,37 @@ $(document).ready(function() {
         }
     });
 
+    // Manipulador de clique para o botão "Meus Agendamentos"
     $("#meusAgendamentosButton").click(function() {
         $("#historicoAgendamentos").toggle();
+    });
+
+    // Manipulador de envio para o formulário de agendamento
+    $("form").submit(function(event) {
+        event.preventDefault(); // Impede o envio padrão do formulário
+
+        // Realiza a submissão do formulário via AJAX
+        $.ajax({
+            url: 'recebe_agen.php',
+            type: 'POST',
+            data: $(this).serialize(),
+            dataType: 'json',
+            success: function(response) {
+                if (response.erros.length > 0) {
+                    // Exibe mensagens de erro na página
+                    $("#mensagemErro").text(response.erros.join('\n')).show();
+                    $("#mensagemSucesso").hide();
+                } else {
+                    // Exibe mensagem de sucesso na página
+                    $("#mensagemErro").hide();
+                    $("#mensagemSucesso").text(response.mensagem).show();
+                    
+                }
+            },
+            error: function(xhr, status, error) {
+                console.error('Erro na requisição AJAX:', error);
+                console.log(xhr.responseText);
+            }
+        });
     });
 });

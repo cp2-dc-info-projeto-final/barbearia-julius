@@ -137,68 +137,70 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/agendamento.css">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
-    <script src="../js/agendamento.js"></script>
-    
-    <title>Agendamento - Barbearia Julius</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="../css/agendamento.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="../js/agendamento.js"></script>
+<title>Agendamento - Barbearia Julius</title>
 </head>
 <body>
 
 <section>
-    <div class="circle"></div>
-    <header>
-        <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
-        <nav class="navegation">
-            <ul>
-                <li><a class="nav" href="../html/logado.html">Pagina Principal</a></li>
-                <li><a class="nav" href="../php/agendamento.php">Agendamento</a></li>
-                <li><a class="nav" href="../php/pagina_cliente.php">Página Cliente</a></li>
-                <li><a class="nav" href="../php/logout.php">Sair</a></li>
-            </ul>
-        </nav>
-    </header>
-    <div class="content">
-        <div class="text">
-            <h2>Agendamento<br><span>Barbearia Julius</span></h2>
-            <?php 
-                if ($mensagem) {
-                    echo "<p class='mensagem'>$mensagem</p>";
-                }
-            ?>
-            <form action="recebe_agen.php" method="POST">
-                <input type="hidden" name="funcao" value="agendar">
+<div class="circle"></div>
+<header>
+    <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
+    <nav class="navegation">
+        <ul>
+            <li><a class="nav" href="../html/logado.html">Pagina Principal</a></li>
+            <li><a class="nav" href="../php/agendamento.php">Agendamento</a></li>
+            <li><a class="nav" href="../php/pagina_cliente.php">Página Cliente</a></li>
+            <li><a class="nav" href="../php/logout.php">Sair</a></li>
+        </ul>
+    </nav>
+</header>
+<div class="content">
+    <div class="text">
+        <h2>Agendamento<br><span>Barbearia Julius</span></h2>
+        <?php 
+            if ($mensagem) {
+                echo "<p class='mensagem'>$mensagem</p>";
+            }
+        ?>
+        <!-- Adicionando divs para exibir mensagens -->
+        <div id="mensagemSucesso" style="color: green; display: none;"></div>
+        <div id="mensagemErro" style="color: red; display: none;"></div>
 
-                <label for="id_funcionario">Funcionário:</label>
-                <select name="id_funcionario" id="id_funcionario">
-                    <option value="" selected="selected" disabled="disabled">Selecione um funcionário</option>
-                    <?php include 'carregar_funcionarios.php'; ?>
-                </select>
+        <form action="recebe_agen.php" method="POST">
+            <input type="hidden" name="funcao" value="agendar">
 
-                <label for="data_agenda">Data:</label>
-                <input type="date" name="data_agenda" id="data_agenda" required>
-                
-                <label for="horario_inicio">Horário:</label>
-                <select name="horario_inicio" id="horario_inicio">
-                   
-                </select>
-                
-                <label for="id_servico">Serviço:</label>
-                <select name="id_servico" id="id_servico">
-                    <option value="" selected="selected" disabled="disabled">Selecione um serviço</option>
-                    <!-- As opções serão carregadas dinamicamente pelo JavaScript -->
-                </select>
-                
-                <input type="submit" value="Agendar">
-            </form>
-        </div>
+            <label for="id_funcionario">Funcionário:</label>
+            <select name="id_funcionario" id="id_funcionario">
+                <option value="" selected="selected" disabled="disabled">Selecione um funcionário</option>
+                <?php include 'carregar_funcionarios.php'; ?>
+            </select>
+
+            <label for="data_agenda">Data:</label>
+            <input type="date" name="data_agenda" id="data_agenda" required>
+            
+            <label for="horario_inicio">Horário:</label>
+            <select name="horario_inicio" id="horario_inicio"></select>
+            
+            <label for="id_servico">Serviço:</label>
+            <select name="id_servico" id="id_servico">
+                <option value="" selected="selected" disabled="disabled">Selecione um serviço</option>
+                <!-- As opções serão carregadas dinamicamente pelo JavaScript -->
+            </select>
+            
+            <input type="submit" value="Agendar">
+        </form>
     </div>
+</div>
 </section>
 
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="../js/agendamento.js"></script>
 </body>
 </html>
