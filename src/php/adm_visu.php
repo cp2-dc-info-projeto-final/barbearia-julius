@@ -19,7 +19,7 @@ echo "Bem-vindo à área de administração!";
 <link rel="stylesheet" href="../css/pop_up_fun.css">
 </head>
 <body>
-<button onclick="abrirModal()">Abrir Modal</button> <!-- Botão para abrir o modal -->
+<button onclick="abrirModal()">Cadastrar funcionário</button> <!-- Botão para abrir o modal -->
 <div id="myModal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close" onclick="fecharModal()">&times;</span>
@@ -42,6 +42,38 @@ echo "Bem-vindo à área de administração!";
             </form>
         </div>
     </div>
+<!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
+<h2>Excluir Funcionário</h2>
+<div id="mensagemExclusao"></div>
+<form id="formExclusao">
+    <label for="idFuncionario">ID do Funcionário:</label>
+    <input type="text" id="idFuncionario" name="id_funcionario" required><br><br>
+
+    <button type="button" onclick="excluirFuncionario()">Excluir Funcionário</button>
+</form>
+
+<script>
+function excluirFuncionario() {
+    var idFuncionario = document.getElementById('idFuncionario').value;
+
+    // Enviar requisição AJAX para o script de exclusão
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'exclui_funcionario.php', true);
+    xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4) {
+            var response = JSON.parse(xhr.responseText);
+            var mensagemExclusao = document.getElementById('mensagemExclusao');
+            if (response.success) {
+                mensagemExclusao.innerHTML = response.message;
+            } else {
+                mensagemExclusao.innerHTML = 'Erro ao excluir funcionário';
+            }
+        }
+    };
+    xhr.send('id_funcionario=' + idFuncionario);
+}
+</script>
 
     <script src="../js/pop_up_fun.js"></script>
 
