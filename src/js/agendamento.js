@@ -61,7 +61,6 @@ $(document).ready(function() {
                     $("#mensagemSucesso").hide();
                 } else {
                     // Exibe mensagem de sucesso na página
-                    $("#mensagemErro").hide();
                     $("#mensagemSucesso").text(response.mensagem).show();
                     
                 }

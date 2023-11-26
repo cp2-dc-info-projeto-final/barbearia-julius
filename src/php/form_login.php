@@ -39,7 +39,7 @@
         </div>
 
             <p><input type="submit" class="rounded-button" value="Entrar"></p>
-            <a href="form_cadastro.php" class="logout-link">Cadastre-se</a>
+            <a href="form_cadastro.php" class="logout-link">Cadastre-se</a></br>
             <a href="reseta_senha.php">Esqueceu a senha?</a>
 
         </form>
