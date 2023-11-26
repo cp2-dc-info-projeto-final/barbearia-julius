@@ -11,6 +11,9 @@
 <body>
 <h1> Recuperação de conta</h1> 
 <p>Para ajudar a proteger sua conta, vamos confirmar se é realmente você que está tentando fazer login</p>
+<div class="content">
+        <h2>Verifique seu Email. Enviaremos uma nova senha para o seu Email. Após recebê-la, tente novamente com a senha enviada.</h2>
+</div>
     <section>
         <div class="circle"></div>
         <header>
@@ -22,11 +25,6 @@
         <button type="submit">Redefinir Senha</button>
             <a href="reseta"><img src="../img/logo.png" alt="" class="logo"></a>
         </header>
-        <div class="content">
-            <div class="text">
-                <h2>Verifique seu Email. Enviaremos uma nova senha para o seu Email. Após recebê-la, tente novamente com a senha enviada.</h2>
-            </div>
-        </div>
     </section>
 </body>
 </html>

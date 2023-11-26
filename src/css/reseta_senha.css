@@ -79,7 +79,7 @@ section {
 header {
     position: absolute;
     top: 70px;
-    left: -700px;
+    left: 0px;
     width: 100%;
     padding: 40px 100px;
     display: flex;
@@ -126,12 +126,12 @@ p {
     margin-bottom: 10px;
     line-height: 2.5em;
     font-weight: 700;
+    text-align: center;
 }
 
 h1{
     font-size: 50px;
     margin-bottom: 10px;
-    line-height: 2.5em;
     font-weight: 700;
     font-size: 6.5em;
     color: #94095e;
@@ -139,6 +139,7 @@ h1{
     padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    text-align: center;
 }
 
 h2 {
@@ -149,10 +150,9 @@ h2 {
     font-weight: 500;
     color: #fff;
     font-size: 19px;
-    margin-bottom: 520px;
     line-height: 33px;
-    font-weight: 700;
-    margin-left: -46px;
+    margin-left: 0px;
+    text-align: center;
 }
 
 .content .text h2 span {
