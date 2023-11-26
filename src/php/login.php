@@ -10,14 +10,12 @@ $sql_admin = "SELECT * FROM administradores WHERE email = '$email';";
 $res_admin = mysqli_query($mysqli, $sql_admin);
 
 if (mysqli_num_rows($res_admin) == 1) {
+    // Verifica a senha do administrador
     $admin = mysqli_fetch_array($res_admin);
-    
-    // Verifica a senha do administrador sem criptografia
-    if ($senha == $admin["senha"]) { // Comparação simples
+    if ($senha == $admin["senha"]) {
         $_SESSION["tipo_usuario"] = 'administrador';
         $_SESSION["email"] = $email;
         $_SESSION["senha"] = $admin["senha"];
-        // Direciona para a página de administração
         header("Location: adm_visu.php");
         exit;
     } else {
@@ -25,19 +23,20 @@ if (mysqli_num_rows($res_admin) == 1) {
         header("Location: form_login.php");
         exit;
     }
-}
-
-
-elseif (mysqli_num_rows($res_funcionario) == 1) {
-    $funcionario = mysqli_fetch_array($res_funcionario); 
+} else {
+    // Consulta na tabela de funcionarios
     $sql_funcionario = "SELECT * FROM funcionarios WHERE email = '$email';";
     $res_funcionario = mysqli_query($mysqli, $sql_funcionario);
-        // Verifica se a senha do funcionário está correta
+
+    if (mysqli_num_rows($res_funcionario) == 1) {
+        $funcionario = mysqli_fetch_array($res_funcionario);
+
+        // Verifica a senha do funcionário
         if ($senha == $funcionario["senha"]) {
             $_SESSION["tipo_usuario"] = 'funcionario';
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $funcionario["senha"];
-            // Direciona para a página do funcionário
+            $_SESSION["id_funcionario"] = $funcionario["id_funcionario"]; // Armazena o ID do funcionário na sessão
             header("Location: tela_funcionario.php");
             exit;
         } else {
@@ -46,7 +45,7 @@ elseif (mysqli_num_rows($res_funcionario) == 1) {
             exit;
         }
     } else {
-        // Se não for encontrado na tabela de funcionários, busca na tabela de usuários
+        // Consulta na tabela de usuários
         $sql_user = "SELECT * FROM usuarios WHERE email = '$email';";
         $res_user = mysqli_query($mysqli, $sql_user);
 
@@ -71,7 +70,7 @@ elseif (mysqli_num_rows($res_funcionario) == 1) {
             exit;
         }
     }
-
+}
 
 mysqli_close($mysqli);
 ?>
