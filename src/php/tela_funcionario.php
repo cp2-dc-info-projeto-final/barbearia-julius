@@ -1,3 +1,25 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/meus_agendamentos.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/pagina_cliente1.js"></script>
+    <script src="../js/pagina_cliente2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Seus Dados - Barbearia Julius</title>
+</head>
+<body>
+<section>
+        <div class="circle"></div>
+        <header>
+            <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
+            <div class="contenti">
+                <h1>Meus Agendamentos</h1>
+        
 <?php
 session_start();
 
@@ -19,7 +41,7 @@ if (isset($_SESSION["id_funcionario"])) {
 
     // Exibição dos agendamentos do funcionário logado
     if ($result->num_rows > 0) {
-        echo "<h3>Agendamentos do Funcionário:</h3>";
+        echo "<h3></h3>";
         echo "<table border='1'>";
         echo "<tr><th>Número de agendamento</th><th>Data</th><th>Hora</th><th>Descrição do Serviço</th><th>Nome do Cliente</th><th>Cancelar</th></tr>";
         while ($row = $result->fetch_assoc()) {
@@ -88,3 +110,5 @@ if (isset($_SESSION["id_funcionario"])) {
         }
     }
 </script>
+</body>
+</html>
