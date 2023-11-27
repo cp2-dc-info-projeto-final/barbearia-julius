@@ -5,7 +5,7 @@ if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'administ
     header("Location: form_login.php");
     exit; 
 }
-echo "Bem-vindo a área de administração!";
+echo "";
 ?>
 
 
@@ -17,6 +17,7 @@ echo "Bem-vindo a área de administração!";
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dashboard Administrador</title>
 <link rel="stylesheet" href="../css/pop_up_fun.css">
+<link rel="stylesheet" href="../css/adm.css">
 </head>
 <body>
 <button onclick="abrirModal()">Cadastrar Funcionário</button> <!-- Botão para abrir o modal -->
