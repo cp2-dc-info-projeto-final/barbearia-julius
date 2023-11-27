@@ -6,14 +6,14 @@
 * Lucas Melo Moura
 * Beatriz dos Santos Silva
 
-* NICKNAME DO GITHUB
+## NICKNAME DO GITHUB
 * ANA - https://github.com/anacasroline
 * ANTONIO - https://github.com/Damascenopog
 * LUCAS DE SOUZA - https://github.com/LCTRAIN
 * LUCAS MELO MOURA - https://github.com/lucasmelomr
 * Beatriz dos Santos Silva - https://github.com/biaacgb1
 
- ## Descrição do Projeto
+## Descrição do Projeto
 
 Bem-vindo ao projeto da Barbearia Julius, o seu destino premium para cuidados masculinos e estilo. Navegue por nosso espaço virtual e descubra um refúgio de sofisticação onde a tradição se encontra com a modernidade. Com uma equipe de barbeiros altamente qualificados, oferecemos cortes de cabelo, barbas e tratamentos de spa excepcionais, proporcionando a você uma experiência de cuidados pessoais inigualável. Explore nossos serviços, conheça nossos profissionais e agende sua visita para uma transformação que vai além da aparência, proporcionando confiança e bem-estar. Na Barbearia Julius, onde você estiver, eu vou estar lá!
 
