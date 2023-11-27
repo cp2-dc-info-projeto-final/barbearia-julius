@@ -389,3 +389,24 @@ input#idServico {
     outline: none;
     transition: border-color 0.3s ease;
 }
+div#mensagem{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #94095e;
+}
+div#mensagemExclusao{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #94095e;
+}
+div#mensagemExclusaoS{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #94095e;
+}
