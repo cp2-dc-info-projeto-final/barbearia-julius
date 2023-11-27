@@ -1,0 +1,291 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+
+/* Estilos globais */
+table{
+    
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: white;
+    margin-left: -170px;
+    text-align: center;
+    margin-bottom: 467px;
+}
+header .navegation li a{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 19px;
+    margin-left: 100px;
+    border-radius: 40px;
+    transition: -0.7s ease-in-out;
+    padding: 10px 25px;
+    background-color: #af4c96;
+}
+ul .nav{
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li .nav{
+  float: left;
+}
+
+li a .nav{
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover.nav{
+  background-color: #111;
+}
+
+.nav {
+  background-color: #af4c96;
+}
+
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+.bloco_fotos{
+    padding: 116px;
+    margin-left: 35px;
+}
+
+.botao1{
+  display: inline-block;
+  padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
+  background-color: #94095e; /* Cor de fundo do botão */
+  color: #fff; /* Cor do texto do botão */
+  text-decoration: none; /* Remove sublinhado padrão dos links */
+  border: none; /* Remove a borda do botão */
+  border-radius: 30px; /* Borda arredondada */
+  cursor: pointer; /* Altera o cursor ao passar o mouse sobre o botão */
+  margin-left: 30px;
+}
+
+.botao1:hover {
+  background-color: #222; /* Cor de fundo ao passar o mouse sobre o botão */
+}
+
+.botao2{
+    display: inline-block;
+    padding: 10px 20px; /* Ajuste o tamanho do botão conforme necessário */
+    background-color: #94095e; /* Cor de fundo do botão */
+    color: #fff; /* Cor do texto do botão */
+    text-decoration: none; /* Remove sublinhado padrão dos links */
+    border: none; /* Remove a borda do botão */
+    border-radius: 30px; /* Borda arredondada */
+    cursor: pointer; /* Altera o cursor ao passar o mouse sobre o botão */
+    margin-left: 30px;
+  }
+
+  .botao2:hover {
+    background-color: #222; /* Cor de fundo ao passar o mouse sobre o botão */
+  }
+
+section{
+    position: relative;
+    width: 87%;
+    min-height: 100vh;
+    padding: 100px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #121212;
+    overflow: hidden;
+    padding: 50px;
+}
+.circlee{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #94095e;
+    clip-path: circle(50% at bottom right);
+}
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+header .logo{
+    position: relative;
+    max-width: 150px;
+}
+header .navegation ul{
+    position: relative;
+    display: flex;
+}
+header .navegation  li{
+    list-style: none;
+    margin-left: 0px;
+}
+header .navegation li a{
+    display: inline-block;
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+    font-size: 19px;
+    margin-left: 100px;
+}
+.content{
+    position: relative;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.content .text{
+    position: relative;
+    max-width: 600px;
+    margin-right: 20px;
+}
+.content .text h2{
+    color: #fff;
+    font-size: 3em;
+    margin-bottom: 10px;
+    line-height: 2.5em;
+    font-weight: 700;
+}
+.content .text h2 span{
+    font-size: 3.5em;
+    color: #94095e;
+}
+.content .text p{
+    color: #fff;
+}
+.content .text a{
+    display: inline-block;
+    margin-top: 50px;
+    padding: 10px 25px;
+    background:#94095e;
+    color: #fff;
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-decoration: none;
+    border-radius: 40px;
+    transition: 0.3s ease-in-out;
+}
+.content .text a:hover{
+    transform: translateY(-10px);
+}
+
+
+/* Estilos para a seção de informações do cliente */
+p {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 19px;
+    color: #fff;
+    font-size: 23px;
+    margin-bottom: 10px;
+    line-height: 2.5em;
+    font-weight: 700;
+    text-align: center;
+}
+
+h1{
+    font-size: 50px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    font-size: 6.5em;
+    color: #94095e;
+    margin: 0;
+    padding: 44px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    margin-left: -211px;
+}
+
+h2 {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    color: #fff;
+    font-size: 19px;
+    line-height: 33px;
+    margin-left: 0px;
+    text-align: center;
+}
+
+.content .text h2 span {
+    font-size: 3.5em;
+    color: #94095e;
+}
+
+.content .text p {
+    color: #fff;
+}
+
+.content .text .dados {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.content .text .informacao {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #94095e;
+    border-radius: 5px;
+}
+
+.content .text .informacao h3,
+.content .text .informacao p {
+    color: #fff;
+}
+body {
+    background-color: #121212;
+    margin: 0;
+    padding: 0;
+}
+
+
+input#email {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #94095e;
+    border-radius: 5px;
+    background-color: #121212;
+    color: #fff;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+button {
+    background-color: #94095e;
+    border: none;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
