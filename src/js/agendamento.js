@@ -39,10 +39,6 @@ $(document).ready(function() {
         }
     });
 
-    // Manipulador de clique para o botão "Meus Agendamentos"
-    $("#meusAgendamentosButton").click(function() {
-        $("#historicoAgendamentos").toggle();
-    });
 
     // Manipulador de envio para o formulário de agendamento
     $("form").submit(function(event) {

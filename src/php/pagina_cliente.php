@@ -34,6 +34,7 @@ if ($resultado->num_rows > 0) {
     $senha_hash = $row['senha'];
 } else {
     echo "Usuário não encontrado.";
+    header ("Location: form_login.php");
     exit;
 }
 
