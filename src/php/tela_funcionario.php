@@ -18,7 +18,7 @@
         <header>
             <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
             <div class="contenti">
-                <h1>Meus Agendamentos</h1>
+                <h1>Agendamentos</h1>
         
 <?php
 session_start();
