@@ -70,10 +70,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 });
             }
         });
-
-        $("#meusAgendamentosButton").click(function() {
-            $("#historicoAgendamentos").toggle();
-        });
     });
 
     // Função para carregar as opções de funcionários

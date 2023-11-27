@@ -80,13 +80,13 @@ if ($operacao == "cadastrar") {
         $mail->addAddress($email, $nome);
 
         // Assunto do email
-        $assunto = 'Confirme seu email';
+        $assunto = 'Cadastro confirmado!';
 
         // Conteúdo do email
         $mail->isHTML(true);
         $mail->Subject = $assunto;
         $link_confirmacao = "$codigo"; // Substitua pelo seu domínio
-        $mail->Body = 'Olá ' . $nome . 'Seu email foi confirmado.' . '>Confirmar cadastro</a>';
+        $mail->Body = 'Olá ' . $nome .',' '<br>Seu email foi confirmado com sucesso!</br>';
 
         $mail->send();
         
