@@ -29,6 +29,7 @@ $(document).ready(function() {
                                 text: horario
                             }));
                         });
+                        console.log("response.horarios_disponiveis 2:", response.horarios_disponiveis);
                     }
                 },
                 error: function(xhr, status, error) {

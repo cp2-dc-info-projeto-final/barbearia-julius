@@ -37,6 +37,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             const partesData = dataSelecionada.split('-');
             const dataFormatoCorreto = partesData[2] + '-' + partesData[1] + '-' + partesData[0];
+            
+            console.log("selecionado: ",selecionado);
+            console.log("dataFormatoCorreto: ", dataFormatoCorreto);
 
             $('#horario_inicio').empty();
 
@@ -60,7 +63,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                     value: horario,
                                     text: horario
                                 }));
-                            });
+                            });                            
+                            console.log("response.horarios_disponiveis:", response.horarios_disponiveis);
                         }
                     },
                     error: function(xhr, status, error) {
