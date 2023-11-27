@@ -70,13 +70,13 @@ if ($operacao == "cadastrar") {
         $mail->isSMTP();                                            //Define o envio por meio do SMTP
         $mail->Host       = 'smtp.gmail.com';                       //Define o servidor SMTP utilizado para o envio
         $mail->SMTPAuth   = true;                                   //Habilita a autenticação do SMTP
-        $mail->Username   = 'lp3.turma2023@gmail.com';               //usuário SMTP
-        $mail->Password   = 'tpqlektljcpmnfga';                      //senha SMTP
+        $mail->Username   = 'barbeariajuliussac@gmail.com';               //usuário SMTP
+        $mail->Password   = 'xqzzrnyqtybmstod';                      //senha SMTP
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Habilita a encriptação implícita TLS
         $mail->Port       = 587;                                    //Porta TCP de conexão; use 587 se você tiver configurado `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
         // Remetente e destinatário
-        $mail->setFrom('lp3.turma2023@gmail.com', 'Site do Professor');
+        $mail->setFrom('barbeariajuliussac@gmail.com', 'Barbearia Julius');
         $mail->addAddress($email, $nome);
 
         // Assunto do email
@@ -86,7 +86,7 @@ if ($operacao == "cadastrar") {
         $mail->isHTML(true);
         $mail->Subject = $assunto;
         $link_confirmacao = "$codigo"; // Substitua pelo seu domínio
-        $mail->Body = 'Olá ' . $nome .'Seu email foi confirmado.' . '">Confirmar cadastro</a>';
+        $mail->Body = 'Olá ' . $nome . 'Seu email foi confirmado.' . '>Confirmar cadastro</a>';
 
         $mail->send();
         

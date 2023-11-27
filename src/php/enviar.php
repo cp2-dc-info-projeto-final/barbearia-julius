@@ -20,16 +20,16 @@ function envia_email($para, $assunto, $mensagem){
         $mail->isSMTP();                                            //Define o envio por meio do SMTP
         $mail->Host       = 'smtp.gmail.com';                       //Define o servidor SMTP utilizado para o envio
         $mail->SMTPAuth   = true;                                   //Habilita a autenticação do SMTP
-        $mail->Username   = 'lp3.turma2023@gmail.com';               //usuário SMTP
-        $mail->Password   = 'tpqlektljcpmnfga';                      //senha SMTP
+        $mail->Username   = 'barbeariajuliussac@gmail.com';               //usuário SMTP
+        $mail->Password   = 'xqzzrnyqtybmstod';                      //senha SMTP
         $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;         //Habilita a encriptação implícita TLS
         $mail->Port       = 587;                                    //Porta TCP de conexão; use 587 se você tiver configurado `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
         
 
         //Remetente e Destinatários
-        $mail->setFrom('lp3.turma2023@gmail.com', 'Site do Professor');  // Adiciona o remetente
+        $mail->setFrom('barbeariajuliussac@gmail.com', 'Barbearia Julius');  // Adiciona o remetente
         $mail->addAddress($para);                                       // Adiciona um destinatário
-        $mail->addAddress('ellen@example.com');                      // O nome é opcional
+        //$mail->addAddress('ellen@example.com');                      // O nome é opcional
         $mail->addReplyTo('info@example.com', 'Information');        // Adicona um endereço de resposta
         //$mail->addCC('cc@example.com');                              // Adiciona um e-mail de cópia
         // $mail->addBCC('bcc@example.com');                            // Adicona um e-mail de cópia oculta.
