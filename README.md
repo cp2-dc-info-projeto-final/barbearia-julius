@@ -36,25 +36,22 @@ Bem-vindo ao projeto da Barbearia Julius, o seu destino premium para cuidados ma
 O sistema deverá ter uma interface de cadastro para usuários.
 
 ### RF 02
-O sistema deverá ter uma interface de login
+O sistema deverá ter uma interface de login.
 
 ### RF 03
-o sistema deverá ter uma interface de agendamento de serviços e um calendário interativo
+O sistema deverá ter uma interface de agendamento de serviços, calendário interativo, hora e funcionário.
 
 ### RF 04
-o sistema deverá ter uma interface da página principal
+O sistema deverá ter uma interface da página principal com alteração de dados e meus agendamentos.
 
 ### RF 05
-O sistema deverá ter uma interface de edição do perfil
+O sistema deverá ter um dashboard para administradores com opção de cadastrar um funcionário, excluir um funcionário, cadastrar um serviço e excluir um serviço.
 
 ### RF 06
-o sistema deverá ter uma gestão de horário
+O sistema deverá ter um dashboard para funcionários com a opção de ver e cancelar os agendamentos feitos para ele.
 
 ### RF 07
-o sistema deverá ter a opção de cancelar ou reagendar
-
-### RF 08
-o sistema deverá ter dashboard para administradores (o que terá nele)
+O sistema deverá ter uma opção de logout.
 
 ## REQUISITOS NÃO FUNCIONAIS <h2>
 
