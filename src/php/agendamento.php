@@ -40,42 +40,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             
             console.log("selecionado: ",selecionado);
             console.log("dataFormatoCorreto: ", dataFormatoCorreto);
+        })});
 
-            $('#horario_inicio').empty();
-
-            if (selecionado !== '0') {
-                $.ajax({
-                    url: 'consultar_horarios.php',
-                    type: 'POST',
-                    data: {
-                        id_funcionario: selecionado,
-                        data_agenda: dataFormatoCorreto,
-                        funcao: 'agendar'
-                    },
-                    dataType: 'json',
-                    success: function(response) {
-                        if (response.erros.length > 0) {
-                            console.error('Erro na requisição AJAX:', response.erros);
-                            alert('Erro ao consultar horários. Por favor, tente novamente mais tarde.');
-                        } else {
-                            response.horarios_disponiveis.forEach(function(horario) {
-                                $('#horario_inicio').append($('<option>', {
-                                    value: horario,
-                                    text: horario
-                                }));
-                            });                            
-                            console.log("response.horarios_disponiveis:", response.horarios_disponiveis);
-                        }
-                    },
-                    error: function(xhr, status, error) {
-                        console.error('Erro na requisição AJAX:', error);
-                        console.log(xhr.responseText);
-                    }
-                });
-            }
-        });
-    });
-
+        
     // Função para carregar as opções de funcionários
     function carregarOpcoesFuncionarios() {
         $.ajax({

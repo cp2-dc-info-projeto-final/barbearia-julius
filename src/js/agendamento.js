@@ -20,6 +20,7 @@ $(document).ready(function() {
                 },
                 dataType: 'json',
                 success: function(response) {
+                    $('#horario_inicio').empty();
                     if (response.erros.length > 0) {
                         console.error('Erro na requisição AJAX:', response.erros);
                     } else {
@@ -33,6 +34,7 @@ $(document).ready(function() {
                     }
                 },
                 error: function(xhr, status, error) {
+                    $('#horario_inicio').empty();
                     console.error('Erro na requisição AJAX:', error);
                     console.log(xhr.responseText);
                 }
