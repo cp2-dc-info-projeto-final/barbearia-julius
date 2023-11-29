@@ -64,7 +64,7 @@ if (mysqli_num_rows($res_admin) == 1) {
                 exit;
             }
         } else {
-            $_SESSION['erro_login'] = "E-mail não encontrado!";
+            $_SESSION['erro_login'] = "E-mail inválido!";
             header("Location: form_login.php");
             exit;
         }
