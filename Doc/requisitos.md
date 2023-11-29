@@ -13,34 +13,34 @@
 O sistema deverá ter uma interface de cadastro para usuários.
 
 ### RF 02
-O sistema deverá ter uma interface de login
+O sistema deverá ter uma interface de login.
 
 ### RF 03
-o sistema deverá ter uma interface de agendamento de serviços e um calendário interativo
+O sistema deverá ter uma interface de agendamento de serviços e um calendário interativo.
 
 ### RF 04
-o sistema deverá ter uma interface da página principal
+O sistema deverá ter uma interface da página principal.
 
 ### RF 05
-O sistema deverá ter uma interface de edição do perfil
+O sistema deverá ter uma interface de edição do perfil.
 
 ### RF 06
-o sistema deverá ter uma gestão de horário
+O sistema deverá ter uma gestão de horário.
 
 ### RF 07
-o sistema deverá ter a opção de cancelar ou reagendar
+O sistema deverá ter a opção de cancelar ou reagendar.
 
 ### RF 08
-o sistema deverá ter dashboard para administradores (o que terá nele)
+O sistema deverá ter dashboard para administradores (o que terá nele).
 
 ## REQUISITOS NÃO FUNCIONAIS <h2>
 
 ### RNF 01
-o sistema deverá se comunicar com o banco de dados MYSQL
+O sistema deverá se comunicar com o banco de dados MYSQL.
 
 ### RNF 02
-o sistema deverá ser disponibilizado em português
+O sistema deverá ser disponibilizado em português.
 
 ### RNF 03
-o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
+O sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 
