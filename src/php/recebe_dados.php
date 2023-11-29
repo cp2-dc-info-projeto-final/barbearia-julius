@@ -86,7 +86,7 @@ if ($operacao == "cadastrar") {
         $mail->isHTML(true);
         $mail->Subject = $assunto;
         $link_confirmacao = "$codigo"; // Substitua pelo seu domínio
-        $mail->Body = 'Olá ' . $nome .',' '<br>Seu email foi confirmado com sucesso!</br>';
+        $mail->Body = 'Olá ' . $nome .',<br>Seu email foi confirmado com sucesso!</br>';
 
         $mail->send();
         
