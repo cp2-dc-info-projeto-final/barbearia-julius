@@ -30,7 +30,7 @@
 ![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/42af0953-47d9-4c40-b1c5-756fd424b93f)
 
 
-## CDU 02 - Login <h1>
+## CDU 02 - Login 
 
 ### Fluxo principal
 
@@ -41,7 +41,7 @@
 5. O sistema redireciona o usuário para a página principal
 ![WhatsApp Image 2023-09-15 at 18 43 51 (2)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/ffc0ef01-47f1-4a67-bdfc-20e8ed3995f3)
 
-### Fluxo alternativo A
+### Fluxo alternativo A - Informação inválida
 
 1. O sistema informa que há alguma informação inválida
 2. O usuário preenche novamente o email e senha
@@ -49,24 +49,30 @@
 4. O sistema redireciona o usuário para a página principal
 ![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/ded03f08-ee66-43ce-bba4-0561c5715e1c)
 
+## CDU 03 - Esqueceu a senha
 
-### Fluxo alternatico C - Esqueceu a senha.
+### Fluxo Principal
 
-1. O sistema apresenta o formulário de login
-2. O usuário pressiona o botão "Esqueceu a senha?"
-3. O sistema redireciona o usuário para a página de redefinição de senha
-4. O usuário preenche com o email da conta que deseja
-5. O sistema envia um e-mail de confirmação com um link para redefinição de senha
-6. Entrando no link, o usuário preencherá com uma nova senha e confirmar a senha.
-7. O sistema altera a senha no banco de dados
-8. O sistema apresenta o formulário de login
-9. O usuário preenche o campo email e senha
-10. O usuário pressiona o botão "enviar"
-11. O sistema redireciona o usuário para a página principal
+1. O usuário preenche com o email da conta que deseja recuperar a senha
+2. O sistema valida o email
+6.  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+3. O sistema envia um e-mail de confirmação com um link para redefinição de senha
+8. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+4. Entrando no link, o usuário preencherá com uma nova senha e confirmar a senha.
+10. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+5. O sistema altera a senha no banco de dados
 ![FluxoAlt_Log03](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f960c911-05f9-4a55-b87a-478afc02a381)
 
+### Fluxo ALternativo - Email inválido
 
-## CDU 03 - Agendamento de serviço<h1>
+1. O sistema informa que há alguma informação inválida
+2. O usuário preenche novamente o email e senha
+3. O usuário clica no botão "enviar"
+4. O sistema redireciona o usuário para a página principal
+![FluxoAlt_EsqSenha](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/a18a6144-cd7e-4be7-a7ac-e6551f4872ae)
+
+
+## CDU 04 - Agendamento de serviço<h1>
 
 ### Fluxo principal
 
@@ -82,7 +88,7 @@
 ![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/e4be6018-53e3-45bf-91e9-32dd5a432629)
 
 
-## CDU 04 -  Alterar senha <h1>
+## CDU 05 -  Alterar senha <h1>
 
 ### Fluxo principal
 
@@ -91,7 +97,7 @@
 3. O sistema altera a senha
 ![FluxoPrinc_AlteraSenha](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f30dcbb2-7ad8-44e3-8ad1-16d8a242e306)
 
-## CDU 05 -  Alterar dados <h1>
+## CDU 06 -  Alterar dados <h1>
 
 1. Usuário seleciona a opção de alterar dados
 2. O usuário preenche as informações que deseja alterar
@@ -100,7 +106,7 @@
 
 
 
-## CDU 05 - Cancelamento <h1>
+## CDU 07 - Cancelamento <h1>
 
 ### Fluxo principal - Cancelamento <h1>
 
@@ -113,7 +119,7 @@
 ![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
 
 
-## CDU 06 - Dashboard para administradores <h1>
+## CDU 08 - Dashboard para administradores <h1>
 
 ### Fluxo principal
 
