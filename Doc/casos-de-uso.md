@@ -53,25 +53,14 @@
 
 ### Fluxo Principal
 
-1. O usuário preenche com o email da conta que deseja recuperar a senha
-2. O sistema valida o email
-6.  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-3. O sistema envia um e-mail de confirmação com um link para redefinição de senha
-8. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-4. Entrando no link, o usuário preencherá com uma nova senha e confirmar a senha.
-10. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-5. O sistema altera a senha no banco de dados
+1. O usuário acessa a opção de "Esqueceu a senha"
+2.  O usuário preenche com o email da conta que deseja recuperar a senha
+3. O sistema valida o email
+4. O sistema envia uma nova senha para login naquela conta
+
 ![FluxoAlt_Log03](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f960c911-05f9-4a55-b87a-478afc02a381)
 
-### Fluxo ALternativo - Email inválido
-
-1. O sistema informa que há alguma informação inválida
-2. O usuário preenche novamente o email e senha
-3. O usuário clica no botão "enviar"
-4. O sistema redireciona o usuário para a página principal
-![FluxoAlt_EsqSenha](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/a18a6144-cd7e-4be7-a7ac-e6551f4872ae)
-
-
+ 
 ## CDU 04 - Agendamento de serviço<h1>
 
 ### Fluxo principal
@@ -119,16 +108,33 @@
 ![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
 
 
-## CDU 08 - Dashboard para administradores <h1>
+## CDU 08 - Cadastro de funcionário <h1>
 
 ### Fluxo principal
 
 1. O administrador acessa o Dashboard
-2. O administrador seleciona um dia no calendário
-3. O administrador realiza as alterações necessárias nos agendamentos 
-4. O sistema realiza as alterações e envia um email ao usuário informando as alterações
-![FluxoPrinc_Dashboard](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/98c4a566-5770-46c6-9615-09197495587f)
+2. O administrador pressiona a opçao de Cadastrar funcionário
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema realiza o cadastro
 
+### Fluxo alternativo - Funcionário já cadastrado
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Cadastrar funcionário
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema informa que já possui um funcionário com esse email
+5. O administrador preenche com novos dados
+6. O sistema realiza o cadastro
+
+
+## CDU 09 - Cadastro de serviços
+
+### Fluxo principal
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Cadastrar serviço
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema realiza o cadastro
 
 
 ## Diagrama de Casos de uso
