@@ -2,7 +2,7 @@
 session_start();
 // Verifica se a variável de sessão do tipo de usuário está definida como administrador
 if (!isset($_SESSION['tipo_usuario']) || $_SESSION['tipo_usuario'] !== 'administrador') {
-    header("Location: form_login.php");
+    header("Location: logout.php");
     exit; 
 }
 echo "";

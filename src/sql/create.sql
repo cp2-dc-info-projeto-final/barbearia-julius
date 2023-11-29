@@ -63,3 +63,6 @@ INSERT INTO servico (descricao, preco) VALUES ("Corte + Barba", 30);
 INSERT INTO servico (descricao, preco) VALUES ("Corte + Sobrancelha", 25);
 INSERT INTO servico (descricao, preco) VALUES ("Corte + Barba + Sobrancelha", 35);
 INSERT INTO servico (descricao, preco) VALUES ("Barba + Sobrancelha", 20);
+
+alter table agendamento
+add CONSTRAINT agendamento_indisponivel_constraint unique (data_agenda, id_funcionario, horario_inicio);
