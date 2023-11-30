@@ -126,7 +126,7 @@
 4. O sistema informa que já possui um funcionário com esse email
 5. O administrador preenche com novos dados
 6. O sistema realiza o cadastro
-![FluxoAlt_CadFuncionario](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/581f58f7-d83f-435f-baef-7b3651d8c7cf)
+![FluxoAlt_CadFuncionario](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/863a91b0-2fd5-4f45-ae85-8c73f76b5e55)
 
 
 ## CDU 09 - Cadastro de serviços
