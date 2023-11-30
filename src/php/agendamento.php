@@ -164,22 +164,6 @@ unset($_SESSION['agendamento_erros']);
                 <label for="id_funcionario">Funcionário:</label>
                 <select name="id_funcionario" id="id_funcionario">
                     <option value="" selected="selected" disabled="disabled">Selecione um funcionário</option>
-                    <?php
-                    include '../inc/conecta_mysqli.inc';
-
-                    $query = "SELECT id_funcionario, nome FROM funcionarios";
-                    $result = mysqli_query($mysqli, $query);
-
-                    if ($result) {
-                        while ($row = mysqli_fetch_assoc($result)) {
-                            echo "<option value='{$row['id_funcionario']}'>{$row['nome']}</option>";
-                        }
-
-                        mysqli_free_result($result);
-                    }
-
-                    mysqli_close($mysqli);
-                    ?>
                 </select>
 
 
