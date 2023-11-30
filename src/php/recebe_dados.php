@@ -13,6 +13,7 @@ $erros = [];
 
 if ($operacao == "cadastrar") {
     $senha = $_POST["senha"];
+    $confirmar_senha = $_POST["confirmar_senha"];
     $nome = $_POST["nome"];
     $email = $_POST["email"];
 
@@ -34,6 +35,9 @@ if ($operacao == "cadastrar") {
 
     if (empty($senha) || strlen($senha) < 6) {
         $erros[] = "Preencha sua senha com pelo menos 6 caracteres.";
+    }
+    if (empty($confirmar_senha) || $confirmar_senha != $senha ){
+        $erros[] = "Preencha uma senha compatível.";
     }
 
     if (empty($nome) || !preg_match('/\S+\s+\S+/', $nome)) {
