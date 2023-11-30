@@ -48,6 +48,10 @@ if (!isset($_SESSION["email"])) {
 
 mysqli_close($mysqli);
 
+// Armazena as mensagens na sessão
+$_SESSION['agendamento_mensagem'] = $mensagem;
+$_SESSION['agendamento_erros'] = $erros;
+
 // Resposta JSON
 $response = array(
     'mensagem' => $mensagem,
