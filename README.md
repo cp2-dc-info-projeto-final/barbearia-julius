@@ -27,7 +27,8 @@ Bem-vindo ao projeto da Barbearia Julius, o seu destino premium para cuidados ma
 
 **Modelagem do Banco de Dados**
 
-![Barbearia Julius](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/c5203ff2-4125-4f57-b263-ef04adf41a73)
+![Diagrama](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/782dc5a7-0bdc-4cea-9dea-b892de37de6b)
+
 
 
 ## REQUISITOS FUNCIONAIS <h2>
