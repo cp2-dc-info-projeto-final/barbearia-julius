@@ -116,6 +116,7 @@
 2. O administrador pressiona a opçao de Cadastrar funcionário
 3. O administrador preenche as informações necessárias para o cadastro
 4. O sistema realiza o cadastro
+![Fluxo_CadFuncionario](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/a827e08a-dd4c-4498-9bfb-bb16f778b467)
 
 ### Fluxo alternativo - Funcionário já cadastrado
 
@@ -125,6 +126,7 @@
 4. O sistema informa que já possui um funcionário com esse email
 5. O administrador preenche com novos dados
 6. O sistema realiza o cadastro
+![FluxoAlt_CadFuncionario](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/863a91b0-2fd5-4f45-ae85-8c73f76b5e55)
 
 
 ## CDU 09 - Cadastro de serviços
@@ -139,4 +141,5 @@
 
 ## Diagrama de Casos de uso
 
-![WhatsApp Image 2023-09-14 at 14 22 45](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/6132e15b-fbc2-4f23-b2be-9b1ee4916187)
+![Diagrama CDU](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/58dccb68-6849-46a8-9561-48b9a949adfd)
+

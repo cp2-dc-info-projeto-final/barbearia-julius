@@ -41,6 +41,10 @@
                 <label for="senha"><i class="fas fa-lock"></i> Senha:</label>
                 <input type="password" id="senha" name="senha" required>
             </div>
+            <div class="input-field">
+                <label for="confirmar_senha"><i class="fas fa-lock"></i> Confirmar Senha:</label>
+                <input type="password" id="confirmar_senha" name="confirmar_senha" required>
+            </div>
             
             <p><input type="submit" class="rounded-button" value="Cadastrar"></p>
         </form>

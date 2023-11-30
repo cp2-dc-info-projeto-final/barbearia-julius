@@ -1,3 +1,17 @@
+<?php
+session_start();
+
+if (isset($_SESSION["id_funcionario"])) {
+    $id_funcionario = $_SESSION["id_funcionario"];
+}else{
+    header("Location: logout.php");
+}
+include "../inc/conecta_mysqli.inc";
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
@@ -13,6 +27,7 @@
     <title>Seus Dados - Barbearia Julius</title>
 </head>
 <body>
+    <li><a class="nav" href="../php/logout.php">Sair</a></li>
 <section>
         <div class="circle"></div>
         <header>
@@ -20,14 +35,8 @@
             <div class="contenti">
                 <h1>Agendamentos</h1>
         
+
 <?php
-session_start();
-
-if (isset($_SESSION["id_funcionario"])) {
-    $id_funcionario = $_SESSION["id_funcionario"];
-}
-include "../inc/conecta_mysqli.inc";
-
 // Verifique se o funcionário está logado (validar a sessão)
 if (isset($_SESSION["id_funcionario"])) {
     $id_funcionario = $_SESSION["id_funcionario"];
