@@ -39,9 +39,11 @@ function envia_email($para, $assunto, $mensagem){
         // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');   //O nome é opcional
 
         //Conteúdo
-        $mail->isHTML(true);                                    //Formata o e-mail com HTML
-        $mail->Subject = $assunto;                              //Assunto do e-mail
-        $mail->Body    = $mensagem;                             // Corpo do e-mail
+        $mail->isHTML(true);                     // Formata o e-mail com HTML
+        $mail->CharSet = 'UTF-8';                // Define o conjunto de caracteres para UTF-8
+        $mail->Subject = $assunto;               // Assunto do e-mail
+        $mail->Body = $mensagem;                 // Corpo do e-mail
+
         // $mail->AltBody = 'Texto sem tags HTML!';             //Opção de texto para provedores de e-mail que não lêem HTML.
 
         $mail->send();                                          // tenta enviar o e-mail
