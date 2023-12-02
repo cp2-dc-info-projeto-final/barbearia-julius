@@ -14,15 +14,14 @@ Seja bem vindo(a) ao manual de usuário do site Barbearia Julius, criado afim de
  - [Redefinir senha](#8-Redefinir-senha)
  - [Cancelar agendamento pelo usuário](#9-Cancelar-agendamento-por-usuário)
  - [Alterar nome](#10-Alterar-nome)
-
+ - [Alterar email (Página  inicial - administrador)](#11-Alterar-email)
    ## Administrador
    
- - [Alterar email (Página  inicial - administrador)](#1-Alterar-email)
- - [Cadastrar serviços (Página  inicial - administrador)](#2-Cadastrar-serviços)
- - [Cadastrar funcionário (Página  inicial - administrador)](#3-Cadastrar-funcionário)
- - [Excluir funcionário (Página  inicial - administrador)](#4-Excluir-funcionário)
- - [Excluir serviços (Página  inicial - administrador)](#5-Excluir-serviços)
- - [Logout de administrador (Página  inicial - administrador)](6-Logout-de-administrador)
+ - [Cadastrar serviços (Página  inicial - administrador)](#1-Cadastrar-serviços)
+ - [Cadastrar funcionário (Página  inicial - administrador)](#2-Cadastrar-funcionário)
+ - [Excluir funcionário (Página  inicial - administrador)](#3-Excluir-funcionário)
+ - [Excluir serviços (Página  inicial - administrador)](#4-Excluir-serviços)
+ - [Logout de administrador (Página  inicial - administrador)](5-Logout-de-administrador)
 
    ## Funcionário
    
