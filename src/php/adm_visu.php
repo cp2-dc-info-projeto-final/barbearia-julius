@@ -20,7 +20,7 @@ echo "";
 <link rel="stylesheet" href="../css/adm.css">
 </head>
 <body>
-    <li><a class="nav" href="../php/logout.php">Sair</a></li>
+
 <button onclick="abrirModal()">Cadastrar Funcionário</button> <!-- Botão para abrir o modal -->
 <div id="myModal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -90,9 +90,12 @@ echo "";
             <label for="idServico">ID do serviço:</label>
             <input type="text" id="idServico" name="id_servico" required><br><br>
             <button type="button" onclick="excluirServico()">Excluir Serviço</button>
+            
         </form>
     </div>
 </div>
+
+<a class="nav" href="../php/logout.php">Sair</a>
 
 <script>
 function excluirServico() {
@@ -148,22 +151,37 @@ function excluirFuncionario() {
 <script src="../js/pop_up_cad.js"></script>
 <script src="../js/pop_up_ex_servico.js"></script>
 
-    <?php
-    // Verifica se há um parâmetro 'success' na URL indicando o status do cadastro
-    if (isset($_GET['success'])) {
-        echo "<script>";
-        echo "abrirModal();"; // Chama a função para abrir o pop-up
-
-        if ($_GET['success'] == 1) {
-            echo "document.getElementById('mensagem').innerHTML = 'Novo funcionário adicionado com sucesso!';";
-        } else {
-            echo "document.getElementById('mensagem').innerHTML = 'Erro ao adicionar funcionário';";
-        }
-
-        echo "</script>";
+<?php
+if (isset($_GET['success'])) {
+    if ($_GET['success'] == 1) {
+        $mensagem = "Novo funcionário adicionado com sucesso!";
+?>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        abrirModal(); // Exibe o pop-up para adicionar funcionário
+        document.getElementById('mensagem').innerHTML = '<?php echo $mensagem; ?>';
+    });
+</script>
+<?php
+    } elseif ($_GET['success'] == 4 && isset($_GET['tipo']) && $_GET['tipo'] === 'servico') {
+        $mensagemServico = "Novo serviço cadastrado com sucesso!";
+?>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        abrirModalCad(); // Exibe o pop-up para cadastrar serviço
+        document.getElementById('mensagemCad').innerHTML = '<?php echo $mensagemServico; ?>';
+    });
+</script>
+<?php
     }
+}
+?>
 
-    ?>
+
+
+
+
+
     
 </body>
 </html>

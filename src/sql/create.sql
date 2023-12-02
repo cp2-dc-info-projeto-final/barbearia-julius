@@ -17,7 +17,7 @@ DROP TABLE IF EXISTS funcionarios;
 CREATE TABLE funcionarios(
     id_funcionario int NOT NULL AUTO_INCREMENT,
     nome varchar(30) NOT NULL,
-    senha varchar(10) NOT NULL,
+    senha varchar(255) NOT NULL,
     numero varchar(11) NOT NULL,
     email varchar(30) NOT NULL,
     primary key(id_funcionario)
@@ -47,7 +47,7 @@ DROP TABLE IF EXISTS administradores;
 CREATE TABLE administradores (
     id_administrador INT NOT NULL AUTO_INCREMENT,
     nome VARCHAR(30) NOT NULL,
-    senha VARCHAR(8) NOT NULL,
+    senha VARCHAR(255) NOT NULL,
     email VARCHAR(30) NOT NULL,
     PRIMARY KEY (id_administrador)
 );

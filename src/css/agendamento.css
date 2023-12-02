@@ -38,10 +38,6 @@ ul .nav{
   li a:hover.nav{
     background-color: #111;
   }
-  
-  .nav {
-    
-  }
 
 
 * {
@@ -219,3 +215,27 @@ form input[type="submit"]:hover {
 }
 
 
+@media screen and (max-width: 768px) {
+    header {
+      padding: 20px 40px; /* Reduzindo o padding do cabeçalho em telas menores */
+    }
+  
+    header .navegation ul {
+      padding: 20px 40px; /* Reduzindo o padding da navegação em telas menores */
+    }
+  
+    .content {
+      flex-direction: column; /* Ajustando a direção do conteúdo para coluna em telas menores */
+      text-align: center; /* Centralizando o texto em telas menores */
+      padding: 50px 20px; /* Ajustando o padding do conteúdo em telas menores */
+    }
+  
+    .content .text {
+      margin-right: 0; /* Removendo a margem direita do texto em telas menores */
+    }
+  
+    form {
+      max-width: 100%; /* Garantindo que o formulário ocupe a largura total em telas menores */
+      margin: 20px auto; /* Centralizando o formulário em telas menores */
+    }
+  }

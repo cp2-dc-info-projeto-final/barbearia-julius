@@ -7,7 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "DELETE FROM servico WHERE id_servico = $id_servico";
 
     if ($mysqli->query($sql) === TRUE) {
-        echo json_encode(array("success" => true, "message" => "Serviço excluído com sucesso"));
+        if ($mysqli->affected_rows > 0) {
+            echo json_encode(array("success" => true, "message" => "Serviço excluído com sucesso"));
+        } else {
+            echo json_encode(array("success" => false, "message" => "O serviço não existe no banco de dados"));
+        }
     } else {
         echo json_encode(array("success" => false, "message" => "Erro ao excluir serviço"));
     }

@@ -101,14 +101,14 @@ li a:hover.nav{
 section{
     position: relative;
     width: 87%;
-    min-height: 100vh;
+    min-height: 76vh;
     padding: 100px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     background: #121212;
     overflow: hidden;
-    padding: 50px;
+    
 }
 .circlee{
     position: absolute;
@@ -289,3 +289,99 @@ button {
     transition: background-color 0.3s ease;
 }
 
+/* Estilos para a tabela de agendamentos */
+table {
+    width: 120%;
+    margin-bottom: 1rem;
+    color: #212529;
+    border-collapse: collapse;
+}
+
+table th,
+table td {
+    padding: 0.75rem;
+    vertical-align: top;
+    border-top: 1px solid #dee2e6;
+    color: white;
+}
+
+table thead th {
+    vertical-align: bottom;
+    border-bottom: 2px solid #dee2e6;
+}
+
+table tbody + tbody {
+    border-top: 2px solid #dee2e6;
+}
+
+/* Estilos específicos para telas menores */
+@media screen and (max-width: 768px) {
+    table {
+        overflow-x: auto;
+        display: block;
+    }
+
+    table thead,
+    table tbody,
+    table th,
+    table td,
+    table tr {
+        display: block;
+    }
+
+    table thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    table tr {
+        margin-bottom: 0.625rem;
+        border: 1px solid #dee2e6;
+    }
+
+    table td {
+        border-bottom: 1px solid #dee2e6;
+        border-right: none;
+        position: relative;
+        padding-left: 50%;
+        text-align: left;
+    }
+
+    table td::before {
+        position: absolute;
+        top: 0;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+    }
+
+    table td:last-child {
+        border-bottom: 0;
+    }
+}
+@media screen and (max-width: 768px) {
+    header {
+      padding: 20px 40px; /* Reduzindo o padding do cabeçalho em telas menores */
+    }
+  
+    header .navegation ul {
+      padding: 20px 40px; /* Reduzindo o padding da navegação em telas menores */
+    }
+  
+    .content {
+      flex-direction: column; /* Ajustando a direção do conteúdo para coluna em telas menores */
+      text-align: center; /* Centralizando o texto em telas menores */
+      padding: 50px 20px; /* Ajustando o padding do conteúdo em telas menores */
+    }
+  
+    .content .text {
+      margin-right: 0; /* Removendo a margem direita do texto em telas menores */
+    }
+  
+    form {
+      max-width: 100%; /* Garantindo que o formulário ocupe a largura total em telas menores */
+      margin: 20px auto; /* Centralizando o formulário em telas menores */
+    }
+  }
