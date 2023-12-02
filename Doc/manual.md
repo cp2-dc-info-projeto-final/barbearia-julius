@@ -15,6 +15,7 @@ Seja bem vindo(a) ao manual de usuário do site Barbearia Julius, criado afim de
  - [Cancelar agendamento pelo usuário](#9-Cancelar-agendamento-por-usuário)
  - [Alterar nome](#10-Alterar-nome)
  - [Alterar email (Página  inicial - administrador)](#11-Alterar-email)
+   
    ## Administrador
    
  - [Cadastrar serviços (Página  inicial - administrador)](#1-Cadastrar-serviços)
@@ -28,7 +29,7 @@ Seja bem vindo(a) ao manual de usuário do site Barbearia Julius, criado afim de
  - [Cancelamento de agendamento pelo FUNCIONÁRIO (Página  inicial - funcionario)](#1-Cancelamento-de-agendamento-pelo-FUNCIONÁRIO)
  - [Logout do funcionário (Página  inicial - funcionario)](#2-Logout-do-funcionário)
 
-   12.Logout de administrador
+
 ## 1. Cadastro
 
 - Clique em Cadastro
