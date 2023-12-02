@@ -298,7 +298,7 @@ Seja bem vindo(a) ao manual de usuário do site Barbearia Julius, criado afim de
 
 
 
-## 4. Excluir serviço
+## 4. Excluir serviços
 
 - Faça login com informações de administrador
 
