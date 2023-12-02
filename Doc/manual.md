@@ -22,7 +22,7 @@ Seja bem vindo(a) ao manual de usuário do site Barbearia Julius, criado afim de
  - [Cadastrar funcionário (Página  inicial - administrador)](#2-Cadastrar-funcionário)
  - [Excluir funcionário (Página  inicial - administrador)](#3-Excluir-funcionário)
  - [Excluir serviços (Página  inicial - administrador)](#4-Excluir-serviços)
- - [Logout de administrador (Página  inicial - administrador)](5-Logout-de-administrador)
+ - [Logout de administrador (Página  inicial - administrador)](#5-Logout-de-administrador)
 
    ## Funcionário
    
