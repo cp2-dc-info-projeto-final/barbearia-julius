@@ -51,14 +51,21 @@ li a:hover.nav{
 }
 
 .nav {
-  background-color: #af4c96;
+    background-color: #94095e;
+    border: none;
+    color: #fff;
+    padding: 14px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
 }
 
 *{
     margin: 0;
-    padding:0;
+    padding: 0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color: white;
 }
 
 .bloco_fotos{
@@ -100,9 +107,9 @@ li a:hover.nav{
 
 section{
     position: relative;
-    width: 87%;
+    width: 84%;
     min-height: 76vh;
-    padding: 100px;
+    padding: 137px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -295,6 +302,7 @@ table {
     margin-bottom: 1rem;
     color: #212529;
     border-collapse: collapse;
+    padding: 50px;
 }
 
 table th,

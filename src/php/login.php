@@ -32,7 +32,7 @@ if (mysqli_num_rows($res_admin) == 1) {
         $funcionario = mysqli_fetch_array($res_funcionario);
 
         // Verifica a senha do funcionário
-        if ($senha == $funcionario["senha"]) {
+        if (password_verify($senha, $funcionario["senha"])) {
             $_SESSION["tipo_usuario"] = 'funcionario';
             $_SESSION["email"] = $email;
             $_SESSION["senha"] = $funcionario["senha"];
