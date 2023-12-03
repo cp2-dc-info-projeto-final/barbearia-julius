@@ -27,6 +27,7 @@ include "../inc/conecta_mysqli.inc";
     <title>Seus Dados - Barbearia Julius</title>
 </head>
 <body>
+<div class="circle"></div>
     <li><a class="nav" href="../php/logout.php">Sair</a></li>
 <section>
         <div class="circle"></div>
