@@ -11,7 +11,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($result->num_rows > 0) {
         // Se a descrição já existe, redirecione para a página de administração com parâmetro de erro
-        header("Location: adm_visu.php?success=0");
+        header("Location: adm_visu.php?success=8");
         exit;
     }
 

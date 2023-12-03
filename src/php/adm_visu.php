@@ -29,13 +29,14 @@ echo "";
             <div id="mensagem"></div> <!-- Elemento para exibir a mensagem -->
             <form action="processa_novo_funcionario.php" method="POST">
             <label for="nome">Nome:</label>
-              <input type="text" id="nome" name="nome" required><br><br>
-              
+            <input type="text" id="nome" name="nome" pattern="[A-Za-z]{3,}\s[A-Za-z]{3,}" title="Por favor, insira um nome e sobrenome "><br><br>
+
               <label for="senha">Senha:</label>
               <input type="password" id="senha" name="senha" required><br><br>
               
               <label for="numero">Número:</label>
-              <input type="text" id="numero" name="numero" required><br><br>
+              <input type="text" id="numero" name="numero" minlength="11" maxlength="11" pattern=".{11}" title="Por favor, insira 11 numeros" required><br><br>
+
               
               <label for="email">Email:</label>
               <input type="email" id="email" name="email" required><br><br>
@@ -163,13 +164,13 @@ if (isset($_GET['success'])) {
     });
 </script>
 <?php
-    } elseif ($_GET['success'] == 2 && isset($_GET['tipo']) && $_GET['tipo'] === 'servico') {
-        $mensagemServico = "Novo serviço cadastrado com sucesso!";
+    } elseif ($_GET['success'] == 0 ) {
+        $mensagem = "Funcionario com email ou numero ja existente.";
 ?>
 <script>
     document.addEventListener('DOMContentLoaded', function() {
-        abrirModalCad(); // Exibe o pop-up para cadastrar serviço
-        document.getElementById('mensagemCad').innerHTML = '<?php echo $mensagemServico; ?>';
+        abrirModal(); // Exibe o pop-up para adicionar funcionário
+        document.getElementById('mensagem').innerHTML = '<?php echo $mensagem; ?>';
     });
 </script>
 <?php
@@ -180,6 +181,7 @@ if (isset($_GET['success'])) {
 
 
 <script>
+
 // Função para abrir o modal
 function abrirModalCad() {
     document.getElementById('modalCad').style.display = 'block';
@@ -195,7 +197,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const successParam = urlParams.get('success');
 
-    if (successParam === '0') {
+    if (successParam === '8') {
         abrirModalCad();
         document.getElementById('mensagemCad').innerHTML = 'Descrição já existente.';
     } else if (successParam === '2') {
@@ -207,7 +209,7 @@ document.addEventListener('DOMContentLoaded', function() {
             abrirModalCad();
             document.getElementById('mensagemCad').innerHTML = 'Novo serviço cadastrado com sucesso!';
         }
-    }
+    } 
 });
 </script>
 
