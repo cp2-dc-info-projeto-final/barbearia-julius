@@ -4,15 +4,7 @@
 
 /* Estilos globais */
 
-.circle {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 111%;
-    height: 100%;
-    background: #94095e;
-    clip-path: circle(50% at bottom right);
-}
+
 
 table{
     
@@ -131,7 +123,7 @@ section{
 header{
     position: absolute;
     top: 0;
-    left: 0;
+    left: -176px;
     width: 100%;
     padding: 40px 100px;
     display: flex;
@@ -228,7 +220,7 @@ h1{
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
     text-align: center;
-    margin-left: -160px;
+    margin-left: -290px;
 }
 
 h2 {
