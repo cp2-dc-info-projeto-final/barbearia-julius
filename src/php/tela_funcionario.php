@@ -32,7 +32,7 @@ include "../inc/conecta_mysqli.inc";
 <section>
         <div class="circle"></div>
         <header>
-            <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
+
             <div class="contenti">
                 <h1>Agendamentos</h1>
         

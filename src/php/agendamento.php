@@ -131,7 +131,6 @@ unset($_SESSION['agendamento_erros']);
 <section>
     <div class="circle"></div>
     <header>
-        <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
         <nav class="navegation">
             <ul>
                 <li><a class="nav" href="../php/logado.php">Página Principal</a></li>
