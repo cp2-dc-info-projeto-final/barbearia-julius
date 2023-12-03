@@ -3,6 +3,15 @@
 
 
 /* Estilos globais */
+.circle {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #94095e;
+    clip-path: circle(50% at bottom right);
+}
 .modal-content{
     position: relative;
     background: #121212;
@@ -71,6 +80,7 @@ li a:hover.nav{
     padding:0;
     box-sizing: border-box;
     font-family: 'Poppins', sans-serif;
+    color:#94095e;
 }
 
 .bloco_fotos{
@@ -411,6 +421,13 @@ div#mensagemExclusao{
     color: #94095e;
 }
 div#mensagemExclusaoS{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #94095e;
+}
+.mensagemCad{
     margin: 0;
     padding: 0;
     box-sizing: border-box;

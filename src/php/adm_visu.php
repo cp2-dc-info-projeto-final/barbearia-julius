@@ -21,6 +21,8 @@ echo "";
 </head>
 <body>
 
+<div class="circle"></div>
+
 <button onclick="abrirModal()">Cadastrar Funcionário</button> <!-- Botão para abrir o modal -->
 <div id="myModal" class="modal" style="display: none;">
         <div class="modal-content">
