@@ -158,6 +158,9 @@ unset($_SESSION['agendamento_erros']);
             }
             ?>
 
+            <!-- Exibição dos horários de funcionamento -->
+            <p>Horários de Funcionamento: Segunda a Sábado de 09h às 20h. <br>Obs: Agendamentos aos domingos e antes da data atual serão desconsiderados.</p>
+
             <form action="recebe_agen.php" method="POST">
                 <input type="hidden" name="funcao" value="agendar">
 
