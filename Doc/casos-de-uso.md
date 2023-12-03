@@ -67,11 +67,7 @@
 
 1. O usuário acessa a página de agendamento de serviços
 2. O usuário preenche as informações necessárias para agendar
-8. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-3. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora e um botão para confirmar agendamento) 
-10. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-4. O usuário clica no botão "confirmar"
-5. O sistema realiza o agendamento
+3. O sistema realiza o agendamento
 ![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/e4be6018-53e3-45bf-91e9-32dd5a432629)
 
 ## CDU 05 -  Alterar senha <h1>

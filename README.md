@@ -69,6 +69,8 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 
 # **SISTEMA DE AGENDAMENTO** <h1>
 
+# Documento de Casos de Uso
+
 ## CDU 01 - Cadastro de usuários <h1>
 
 ### Fluxo principal
@@ -88,10 +90,10 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 3. O sistema valida as informações
 4. O sistema cadastra o usuário
 5. O sistema redireciona o usuário para a página de login
-![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/42af0953-47d9-4c40-b1c5-756fd424b93f)
+![FluxoAlt_Cad01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/9a3f5cbe-29f5-4c47-b64d-fcb026946934)
 
 
-## CDU 02 - Login <h1>
+## CDU 02 - Login 
 
 ### Fluxo principal
 
@@ -102,48 +104,36 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 5. O sistema redireciona o usuário para a página principal
 ![WhatsApp Image 2023-09-15 at 18 43 51 (2)](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/ffc0ef01-47f1-4a67-bdfc-20e8ed3995f3)
 
-### Fluxo alternativo A
+### Fluxo alternativo A - Informação inválida
 
 1. O sistema informa que há alguma informação inválida
 2. O usuário preenche novamente o email e senha
 3. O usuário clica no botão "enviar"
 4. O sistema redireciona o usuário para a página principal
-![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/ded03f08-ee66-43ce-bba4-0561c5715e1c)
+![FluxoAlt_Log01](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/eebbdab3-892f-4f07-b15f-4986c22e5b5d)
 
 
-### Fluxo alternatico C - Esqueceu a senha.
+## CDU 03 - Esqueceu a senha
 
-1. O sistema apresenta o formulário de login
-2. O usuário pressiona o botão "Esqueceu a senha?"
-3. O sistema redireciona o usuário para a página de redefinição de senha
-4. O usuário preenche com o email da conta que deseja
-5. O sistema envia um e-mail de confirmação com um link para redefinição de senha
-6. Entrando no link, o usuário preencherá com uma nova senha e confirmar a senha.
-7. O sistema altera a senha no banco de dados
-8. O sistema apresenta o formulário de login
-9. O usuário preenche o campo email e senha
-10. O usuário pressiona o botão "enviar"
-11. O sistema redireciona o usuário para a página principal
-![FluxoAlt_Log03](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f960c911-05f9-4a55-b87a-478afc02a381)
+### Fluxo Principal
 
+1. O usuário acessa a opção de "Esqueceu a senha"
+2.  O usuário preenche com o email da conta que deseja recuperar a senha
+3. O sistema valida o email
+4. O sistema envia uma nova senha para login naquela conta pelo email
+![FluxoPrinc_EsqSenha](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/3d060efd-8017-4621-9edd-4165a2de28c3)
 
-## CDU 03 - Agendamento de serviço<h1>
+ 
+## CDU 04 - Agendamento de serviço<h1>
 
 ### Fluxo principal
 
-1. O usuário clica na opção para acessar a seleção de profissionais.
-2. O usuário seleciona o funcionário com o qual  deseja agendar um horário.
-4. O usuário clica no botão de buscar horários.
-5. O sistema exibirá as horas disponíveis para o profissional selecionado.
-6. O usuário escolhe um horário que se adeque ao seu agendamento.
-7. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-8. O sistema exibe um modal ou pop up que faz um breve resumo do que o usuário escolheu contendo (data, profissional, valor, hora e um botão para confirmar agendamento) 
-9. !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-10. O usuário clica no botão "confirmar"
+1. O usuário acessa a página de agendamento de serviços
+2. O usuário preenche as informações necessárias para agendar
+3. O sistema realiza o agendamento
 ![FluxoPrinc_Agenda](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/e4be6018-53e3-45bf-91e9-32dd5a432629)
 
-
-## CDU 04 -  Alterar senha <h1>
+## CDU 05 -  Alterar senha <h1>
 
 ### Fluxo principal
 
@@ -152,7 +142,9 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 3. O sistema altera a senha
 ![FluxoPrinc_AlteraSenha](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/f30dcbb2-7ad8-44e3-8ad1-16d8a242e306)
 
-## CDU 05 -  Alterar dados <h1>
+## CDU 06 -  Alterar dados <h1>
+
+### Fluxo principal
 
 1. Usuário seleciona a opção de alterar dados
 2. O usuário preenche as informações que deseja alterar
@@ -160,29 +152,118 @@ o sistema deverá ser desenvolvido nas linguagens: html, css , PHP, javascript.
 ![FluxoPrinc_AlteraDados](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/96ba6888-6ab0-48ac-86d8-ff099ef58828)
 
 
+## CDU 07 - Cancelamento de agendamento do cliente<h1>
 
-## CDU 05 - Cancelamento <h1>
+### Fluxo principal <h1>
 
-### Fluxo principal - Cancelamento <h1>
-
-1. O usuário acessa o sistema usando suas credenciais de login
-2. O usuário é direcionado para o painel onde seus agendamentos são exibidos
-3. O usuário localiza o agendamento que deseja cancelar
-4. Junto ao agendamento, o cliente encontra a opção "Cancelar" e clica nela
-5. Uma mensagem de confirmação é exibida: "Tem certeza de que deseja cancelar este agendamento?" 
-6. O sistema remove o agendamento e envia uma notificação confirmando o cancelamento
-![WhatsApp Image 2023-09-15 at 18 43 51](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/142441068/a22d8a5c-e3e2-4813-beac-01c75f35ab7b)
+1. O usuário acessa a página Cliente e seleciona "Meus agendamentos"
+2. O sistema mostra os agendamentos feitos pelo usuário
+3. O usuário aperta em "Cancelar" no agendamento desejado
+4. O usuário confirma o cancelamento
+5. O sistema remove o agendamento
+![FluxoPrinc_CancelaUser](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/cb7e18f7-c4b1-4085-a44e-830c0839d81c)
 
 
-## CDU 06 - Dashboard para administradores <h1>
+
+## CDU 07 - Cancelamento de agendamento do funcionário<h1>
+
+### Fluxo principal <h1>
+
+1. O funcionário realiza o login e entra na seção de gerenciamento de agendamentos
+3. O funcionário aperta em "Cancelar" no agendamento desejado
+4. O funcionário confirma o cancelamento
+5. O sistema remove o agendamento
+![FluxoPrinc_CancelaFunc](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/717985f5-265b-4e99-89b4-8f115152bc3d)
+
+
+## CDU 08 - Cadastro de funcionário <h1>
 
 ### Fluxo principal
 
 1. O administrador acessa o Dashboard
-2. O administrador seleciona um dia no calendário
-3. O administrador realiza as alterações necessárias nos agendamentos 
-4. O sistema realiza as alterações e envia um email ao usuário informando as alterações
-![FluxoPrinc_Dashboard](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/98c4a566-5770-46c6-9615-09197495587f)
+2. O administrador pressiona a opçao de Cadastrar funcionário
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema realiza o cadastro
+![Fluxo_CadFuncionario](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/a827e08a-dd4c-4498-9bfb-bb16f778b467)
+
+### Fluxo alternativo A - Funcionário já cadastrado
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Cadastrar funcionário
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema informa que já possui um funcionário com esse email
+5. O administrador preenche com novos dados
+6. O sistema realiza o cadastro
+![FluxoAlt_CadFuncionario](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/5a752556-0b4d-4c64-b5d0-d4b63eeb9276)
+
+
+## CDU 09 - Excluir funcionário
+
+### Fluxo principal
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Excluir funcionário
+3. O administrador preenche o id do funcionário que deseja excluir
+4. O sistema realiza a exclusão
+![FluxoPrinc_ExcluiFunc](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/b112c4a5-1a31-4ceb-bf00-bc540fb5c20d)
+
+
+
+### Fluxo alternativo A - Funcionário inexistente
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Excluir funcionário
+3. O administrador preenche o id do funcionário que deseja excluir
+4. O sistema informa que não há um funcionário com o id informado
+5. O administrador preenche novamente o id do funcionário
+6. O sistema realiza a exclusão
+![FluxoAlt_ExcluiFunc](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/7d156cef-7768-45ec-b300-1ab8d16d99f6)
+
+
+## CDU 11 - Cadastro de serviços
+
+### Fluxo principal
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Cadastrar serviço
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema realiza o cadastro
+![FluxoPrinc_CadastServ](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/26819ef2-33ae-426f-91dc-dec2c69c15cb)
+
+
+### Fluxo alternativo A - Serviço já cadastrado
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Cadastrar serviço
+3. O administrador preenche as informações necessárias para o cadastro
+4. O sistema informa que já há um serviço com o nome informado
+5. O administrador preenche com outro nome
+6. O sistema realiza a o cadastro
+![FluxoAlt_CadastServ](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/160019fd-7e5f-42bf-a6b5-1da4883ea2bb)
+
+
+## CDU 10 Excluir serviço
+
+### Fluxo principal
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Excluir serviço
+3. O administrador preenche o id do serviço que deseja excluir
+4. O sistema realiza a exclusão
+![FluxoPrinc_ExcluiServ](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/a72d8a8e-d14a-4f48-9a66-7478c9aa3319)
+
+
+
+### Fluxo alternativo A - Serviço inexistente
+
+1. O administrador acessa o Dashboard
+2. O administrador pressiona a opçao de Excluir serviço
+3. O administrador preenche o id do serviço que deseja excluir
+4. O sistema informa que não há um serviço com o id informado
+5. O administrador preenche novamente o id do serviço
+6. O sistema realiza a exclusão
+![FluxoAlt_ExcluiServ](https://github.com/cp2-dc-info-projeto-final/barbearia-julius/assets/71456387/a4777e7c-4a4e-473d-afa9-fdec8c46fe08)
+
 
 
 ## Diagrama de Casos de uso
