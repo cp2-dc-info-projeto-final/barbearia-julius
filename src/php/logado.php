@@ -181,7 +181,7 @@ if (isset($_SESSION["email"])) {
   </a>
   <div id="demo" class="collapse">
     <p>Lucas de Souza Santana</p>
-    <p>17 anos</p>
+    <p>18 anos</p>
     <p>membro desde 2019</p>
   </div>
 </div>
@@ -281,7 +281,7 @@ if (isset($_SESSION["email"])) {
           <p>Endereço: Bedford-Stuveysant, 123<br>
              </p>
           <p>Telefone: (21) 4002-8922</p>
-          <p>Email: barbeariajuliussac.com</p>
+          <p>Email: barbeariajuliussac@gmail.com</p>
       </div>
       <div class="footer-right">
           <h3>Siga-nos</h3>
