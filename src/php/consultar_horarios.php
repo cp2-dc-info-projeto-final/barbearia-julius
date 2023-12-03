@@ -27,7 +27,7 @@ if (isset($_POST['id_funcionario'], $_POST['data_agenda'])) {
     $stmt_agendados->close();
 
     // Todos os horários possíveis
-    $horarios_disponiveis = ['09', '10', '11', '12', '13', '14', '15', '16', '17', '18', '19', '20'];
+    $horarios_disponiveis = ['09', '10', '11', '13', '14', '15', '16', '17', '18', '19', '20'];
 
     // Remover os horários já agendados para o funcionário na data especificada da lista de horários disponíveis
     $horarios_disponiveis = array_diff($horarios_disponiveis, $horarios_ocupados);

@@ -406,6 +406,13 @@ div#mensagem{
     font-family: 'Poppins', sans-serif;
     color: #94095e;
 }
+div#mensagemCad{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    color: #94095e;
+}
 div#mensagemExclusao{
     margin: 0;
     padding: 0;
