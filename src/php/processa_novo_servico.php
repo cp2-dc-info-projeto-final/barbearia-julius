@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $result = $mysqli->query($check_descricao);
 
     if ($result->num_rows > 0) {
-        // Se a descrição já existe, redirecione de volta para o formulário com um parâmetro de erro
+        // Se a descrição já existe, redirecione para a página de administração com parâmetro de erro
         header("Location: adm_visu.php?success=0");
         exit;
     }
@@ -19,11 +19,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $sql = "INSERT INTO servico (descricao, preco) VALUES ('$descricao', '$preco')";
 
     if ($mysqli->query($sql) === TRUE) {
-        header("Location: adm_visu.php?success=4"); // Redireciona com o parâmetro de sucesso
+        // Se a inserção foi bem-sucedida, redirecione para a página de administração com parâmetro de sucesso
+        header("Location: adm_visu.php?success=4&tipo=servico");
+        exit;
+    } else {
+        // Se houver falha na inserção, redirecione para a página de administração com parâmetro de falha
+        header("Location: adm_visu.php?success=2");
         exit;
     }
 } else {
-    header("Location: adm_visu.php?success=2"); // Redireciona com o parâmetro de falha
+    // Se o método de requisição não for POST, redirecione para a página de administração com parâmetro de falha
+    header("Location: adm_visu.php?success=2");
     exit;
 }
 ?>

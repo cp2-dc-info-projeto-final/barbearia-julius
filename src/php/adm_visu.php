@@ -65,7 +65,7 @@ echo "";
         <div class="modal-content">
             <span class="close" onclick="fecharModalCad()">&times;</span>
             <h2>Adicionar Novo Serviço</h2>
-            <div id="mensagem"></div> <!-- Elemento para exibir a mensagem -->
+            <div id="mensagemCad"></div> <!-- Elemento para exibir a mensagem -->
             <form action="processa_novo_servico.php" method="POST">
             <label for="descricao">Descrição:</label>
               <input type="text" id="descricao" name="descricao" required><br><br>
@@ -163,7 +163,7 @@ if (isset($_GET['success'])) {
     });
 </script>
 <?php
-    } elseif ($_GET['success'] == 4 && isset($_GET['tipo']) && $_GET['tipo'] === 'servico') {
+    } elseif ($_GET['success'] == 2 && isset($_GET['tipo']) && $_GET['tipo'] === 'servico') {
         $mensagemServico = "Novo serviço cadastrado com sucesso!";
 ?>
 <script>
@@ -176,6 +176,40 @@ if (isset($_GET['success'])) {
     }
 }
 ?>
+
+
+
+<script>
+// Função para abrir o modal
+function abrirModalCad() {
+    document.getElementById('modalCad').style.display = 'block';
+}
+
+// Função para fechar o modal
+function fecharModalCad() {
+    document.getElementById('modalCad').style.display = 'none';
+}
+
+// Verificar parâmetros e exibir mensagem no modal, se necessário
+document.addEventListener('DOMContentLoaded', function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    const successParam = urlParams.get('success');
+
+    if (successParam === '0') {
+        abrirModalCad();
+        document.getElementById('mensagemCad').innerHTML = 'Descrição já existente.';
+    } else if (successParam === '2') {
+        abrirModalCad();
+        document.getElementById('mensagemCad').innerHTML = 'Falha na operação.';
+    } else if (successParam === '4') {
+        const tipoParam = urlParams.get('tipo');
+        if (tipoParam === 'servico') {
+            abrirModalCad();
+            document.getElementById('mensagemCad').innerHTML = 'Novo serviço cadastrado com sucesso!';
+        }
+    }
+});
+</script>
 
 
 

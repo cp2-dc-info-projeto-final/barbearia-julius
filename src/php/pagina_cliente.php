@@ -1,101 +1,85 @@
 <?php
 session_start();
 
-// Verifica se o usuário está logado
 if (isset($_SESSION["email"])) {
-    $emailUsuario = $_SESSION["email"]; // Obtém o email do usuário da sessão
+    $emailUsuario = $_SESSION["email"];
 
-    // Use $emailUsuario para exibir informações do usuário ou realizar operações relacionadas ao agendamento
-    
+    $conexao = new mysqli("localhost", "barbeariajulius", "123", "BARBEARIAJULIUS");
+
+    if ($conexao->connect_error) {
+        die("Falha na conexão: " . $conexao->connect_error);
+    }
+
+    $query = "SELECT id_usuario, nome, email, senha FROM usuarios WHERE email = ?";
+    $stmt = $conexao->prepare($query);
+    $stmt->bind_param("s", $emailUsuario);
+    $stmt->execute();
+    $resultado = $stmt->get_result();
+
+    if ($resultado->num_rows > 0) {
+        $row = $resultado->fetch_assoc();
+        $id_usuario = $row['id_usuario'];
+        $nomeUsuario = $row['nome'];
+        $emailUsuario = $row['email'];
+        $senha_hash = $row['senha'];
+    } else {
+        echo "Usuário não encontrado.";
+        header("Location: form_login.php");
+        exit;
+    }
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+        if (isset($_POST["novo_nome"])) {
+            $novo_nome = htmlspecialchars($_POST["novo_nome"]);
+            $novo_email = htmlspecialchars($_POST["novo_email"]);
+
+            $query_update = $conexao->prepare("UPDATE usuarios SET nome=?, email=? WHERE id_usuario=?");
+            $query_update->bind_param("ssi", $novo_nome, $novo_email, $id_usuario);
+
+            if ($query_update->execute()) {
+                $_SESSION['email'] = $novo_email;
+                header("Location: pagina_cliente.php");
+                exit();
+            } else {
+                echo "Erro ao atualizar os dados: " . $conexao->error;
+            }
+        } elseif (isset($_POST["senha_antiga"])) {
+            $senha_antiga = $_POST["senha_antiga"];
+            $nova_senha = $_POST["nova_senha"];
+            $confirmar_senha = $_POST["confirmar_senha"];
+
+            if (password_verify($senha_antiga, $senha_hash)) {
+                if ($nova_senha !== $senha_antiga) {
+                    if ($nova_senha === $confirmar_senha) {
+                        $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
+
+                        $query_update = $conexao->prepare("UPDATE usuarios SET senha=? WHERE id_usuario=?");
+                        $query_update->bind_param("si", $nova_senha_hash, $id_usuario);
+
+                        if ($query_update->execute()) {
+                            header("Location: pagina_cliente.php");
+                            exit();
+                        } else {
+                            echo "Erro ao atualizar os dados: " . $conexao->error;
+                        }
+                    } else {
+                        echo "A nova senha e a confirmação não coincidem.";
+                    }
+                } else {
+                    echo "A nova senha deve ser diferente da senha antiga.";
+                }
+            } else {
+                echo "Senha antiga incorreta.";
+            }
+        }
+    }
+
+    $conexao->close();
 } else {
-    // Se o usuário não estiver logado, redirecione-o para a página de login
     header("Location: form_login.php");
     exit;
 }
-
-
-$conexao = new mysqli("localhost", "barbeariajulius", "123", "BARBEARIAJULIUS");
-
-if ($conexao->connect_error) {
-    die("Falha na conexão: " . $conexao->connect_error);
-}
-
-$query = "SELECT id_usuario, nome, email, senha FROM usuarios WHERE email = ?";
-$stmt = $conexao->prepare($query);
-$stmt->bind_param("s", $emailUsuario);
-$stmt->execute();
-$resultado = $stmt->get_result();
-
-if ($resultado->num_rows > 0) {
-    $row = $resultado->fetch_assoc();
-    $id_usuario = $row['id_usuario'];
-    $nomeUsuario = $row['nome'];
-    $emailUsuario = $row['email'];
-    $senha_hash = $row['senha'];
-} else {
-    echo "Usuário não encontrado.";
-    header ("Location: form_login.php");
-    exit;
-}
-
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    if (isset($_POST["novo_nome"])) {
-        $novo_nome = htmlspecialchars($_POST["novo_nome"]);
-        $novo_email = htmlspecialchars($_POST["novo_email"]);
-        
-
-        // Atualiza a senha, nome e email no banco de dados
-        $query_update = $conexao->prepare("UPDATE usuarios SET  nome=?, email=? WHERE id_usuario=?");
-        $query_update->bind_param("ssi", $novo_nome, $novo_email, $id_usuario);
-
-        if ($query_update->execute()) {
-            // Atualiza os dados na sessão para refletir as mudanças
-            $_SESSION['email'] = $novo_email;
-
-            // Redireciona de volta para a página de perfil após a alteração
-            header("Location: pagina_cliente.php");
-            exit();
-        }else {
-            echo "Erro ao atualizar os dados: " . $conexao->error;
-        }
-    }
-
-    else {
-        $senha_antiga = $_POST["senha_antiga"];
-        $nova_senha = $_POST["nova_senha"];
-        $confirmar_senha = $_POST["confirmar_senha"];
-
-        // Verifica se a senha antiga está correta
-        if (password_verify($senha_antiga, $senha_hash)) {
-            // Verifica se a nova senha e a confirmação coincidem
-            if ($nova_senha === $confirmar_senha) {
-                // Hash da nova senha
-                $nova_senha_hash = password_hash($nova_senha, PASSWORD_DEFAULT);
-
-                // Atualiza a senha no banco de dados
-                $query_update = $conexao->prepare("UPDATE usuarios SET senha=? WHERE id_usuario=?");
-                $query_update->bind_param("si", $nova_senha_hash, $id_usuario);
-
-                if ($query_update->execute()) {
-                    // Redireciona de volta para a página de perfil após a alteração
-                    header("Location: pagina_cliente.php");
-                    exit();
-                } else {
-                    echo "Erro ao atualizar os dados: " . $conexao->error;
-                }
-            } else {
-                echo "A nova senha e a confirmação não coincidem.";
-            }
-        } else {
-            echo "Senha antiga incorreta.";
-        }
-    }
-}
-
-// Fechar a conexão
-$conexao->close();
 ?>
-
 
 <!-- ... (restante do código HTML) -->
 <!DOCTYPE html>
