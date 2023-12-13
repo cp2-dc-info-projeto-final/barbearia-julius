@@ -17,13 +17,10 @@
     <section>
         <div class="circle"></div>
         <header>
-            <a href="#"><img src="../img/logo.png" alt="" class="logo"></a>
-            <a href="reseta"><img src="../img/logo.png" alt="" class="logo"></a>
             <form action="reseta.php" method="post">
         <label for="email">E-mail:</label>
         <input type="email" id="email" name="email" required>
         <button type="submit">Redefinir Senha</button>
-            <a href="reseta"><img src="../img/logo.png" alt="" class="logo"></a>
         </header>
     </section>
 </body>
