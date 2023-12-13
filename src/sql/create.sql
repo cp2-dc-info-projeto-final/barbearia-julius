@@ -53,9 +53,6 @@ CREATE TABLE administradores (
 );
 
 INSERT INTO administradores (nome, senha, email) VALUES ('Administrador', '123456', 'adm@gmail.com');
-
-INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (1, "Julius", "ju1452", "21987456123", "julis@email.com");
-INSERT INTO funcionarios (id_funcionario, nome, senha, numero, email) VALUES (2, "Chris", "ch5689", "21932145678", "chris@email.com");
 INSERT INTO servico (descricao, preco) VALUES ("Corte", 20);
 INSERT INTO servico (descricao, preco) VALUES ("Barba", 15);
 INSERT INTO servico (descricao, preco) VALUES ("Sobrancelha", 10);
