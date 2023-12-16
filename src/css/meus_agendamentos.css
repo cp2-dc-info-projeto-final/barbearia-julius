@@ -109,7 +109,7 @@ li a:hover.nav{
 
 section{
     position: relative;
-    width: 84%;
+    width: 71%;
     min-height: 76vh;
     padding: 137px;
     display: flex;
@@ -213,7 +213,7 @@ h1{
     font-size: 50px;
     margin-bottom: 10px;
     font-weight: 700;
-    font-size: 6.5em;
+    font-size: 5.5em;
     color: #94095e;
     margin: 0;
     padding: 44px;

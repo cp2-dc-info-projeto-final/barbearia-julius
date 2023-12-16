@@ -23,6 +23,7 @@ if (!isset($_SESSION["email"])) {
         // Validar dados do formulário
         if (empty($id_funcionario) || empty($id_servico) || empty($horario_inicio) || empty($data_agenda)) {
             $erros[] = "Por favor, preencha todos os campos obrigatórios.";
+            header("Location: agendamento.php");
         } else {
             // Obter o ID do usuário
             $id_usuario = obterIdUsuarioPorEmail($mysqli, $emailUsuario);
@@ -31,12 +32,15 @@ if (!isset($_SESSION["email"])) {
                 // Verificar se já existe um agendamento
                 if (existeAgendamento($mysqli, $id_funcionario, $data_agenda, $horario_inicio)) {
                     $erros[] = "Este funcionário já possui um agendamento para o dia e horário especificados.";
+                    header("Location: agendamento.php");
                 } else {
                     // Realizar o agendamento
                     if (agendar($mysqli, $id_usuario, $id_funcionario, $id_servico, $horario_inicio, $data_agenda)) {
                         $mensagem = "Agendamento realizado com sucesso!";
+                        header("Location: agendamento.php");
                     } else {
                         $erros[] = "Ocorreu um erro ao realizar o agendamento. Por favor, tente novamente.";
+                        header("Location: agendamento.php");
                     }
                 }
             } else {

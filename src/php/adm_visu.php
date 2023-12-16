@@ -21,7 +21,7 @@ echo "";
 </head>
 <body>
 
-<div class="circle"></div>
+
 
 <button onclick="abrirModal()">Cadastrar Funcionário</button> <!-- Botão para abrir o modal -->
 <div id="myModal" class="modal" style="display: none;">
@@ -36,7 +36,7 @@ echo "";
               <label for="senha">Senha:</label>
               <input type="password" id="senha" name="senha" required><br><br>
               
-              <label for="numero">Número:</label>
+              <label for="numero">Celular:</label>
               <input type="text" id="numero" name="numero" minlength="11" maxlength="11" pattern=".{11}" title="Por favor, insira 11 numeros" required><br><br>
 
               
@@ -47,7 +47,7 @@ echo "";
             </form>
         </div>
     </div>
-<!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
+<!-- Adicione este trecho abaixo do formulário de adição de funcionário 
 <button onclick="abrirModalExclusao()">Excluir Funcionário</button>
 
 <div id="modalExclusao" class="modal" style="display: none;">
@@ -62,7 +62,7 @@ echo "";
             <button type="button" onclick="excluirFuncionario()">Excluir Funcionário</button>
         </form>
     </div>
-</div>
+</div> <!-- Botão para abrir o modal -->
 <button onclick="abrirModalCad()">Cadastrar Serviço</button> <!-- Botão para abrir o modal -->
 <div id="modalCad" class="modal" style="display: none;">
         <div class="modal-content">
@@ -81,7 +81,7 @@ echo "";
     </div>
     
 
-<!-- Adicione este trecho abaixo do formulário de adição de funcionário -->
+<!-- Adicione este trecho abaixo do formulário de adição de funcionário 
 <button onclick="abrirModalExclusaoS()">Excluir Serviço</button>
 
 <div id="modalExclusaoS" class="modal" style="display: none;">
@@ -96,7 +96,7 @@ echo "";
             
         </form>
     </div>
-</div>
+</div> <!-- Botão para abrir o modal -->
 
 <a class="nav" href="../php/logout.php">Sair</a>
 
@@ -207,7 +207,7 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('mensagemCad').innerHTML = 'Falha na operação.';
     } else if (successParam === '4') {
         const tipoParam = urlParams.get('tipo');
-        if (tipoParam === 'servico') {
+        if (tipoParam === 'servicoo') {
             abrirModalCad();
             document.getElementById('mensagemCad').innerHTML = 'Novo serviço cadastrado com sucesso!';
         }
@@ -216,12 +216,141 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 
-
-
-
-
-    
 </body>
 </html>
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/meus_agendamento.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="../js/pagina_cliente1.js"></script>
+    <script src="../js/pagina_cliente2.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <title>Seus Dados - Barbearia Julius</title>
+</head>
+<body>
+<section>
+
+<?php
+    include '../inc/conecta_mysqli.inc';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_service'])) {
+        $service_id = $_POST['delete_service'];
+
+        // Prepare a query to delete the service
+        $delete_query = "DELETE FROM servico WHERE id_servico = ?";
+        $stmt = $mysqli->prepare($delete_query);
+
+        if ($stmt) {
+            $stmt->bind_param("i", $service_id);
+            $stmt->execute();
+
+            // Check if the deletion was successful
+            if ($stmt->affected_rows > 0) {
+                echo "Serviço excluído com sucesso.";
+            } else {
+                echo "Falha ao excluir o serviço.";
+            }
+
+            $stmt->close();
+        } else {
+            echo "Erro na preparação da declaração SQL.";
+        }
+    }
+
+    $query = "SELECT * FROM servico";
+    $result = $mysqli->query($query);
+
+    if ($result && $result->num_rows > 0) {
+
+        echo "<table border='1'>";
+        echo "<tr><th>ID</th><th>Descrição</th><th>Preço</th><th>Ação</th></tr>";
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['id_servico'] . "</td>";
+            echo "<td>" . $row['descricao'] . "</td>";
+            echo "<td>" . $row['preco'] . "</td>";
+            echo "<td>
+                    <form method='post'>
+                        <input type='hidden' name='delete_service' value='" . $row['id_servico'] . "'>
+                        <button type='submit'>Excluir</button>
+                    </form>
+                  </td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    } else {
+        echo "Nenhum serviço encontrado.";
+    }
+
+    mysqli_close($mysqli);
+?>
+<?php
+    include '../inc/conecta_mysqli.inc';
+
+    if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['delete_employee'])) {
+        $employee_id = $_POST['delete_employee'];
+
+        // Prepare a query to delete the employee
+        $delete_query = "DELETE FROM funcionarios WHERE id_funcionario = ?";
+        $stmt = $mysqli->prepare($delete_query);
+
+        if ($stmt) {
+            $stmt->bind_param("i", $employee_id);
+            $stmt->execute();
+
+            // Check if the deletion was successful
+            if ($stmt->affected_rows > 0) {
+                echo "Funcionário excluído com sucesso.";
+            } else {
+                echo "Falha ao excluir o funcionário.";
+            }
+
+            $stmt->close();
+        } else {
+            echo "Erro na preparação da declaração SQL.";
+        }
+    }
+
+    $query = "SELECT * FROM funcionarios";
+    $result = $mysqli->query($query);
+
+    if ($result && $result->num_rows > 0) {
+
+        echo "<table border='1'>";
+        echo "<tr><th>ID</th><th>Nome</th><th>Email</th><th>Ação</th></tr>";
+
+        while ($row = $result->fetch_assoc()) {
+            echo "<tr>";
+            echo "<td>" . $row['id_funcionario'] . "</td>";
+            echo "<td>" . $row['nome'] . "</td>";
+            echo "<td>" . $row['email'] . "</td>";
+            echo "<td>
+                    <form method='post'>
+                        <input type='hidden' name='delete_employee' value='" . $row['id_funcionario'] . "'>
+                        <button type='submit'>Excluir</button>
+                    </form>
+                  </td>";
+            echo "</tr>";
+        }
+
+        echo "</table>";
+    } else {
+        echo "Nenhum funcionário encontrado.";
+    }
+
+    mysqli_close($mysqli);
+?>
+
+
 </body>
 </html>
